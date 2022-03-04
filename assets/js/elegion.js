@@ -699,4 +699,54 @@ docReady(function() {
         then close all select boxes: */
         document.addEventListener("click", closeAllSelect);
     }
+
+    // блок с фото сотрудников
+    if (document.querySelectorAll(".js-team-container").length > 0)
+    {
+        let container = document.querySelector(".js-team-container");
+        let cases = Array.prototype.slice.call(container.children);
+
+        var sliderTeam = tns({
+            container: '.js-team-container .team__list',
+            items: 4,
+            gutter: 15,
+            axis: "horizontal",
+            controls: false,
+            navPosition: 'bottom',
+            mouseDrag: true,
+            slideBy: 'page'
+        });
+    }
+
+    // блок с рандомными проектами
+    if (document.querySelectorAll(".js-randomcases-container").length > 0)
+    {
+        let container = document.querySelector(".js-randomcases-container");
+        let cases = Array.prototype.slice.call(container.children);
+
+        var sliderCases = tns({
+            container: '.js-randomcases-container .some-projects__list',
+            items: 4,
+            gutter: 15,
+            controls: false,
+            nav: false,
+            //navPosition: 'bottom',
+            mouseDrag: true,
+            slideBy: 'page'
+        });
+    }
+
+    // аккордеон
+    if (document.querySelectorAll(".js-accordion").length > 0)
+    {
+        let container = document.querySelector(".js-accordion");
+        let accItems = Array.prototype.slice.call(container.children);
+        for (var i=0; i<accItems.length; i++){
+            accItems[i].addEventListener("click", function(e){
+                e.preventDefault();
+                e.target.parentNode.classList.toggle("active");
+            }, false);
+        }
+    }
+
 });
