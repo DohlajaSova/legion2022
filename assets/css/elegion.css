@@ -903,6 +903,9 @@ a.button.button_grey {
 .social_h {
   background-image: url("img/icon-social-h.svg");
 }
+.social_vc {
+  background-image: url("img/icon-social-vc.svg");
+}
 
 .circle {
   position: relative;
