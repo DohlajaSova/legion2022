@@ -793,6 +793,14 @@ a.button.button_grey {
   width: calc(50% - 46px);
   min-width: 148px;
   height: 36px;
+  position: relative;
+}
+.header__logo a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .header__hmenu {
   background: url("img/icon-menu1.svg") 0 0 no-repeat;
@@ -3647,6 +3655,11 @@ a.button.button_grey {
           justify-content: flex-end;
   padding-bottom: 70px;
   margin-top: -152px;
+}
+.body_about .top > .container {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .body_about .top .h1 {
   color: #fff;
