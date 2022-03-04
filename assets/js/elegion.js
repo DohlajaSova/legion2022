@@ -433,20 +433,23 @@ docReady(function() {
 
             portfolioTags[i].addEventListener("click", function(e){
                 e.preventDefault();
-                let selectedTag = e.target.getAttribute("href").slice(1);
-                for (var j=0; j<portfolioTags[0].children.length; j++){
-                    portfolioTags[0].children[j].classList.remove("active");
-                }
-                e.target.classList.add("active");
-                for (var j=0; j<tags.length; j++){
-                    if (!tags[j].includes("'" + selectedTag + "'")){
-                        portfolioBlocks[0].children[j].classList.add("hide");
-                    }
-                    else{
-                        portfolioBlocks[0].children[j].classList.remove("hide");
-                    }
-                }
-                portfolioRefresh(curLimit);
+				let selectedTag;
+				if (e.target.getAttribute("href") != null){
+					selectedTag = e.target.getAttribute("href").slice(1);
+					for (var j=0; j<portfolioTags[0].children.length; j++){
+						portfolioTags[0].children[j].classList.remove("active");
+					}
+					e.target.classList.add("active");
+					for (var j=0; j<tags.length; j++){
+						if (!tags[j].includes("'" + selectedTag + "'")){
+							portfolioBlocks[0].children[j].classList.add("hide");
+						}
+						else{
+							portfolioBlocks[0].children[j].classList.remove("hide");
+						}
+					}
+					portfolioRefresh(curLimit);
+				}
             })
         }
     }
