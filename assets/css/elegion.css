@@ -4752,6 +4752,23 @@ a.button:visited {
       }
   }
   */
+  .cases_portfolio .container_portfolio-inner {
+    width: 102.3333%;
+    margin-right: -2.3333%;
+  }
+  .cases_portfolio .cases__case {
+    width: 47.667%;
+    padding-bottom: 47.667%;
+    margin-right: 2.3333%;
+  }
+
+  .cases__pagination-arrows {
+    display: none;
+  }
+  .cases__pagination-button {
+    width: 100%;
+  }
+
   .dummy-inprocess__text {
     width: calc(40% - 30px);
   }

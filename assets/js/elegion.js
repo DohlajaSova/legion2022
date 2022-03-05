@@ -191,6 +191,7 @@ function TextareaOnInput() {
 
 function portfolioRefresh(limit){
     let portfolioBlocks = document.querySelectorAll(".js-cases-container-portfolio .container_portfolio-inner")[0];
+    let moreButton = document.querySelectorAll(".js-cases-more")[0];
     let shown = 0;
     for (let i=0; i<portfolioBlocks.children.length; i++){
         portfolioBlocks.children[i].classList.add("not-shown");
@@ -201,8 +202,9 @@ function portfolioRefresh(limit){
             if (shown <= limit)
                 portfolioBlocks.children[i].classList.remove("not-shown");
         }
-        
     }
+    if (shown <= limit)
+        moreButton.parentNode.classList.add("hide");
 }
 
 docReady(function() {
