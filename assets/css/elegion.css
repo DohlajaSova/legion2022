@@ -1266,6 +1266,10 @@ a.button.button_grey {
   margin-bottom: 56px;
   padding-right: 150px;
 }
+.accordion__item .cases__case {
+  width: 100%;
+  padding-bottom: 50%;
+}
 .accordion__item.active .accordion__item_head::before {
   width: 15px;
   height: 15px;
@@ -3606,7 +3610,7 @@ a.button.button_grey {
   position: relative;
 }
 .some-projects__list .cases__case {
-  padding-bottom: 5%;
+  padding-bottom: 25%;
   background: transparent;
 }
 .some-projects__list .cases__case_inner {

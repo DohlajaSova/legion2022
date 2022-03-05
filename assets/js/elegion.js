@@ -707,7 +707,6 @@ docReady(function() {
     if (document.querySelectorAll(".js-team-container").length > 0)
     {
         let container = document.querySelector(".js-team-container");
-        let cases = Array.prototype.slice.call(container.children);
 
         var sliderTeam = tns({
             container: '.js-team-container .team__list',
@@ -725,7 +724,15 @@ docReady(function() {
     if (document.querySelectorAll(".js-randomcases-container").length > 0)
     {
         let container = document.querySelector(".js-randomcases-container");
-        let cases = Array.prototype.slice.call(container.children);
+        
+        for (i=0; i<4; i++)
+        {
+            let random = Math.floor(1 + Math.random() * container.children[0].childElementCount);
+            child = document.querySelector('.js-randomcases-container > .some-projects__list > .cases__case:nth-child(' + random + ')');
+            if (child)
+                child.remove();
+        }
+        let cases = Array.prototype.slice.call(container.children[0].children);
 
         var sliderCases = tns({
             container: '.js-randomcases-container .some-projects__list',
