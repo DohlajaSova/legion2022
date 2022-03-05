@@ -5229,6 +5229,9 @@ a.button:visited {
   .cases__case {
     margin-bottom: 15px;
   }
+  .cases__filter .select {
+    margin-bottom: 30px;
+  }
   .cases .cases-container .cases-container__inner .cases__case {
     width: calc(50% - 7.5px);
     padding-bottom: calc(50% - 7.5px);
