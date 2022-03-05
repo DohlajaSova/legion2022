@@ -3734,6 +3734,11 @@ a.button.button_grey {
     padding: 0 30px;
   }
 }
+@media only screen and (max-width: 1440px) {
+  .body_about .top {
+    background-size: cover;
+  }
+}
 @media only screen and (max-width: 1350px) {
   .top .h1 {
     width: 70%;
