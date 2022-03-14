@@ -7,7 +7,7 @@ function docReady(fn) {
 }
 
 function findOffset(element) {
-    var top = 0, left = 0;
+    let top = 0, left = 0;
 
     do {
         top += element.offsetTop  || 0;
@@ -209,15 +209,16 @@ function portfolioRefresh(limit){
 
 docReady(function() {
     // фиксим хедер при скролле
-    var stickyHeader = document.getElementsByClassName('header')[0];
-    var headerOffset = findOffset(stickyHeader);
-    var lastScrollTop = 0;
-    var windowWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let stickyHeader = document.getElementsByClassName('header')[0];
+    //let headerOffset = findOffset(stickyHeader);
+    let lastScrollTop = 0;
+    let windowWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let i,j;
 
     if (windowWidth <= 550)
     {
         window.onscroll = function() {
-            var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            let bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
             if (bodyScrollTop > 50){
                 stickyHeader.classList.add('header_scrolled');
@@ -235,17 +236,17 @@ docReady(function() {
     }
     
     // слайдер с проектом
-    var sliderDots = document.querySelectorAll(".js-cases-dots");
-    for (var i=0; i<sliderDots.length; i++){
+    let sliderDots = document.querySelectorAll(".js-cases-dots");
+    for (i=0; i<sliderDots.length; i++){
         sliderDots[i].addEventListener("click", function(e){
             e.preventDefault();
-            var slider = this.previousElementSibling; // контейнер со слайдами
-            var sliderControlsContainer = this; // кликнутая точка
+            let slider = this.previousElementSibling; // контейнер со слайдами
+            let sliderControlsContainer = this; // кликнутая точка
             if (e.target.tagName == "A")
             {
-                var sliderControls = Array.prototype.slice.call(e.target.parentNode.parentNode.children); // контейнер с точками
-                var clickedItemNumber = sliderControls.indexOf(e.target.parentNode); // номер кликнутого элемента
-                for (var i=0; i<slider.children.length; i++){
+                let sliderControls = Array.prototype.slice.call(e.target.parentNode.parentNode.children); // контейнер с точками
+                let clickedItemNumber = sliderControls.indexOf(e.target.parentNode); // номер кликнутого элемента
+                for (i=0; i<slider.children.length; i++){
                     slider.children[i].classList.remove("active");
                     sliderControls[i].classList.remove("active");
                 }
@@ -256,17 +257,17 @@ docReady(function() {
     }
     
     // слайдер с информацией
-    var sliderInfoDots = document.querySelectorAll(".js-cases-info-dots");
-    for (var i=0; i<sliderInfoDots.length; i++){
+    let sliderInfoDots = document.querySelectorAll(".js-cases-info-dots");
+    for (i=0; i<sliderInfoDots.length; i++){
         sliderInfoDots[i].addEventListener("click", function(e){
             e.preventDefault();
-            var slider = this.parentNode.previousElementSibling; // контейнер со слайдами
-            var sliderControlsContainer = this; // кликнутая точка
+            let slider = this.parentNode.previousElementSibling; // контейнер со слайдами
+            let sliderControlsContainer = this; // кликнутая точка
             if (e.target.tagName == "A")
             {
-                var sliderControls = Array.prototype.slice.call(e.target.parentNode.parentNode.children); // контейнер с точками
-                var clickedItemNumber = sliderControls.indexOf(e.target.parentNode); // номер кликнутого элемента
-                for (var i=0; i<slider.children[0].children.length; i++){
+                let sliderControls = Array.prototype.slice.call(e.target.parentNode.parentNode.children); // контейнер с точками
+                let clickedItemNumber = sliderControls.indexOf(e.target.parentNode); // номер кликнутого элемента
+                for (i=0; i<slider.children[0].children.length; i++){
                     slider.children[0].children[i].classList.remove("active");
                     sliderControls[i].classList.remove("active");
                 }
@@ -277,17 +278,17 @@ docReady(function() {
     }
     
     // слайдер с принципами
-    var sliderProblemsDots = document.querySelectorAll(".js-problems-groups-dots");
-    for (var i=0; i<sliderProblemsDots.length; i++){
+    let sliderProblemsDots = document.querySelectorAll(".js-problems-groups-dots");
+    for (i=0; i<sliderProblemsDots.length; i++){
         /*sliderProblemsDots[i].addEventListener("click", function(e){
             e.preventDefault();
-            var slider = this.parentNode.previousElementSibling; // контейнер со слайдами
-            var sliderControlsContainer = this; // кликнутая точка
+            let slider = this.parentNode.previousElementSibling; // контейнер со слайдами
+            let sliderControlsContainer = this; // кликнутая точка
             if (e.target.tagName == "A")
             {
-                var sliderControls = Array.prototype.slice.call(e.target.parentNode.parentNode.children); // контейнер с точками
-                var clickedItemNumber = sliderControls.indexOf(e.target.parentNode); // номер кликнутого элемента
-                for (var i=0; i<slider.children[0].children[0].children.length; i++){
+                let sliderControls = Array.prototype.slice.call(e.target.parentNode.parentNode.children); // контейнер с точками
+                let clickedItemNumber = sliderControls.indexOf(e.target.parentNode); // номер кликнутого элемента
+                for (i=0; i<slider.children[0].children[0].children.length; i++){
                     slider.children[0].children[0].children[i].classList.remove("active");
                     sliderControls[i].classList.remove("active");
                 }
@@ -298,7 +299,7 @@ docReady(function() {
     }
     if (document.querySelectorAll(".js-problems-slider-groups").length > 0)
     {
-        var sliderProblems = tns({
+        let sliderProblems = tns({
             container: '.js-problems-slider-groups',
             items: 1,
             controls: false,
@@ -312,7 +313,7 @@ docReady(function() {
     // слайдер со статьями
     if (document.querySelectorAll(".js-project-article").length > 0)
     {
-        var sliderProjects = tns({
+        let sliderProjects = tns({
             container: '.js-project-article',
             items: 1,
             controls: false,
@@ -362,7 +363,7 @@ docReady(function() {
             }
         }
         if (windowWidth <= 650){
-            var sliderCases = tns({
+            let sliderCases = tns({
                 container: '.js-cases-container-inner',
                 items: 1,
                 gutter: 15,
@@ -374,7 +375,7 @@ docReady(function() {
             });
         }
         else{
-            var sliderCases = tns({
+            let sliderCases = tns({
                 container: '.js-cases-container-inner',
                 items: 2,
                 gutter: 15,
@@ -403,9 +404,9 @@ docReady(function() {
         })
         portfolioRefresh(curLimit);
 
-        for (var i=0; i<portfolioTypes.length; i++){
+        for (i=0; i<portfolioTypes.length; i++){
             let types = new Array();
-            for (var j=0; j<portfolioBlocks[0].children.length; j++){
+            for (j=0; j<portfolioBlocks[0].children.length; j++){
                 let typeString = portfolioBlocks[0].children[j].dataset.types.slice(1,portfolioBlocks[0].children[j].dataset.types.length-1);
                 types[j] = typeString.split(",");
             }
@@ -415,7 +416,7 @@ docReady(function() {
                 e.preventDefault();
                 let selectedType = options.selectedOptions[0].value;
 
-                for (var j=0; j<types.length; j++){
+                for (j=0; j<types.length; j++){
                     if (!types[j].includes("'" + selectedType + "'")){
                         portfolioBlocks[0].children[j].classList.add("hide");
                     }
@@ -426,9 +427,9 @@ docReady(function() {
                 portfolioRefresh(curLimit);
             })
         }
-        for (var i=0; i<portfolioTags.length; i++){
+        for (i=0; i<portfolioTags.length; i++){
             let tags = new Array();
-            for (var j=0; j<portfolioBlocks[0].children.length; j++){
+            for (j=0; j<portfolioBlocks[0].children.length; j++){
                 let tagString = portfolioBlocks[0].children[j].dataset.tags.slice(1,portfolioBlocks[0].children[j].dataset.tags.length-1);
                 tags[j] = tagString.split(",");
             }
@@ -438,11 +439,11 @@ docReady(function() {
 				let selectedTag;
 				if (e.target.getAttribute("href") != null){
 					selectedTag = e.target.getAttribute("href").slice(1);
-					for (var j=0; j<portfolioTags[0].children.length; j++){
+					for (j=0; j<portfolioTags[0].children.length; j++){
 						portfolioTags[0].children[j].classList.remove("active");
 					}
 					e.target.classList.add("active");
-					for (var j=0; j<tags.length; j++){
+					for (j=0; j<tags.length; j++){
 						if (!tags[j].includes("'" + selectedTag + "'")){
 							portfolioBlocks[0].children[j].classList.add("hide");
 						}
@@ -457,26 +458,26 @@ docReady(function() {
     }
 
     // блок вакансий
-    var vacancyBlocks = document.querySelectorAll(".vacancy");
-    for (var i=0; i<vacancyBlocks.length; i++){
+    let vacancyBlocks = document.querySelectorAll(".vacancy");
+    for (i=0; i<vacancyBlocks.length; i++){
         vacancyBlocks[i].addEventListener("mouseover", function(e){
             e.preventDefault();
-            var vacancyContainer = this.children[0]; // контейнер с вакансией
-            var vacancyContainerHeight = vacancyContainer.getBoundingClientRect().height;
-            var vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
-            var vacanceNameHeight = vacancyName.getBoundingClientRect().height+50;
-            var vacancyTitle = vacancyName.parentNode;
-            var vacancyBody = vacancyTitle.nextElementSibling;
+            let vacancyContainer = this.children[0]; // контейнер с вакансией
+            let vacancyContainerHeight = vacancyContainer.getBoundingClientRect().height;
+            let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
+            let vacanceNameHeight = vacancyName.getBoundingClientRect().height+50;
+            let vacancyTitle = vacancyName.parentNode;
+            let vacancyBody = vacancyTitle.nextElementSibling;
             vacancyTitle.style.top = vacanceNameHeight - vacancyContainerHeight + "px";
             vacancyBody.style.top = vacanceNameHeight - vacancyContainerHeight + "px";
             vacancyBody.style.height = vacancyContainerHeight - vacanceNameHeight + 92 + "px";
         }, false);
         vacancyBlocks[i].addEventListener("mouseout", function(e){
             e.preventDefault();
-            var vacancyContainer = this.children[0]; // контейнер с вакансией
-            var vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
-            var vacancyTitle = vacancyName.parentNode;
-            var vacancyBody = vacancyTitle.nextElementSibling;
+            let vacancyContainer = this.children[0]; // контейнер с вакансией
+            let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
+            let vacancyTitle = vacancyName.parentNode;
+            let vacancyBody = vacancyTitle.nextElementSibling;
             vacancyTitle.style.top = "0px";
             vacancyBody.style.top = "0px";
             vacancyBody.style.height = "100%";
@@ -484,9 +485,9 @@ docReady(function() {
     }
     
     // выпадающее меню
-    var pmenuToggler = document.querySelector(".js-top-menu");
-    var pmenuTogglerInner = document.querySelector(".js-top-menu-inner");
-    var pmenuBody = document.querySelector(".pmenu");
+    let pmenuToggler = document.querySelector(".js-top-menu");
+    let pmenuTogglerInner = document.querySelector(".js-top-menu-inner");
+    let pmenuBody = document.querySelector(".pmenu");
     pmenuToggler.addEventListener("click", function(e){
         e.preventDefault();
         if (pmenuBody.classList.contains("active"))
@@ -513,18 +514,18 @@ docReady(function() {
     }, false);
 
     // видео: пропорции
-    var players = ['iframe[src*="youtube.com"]', 'iframe[src*="vimeo.com"]'];
-    var fitVideos = document.querySelectorAll(players.join(","));
+    let players = ['iframe[src*="youtube.com"]', 'iframe[src*="vimeo.com"]'];
+    let fitVideos = document.querySelectorAll(players.join(","));
     if (fitVideos.length) {
-        for (var i = 0; i < fitVideos.length; i++) {
+        for (i = 0; i < fitVideos.length; i++) {
             // Get Video Information
-            var fitVideo = fitVideos[i];
-            var width = fitVideo.getAttribute("width");
-            var height = fitVideo.getAttribute("height");
-            var aspectRatio = height / width;
-            var parentDiv = fitVideo.parentNode;
+            let fitVideo = fitVideos[i];
+            let width = fitVideo.getAttribute("width");
+            let height = fitVideo.getAttribute("height");
+            let aspectRatio = height / width;
+            let parentDiv = fitVideo.parentNode;
 
-            var div = document.createElement("div");
+            let div = document.createElement("div");
             div.className = "popup-video__frame";
             div.style.paddingBottom = aspectRatio * 100 + "%";
             parentDiv.insertBefore(div, fitVideo);
@@ -571,9 +572,9 @@ docReady(function() {
 	}
     
     // выпадающее видео
-    var videoOpener = document.querySelector(".js-popup-video-open");
-    var videoCloser = document.querySelector(".js-popup-video-close");
-    var videoBody = document.querySelector(".popup-video");
+    let videoOpener = document.querySelector(".js-popup-video-open");
+    let videoCloser = document.querySelector(".js-popup-video-close");
+    let videoBody = document.querySelector(".popup-video");
     if (videoOpener!= null) {
         videoOpener.addEventListener("click", function(e){
             e.preventDefault();
@@ -588,10 +589,10 @@ docReady(function() {
     }
     
     // выпадающая форма обратной связи
-    var feedbackOpener = document.querySelectorAll(".js-popup-feedback-open");
-    var feedbackCloser = document.querySelector(".js-popup-feedback-close");
-    for (var i=0; i<feedbackOpener.length; i++){
-        var feedbackBody = document.querySelector(".popup-feedback");
+    let feedbackOpener = document.querySelectorAll(".js-popup-feedback-open");
+    let feedbackCloser = document.querySelector(".js-popup-feedback-close");
+    for (i=0; i<feedbackOpener.length; i++){
+        let feedbackBody = document.querySelector(".popup-feedback");
         if (feedbackOpener[i]!= null) {
             feedbackOpener[i].addEventListener("click", function(e){
                 e.preventDefault();
@@ -607,16 +608,16 @@ docReady(function() {
     }
     
     // круг с цифрами
-    var circle = document.querySelector(".circle");
-    var circleText = document.querySelector(".circle-text");
-    var circlePic = document.querySelector(".circle-pic");
+    let circle = document.querySelector(".circle");
+    let circleText = document.querySelector(".circle-text");
+    let circlePic = document.querySelector(".circle-pic");
     
     if (circlePic!= null) {
         circlePic.classList.add("rotating");
-        var num = 2;
+        let num = 2;
         setInterval(function(){
             //circlePic.style.transform = "rotate("+ 360*num + "deg)";
-            for (var i=0; i<circleText.children.length; i++){
+            for (i=0; i<circleText.children.length; i++){
                 circleText.children[i % circleText.children.length].style.display = "none";
             }
             circleText.children[num % circleText.children.length].style.display = "block";
@@ -710,7 +711,7 @@ docReady(function() {
     {
         let container = document.querySelector(".js-team-container");
 
-        var sliderTeam = tns({
+        let sliderTeam = tns({
             container: '.js-team-container .team__list',
             items: 4,
             gutter: 15,
@@ -736,7 +737,7 @@ docReady(function() {
         }
         let cases = Array.prototype.slice.call(container.children[0].children);
 
-        var sliderCases = tns({
+        let sliderCases = tns({
             container: '.js-randomcases-container .some-projects__list',
             items: 4,
             gutter: 15,
@@ -753,7 +754,7 @@ docReady(function() {
     {
         let container = document.querySelector(".js-accordion");
         let accItems = Array.prototype.slice.call(container.children);
-        for (var i=0; i<accItems.length; i++){
+        for (i=0; i<accItems.length; i++){
             accItems[i].addEventListener("click", function(e){
                 e.preventDefault();
                 e.target.parentNode.classList.toggle("active");
