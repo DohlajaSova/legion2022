@@ -2023,8 +2023,9 @@ a.button.button_grey {
 }
 .who-we-are__widget {
   display: grid;
+  width: 100%;
   grid-gap: 17px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-bottom: 149px;
 }
 .who-we-are__widget_item {
@@ -2034,7 +2035,47 @@ a.button.button_grey {
 }
 .who-we-are__widget_item.double {
   grid-row-end: span 2;
+  grid-column-end: span 2;
   height: 0;
+  padding-bottom: 100%;
+}
+.who-we-are__widget_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.who-we-are__widget .vacancies {
+  height: 100%;
+  background-color: transparent;
+}
+.who-we-are__widget .vacancies__list {
+  height: 100%;
+}
+.who-we-are__widget .vacancies .vacancy {
+  width: 100%;
+}
+.who-we-are__widget .problems__item {
+  width: 100%;
+  padding: 30px 30px calc(100% - 30px);
+}
+.who-we-are__widget .problems__item h3 {
+  font-size: 24px;
+  width: 100%;
+}
+.who-we-are__widget .problems__more {
+  left: 30px;
+  bottom: 20px;
+}
+.who-we-are__widget .problems__more::before {
+  margin-top: -30px;
+}
+.who-we-are__widget .problems__more::after {
+  top: 23px;
+}
+.who-we-are__widget .cases__case {
+  width: 100%;
   padding-bottom: 100%;
 }
 
