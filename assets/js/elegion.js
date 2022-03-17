@@ -762,4 +762,41 @@ docReady(function() {
         }
     }
 
+    // блок с годами
+    if (document.querySelectorAll(".js-years").length > 0)
+    {
+        let container = document.querySelector(".js-years");
+        
+        let cases = Array.prototype.slice.call(container.children[0].children);
+
+        let sliderYears = tns({
+            container: '.js-years',
+            items: 1,
+            controls: false,
+            navPosition: 'bottom',
+            mouseDrag: true,
+            slideBy: 'page',
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayButton: false,
+            autoplayButtonOutput: false
+        });
+
+        const slideCircle = (() => {
+            const info = sliderYears.getInfo();
+            let num = info.displayIndex-1;
+            //let data = switcherItems[clickedIndex].dataset;
+            
+            const bullet = document.querySelector(".js-year-circle");
+            const yearnum = document.querySelector(".js-year-number");
+            bullet.style.left = 100*num/(info.slideCount-1) + "%";
+            yearnum.innerHTML = info.slideItems[info.displayIndex].dataset.year;
+            
+        });
+        
+        slideCircle();
+        sliderYears.events.on('transitionEnd', slideCircle);
+    }
+
+
 });
