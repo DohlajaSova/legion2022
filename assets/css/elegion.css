@@ -1477,6 +1477,9 @@ a.button.button_grey {
 .cases__case_contents-slider:hover {
   height: calc(100% - 62px);
 }
+.cases__case_contents-static:hover {
+  height: 100% !important;
+}
 .cases__case_number {
   position: absolute;
   top: -2px;
@@ -2738,6 +2741,9 @@ a.button.button_grey {
 .projects .project__article_contents-slider:hover {
   height: calc(100% - 62px);
 }
+.projects .project__article_contents-static:hover {
+  height: 100% !important;
+}
 
 .feedback {
   margin-bottom: 76px;
@@ -3629,6 +3635,9 @@ a.button.button_grey {
 }
 .teammate__contents-slider:hover {
   height: calc(100% - 62px);
+}
+.teammate__contents-static:hover {
+  height: 100% !important;
 }
 .teammate:hover .teammate__contents {
   top: -163px;
