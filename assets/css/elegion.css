@@ -2017,6 +2017,17 @@ a.button.button_grey {
   left: 50%;
   z-index: 10;
 }
+.principles__video_inline {
+  width: 100%;
+}
+.principles__video_inline .popup-video__frame {
+  width: 100%;
+}
+.principles__video_inline .popup-video__frame iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
 .who-we-are__content {
   display: -webkit-box;
