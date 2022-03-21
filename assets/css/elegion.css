@@ -496,6 +496,7 @@ body.dummy {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-x: hidden;
 }
 
 html,
@@ -807,6 +808,7 @@ a.button.button_grey {
   background-size: contain;
   width: 26px;
   height: 26px;
+  display: none;
 }
 .header__hmenu > a {
   display: block;
@@ -819,11 +821,18 @@ a.button.button_grey {
 }
 .dummy .header__hmenu {
   background-image: url("img/icon-menu2.svg");
+  display: block;
 }
 .header__mmenu {
   width: calc(50% - 46px);
   white-space: nowrap;
   text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .header__mmenu > a {
   margin-right: 35px;
@@ -841,6 +850,8 @@ a.button.button_grey {
   width: 30px;
   height: 30px;
   border-radius: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .header.header_sticky {
   position: fixed;
@@ -854,7 +865,7 @@ a.button.button_grey {
   left: calc(50% - 13px);
 }
 .dummy .header {
-  background-color: #1E2738;
+  background-color: transparent;
   padding-bottom: 40px;
 }
 .dummy .header__logo {
@@ -3182,6 +3193,7 @@ a.button.button_grey {
   margin-top: auto;
   padding-bottom: 41px;
   padding-top: 0;
+  background: transparent;
 }
 .dummy .footer .footer__contacts, .dummy .footer .footer__copyright {
   display: none;
@@ -3942,6 +3954,16 @@ a.button.button_grey {
   .body_about .top {
     background-size: cover;
   }
+
+  .header__hmenu {
+    display: block;
+  }
+  .header__mmenu a {
+    display: none;
+  }
+  .header__mmenu_lang {
+    display: inline-block !important;
+  }
 }
 @media only screen and (max-width: 1350px) {
   .top .h1 {
@@ -4136,12 +4158,6 @@ a.button:visited {
 
   .header {
     padding-bottom: 43px;
-  }
-  .header__mmenu a {
-    display: none;
-  }
-  .header__mmenu_lang {
-    display: inline-block !important;
   }
   .header.header_sticky {
     padding-bottom: 0;
@@ -5346,6 +5362,10 @@ a.button:visited {
     min-height: 300px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .dummy__container_404 {
+    padding-left: 0;
+    padding-right: 0;
   }
   .dummy-inprocess {
     padding-bottom: 30px;
