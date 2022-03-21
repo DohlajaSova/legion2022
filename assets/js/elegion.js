@@ -628,7 +628,6 @@ docReady(function() {
         circlePic.classList.add("rotating");
         let num = 2;
         setInterval(function(){
-            //circlePic.style.transform = "rotate("+ 360*num + "deg)";
             for (i=0; i<circleText.children.length; i++){
                 circleText.children[i % circleText.children.length].style.display = "none";
             }
