@@ -465,7 +465,7 @@ docReady(function() {
             let vacancyContainer = this.children[0]; // контейнер с вакансией
             let vacancyContainerHeight = vacancyContainer.getBoundingClientRect().height;
             let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
-            let vacanceNameHeight = vacancyName.getBoundingClientRect().height+50;
+            let vacanceNameHeight = vacancyName.getBoundingClientRect().height+100;
             let vacancyTitle = vacancyName.parentNode;
             let vacancyBody = vacancyTitle.nextElementSibling;
             vacancyTitle.style.top = vacanceNameHeight - vacancyContainerHeight + "px";
