@@ -591,8 +591,10 @@ docReady(function() {
     // выпадающая форма обратной связи
     let feedbackOpener = document.querySelectorAll(".js-popup-feedback-open");
     let feedbackCloser = document.querySelector(".js-popup-feedback-close");
+    let feedbackSubmiter = document.querySelector(".js-popup-feedback-send");
     for (i=0; i<feedbackOpener.length; i++){
         let feedbackBody = document.querySelector(".popup-feedback");
+        let feedbackBodyContent = document.querySelector(".popup-feedback__content");
         if (feedbackOpener[i]!= null) {
             feedbackOpener[i].addEventListener("click", function(e){
                 e.preventDefault();
@@ -604,11 +606,20 @@ docReady(function() {
                 feedbackBody.classList.remove("active");
                 document.querySelector("body").classList.remove("popup-open");
             }, false);
+            feedbackSubmiter.addEventListener("click", function(e){
+                e.preventDefault();
+                feedbackBodyContent.classList.add("popup-feedback__content_success");
+                setTimeout(function(){
+                    feedbackBody.classList.remove("active");
+                    document.querySelector("body").classList.remove("popup-open");
+                }, 4000);
+            }, false);
         }
     }
+
+
     
     // круг с цифрами
-    let circle = document.querySelector(".circle");
     let circleText = document.querySelector(".circle-text");
     let circlePic = document.querySelector(".circle-pic");
     
@@ -646,6 +657,8 @@ docReady(function() {
           a = document.createElement("DIV");
           a.setAttribute("class", "select-selected");
           a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+		  //a.innerHTML = Array.prototype.slice.call(selElmnt.selectedOptions);
+		  console.log(selElmnt.selectedOptions);
           x[i].appendChild(a);
           /* For each element, create a new DIV that will contain the option list: */
           b = document.createElement("DIV");
@@ -761,5 +774,42 @@ docReady(function() {
             }, false);
         }
     }
+
+    // блок с годами
+    if (document.querySelectorAll(".js-years").length > 0)
+    {
+        let container = document.querySelector(".js-years");
+        
+        let cases = Array.prototype.slice.call(container.children[0].children);
+
+        let sliderYears = tns({
+            container: '.js-years',
+            items: 1,
+            controls: false,
+            navPosition: 'bottom',
+            mouseDrag: true,
+            slideBy: 'page',
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayButton: false,
+            autoplayButtonOutput: false
+        });
+
+        const slideCircle = (() => {
+            const info = sliderYears.getInfo();
+            let num = info.displayIndex-1;
+            //let data = switcherItems[clickedIndex].dataset;
+            
+            const bullet = document.querySelector(".js-year-circle");
+            const yearnum = document.querySelector(".js-year-number");
+            bullet.style.left = 100*num/(info.slideCount-1) + "%";
+            yearnum.innerHTML = info.slideItems[info.displayIndex].dataset.year;
+            
+        });
+        
+        slideCircle();
+        sliderYears.events.on('transitionEnd', slideCircle);
+    }
+
 
 });
