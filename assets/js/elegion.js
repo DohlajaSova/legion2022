@@ -612,6 +612,7 @@ docReady(function() {
                 setTimeout(function(){
                     feedbackBody.classList.remove("active");
                     document.querySelector("body").classList.remove("popup-open");
+                    feedbackBodyContent.classList.remove("popup-feedback__content_success");
                 }, 4000);
             }, false);
         }

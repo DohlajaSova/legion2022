@@ -3381,6 +3381,19 @@ a.button.button_grey {
 .request__textarea .button {
   margin: 50px 0 70px;
 }
+.request__file {
+  margin-bottom: 80px;
+}
+.request__file p {
+  color: #949191;
+  font-size: 24px;
+  border-bottom: 1px solid #949191;
+  padding-bottom: 35px;
+  margin-bottom: 30px;
+}
+.request__file input[type=file] {
+  display: none;
+}
 .request .select-inline .select-hide {
   font-size: 24px;
 }
