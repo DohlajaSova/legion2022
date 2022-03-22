@@ -4523,6 +4523,7 @@ a.button:visited {
             justify-content: space-between;
     padding-top: 30px;
     padding-left: 30px;
+    padding-right: 30px;
   }
   .problems__item_plus {
     background-size: auto 100%;
@@ -5437,6 +5438,10 @@ a.button:visited {
     margin-bottom: 44px;
   }
 
+  .category__content {
+    font-size: 60px;
+  }
+
   .contacts__title {
     margin-bottom: 20px;
   }
@@ -5523,6 +5528,14 @@ a.button:visited {
     height: 10px;
     border-color: #949191;
     background-color: #fff;
+  }
+
+  .problems__item {
+    width: 100%;
+    padding: 30px 24px calc(100% - 30px);
+  }
+  .problems__item p {
+    margin-top: 15px;
   }
 }
 @media only screen and (max-width: 550px) {
