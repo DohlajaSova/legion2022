@@ -2766,6 +2766,9 @@ a.button.button_grey {
 .projects .project__article_contents-static:hover {
   height: 100% !important;
 }
+.projects .project__article_contents-static + .project-slider-article__statics {
+  display: none;
+}
 
 .feedback {
   margin-bottom: 76px;
@@ -4530,7 +4533,7 @@ a.button:visited {
     height: 100%;
   }
   .problems__review_top {
-    min-height: 340px;
+    min-height: 390px;
   }
   .problems__review_body {
     font-size: 24px;
@@ -4813,7 +4816,7 @@ a.button:visited {
   }
 
   .feedback h2 {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
   }
   .feedback__container {
     padding-bottom: 200px;
@@ -4828,6 +4831,9 @@ a.button:visited {
             order: 3;
     padding: 6px 0 0 20px;
     font-size: 14px;
+  }
+  .feedback_compact {
+    padding: 60px 30px 20px;
   }
 
   .news .news-item {
@@ -5143,6 +5149,10 @@ a.button:visited {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+
+  .feedback_compact h2 {
+    width: 70%;
   }
 }
 @media only screen and (max-width: 650px) {
