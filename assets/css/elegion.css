@@ -4361,6 +4361,13 @@ a.button:visited {
     font-size: 20px;
     display: block;
   }
+
+  .teammate__body {
+    padding-top: 20px;
+  }
+  .teammate__body_name {
+    margin-bottom: 5px;
+  }
 }
 @media only screen and (max-width: 992px) {
   body {
