@@ -4868,6 +4868,13 @@ a.button:visited {
     width: 100%;
     margin-left: 0;
   }
+
+  .who-we-are__widget {
+    grid-template-columns: 1fr 1fr;
+  }
+  .who-we-are__widget_item {
+    padding-bottom: 100%;
+  }
 }
 @media only screen and (max-width: 860px) {
   .projects__panels {
