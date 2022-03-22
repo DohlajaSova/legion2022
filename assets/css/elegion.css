@@ -3958,6 +3958,9 @@ a.button.button_grey {
   .header__hmenu {
     display: block;
   }
+  .header__hmenu.pmenu__mmenu_close {
+    display: none;
+  }
   .header__mmenu a {
     display: none;
   }
@@ -4158,6 +4161,7 @@ a.button:visited {
 
   .header {
     padding-bottom: 43px;
+    height: 102px;
   }
   .header.header_sticky {
     padding-bottom: 0;
@@ -5551,6 +5555,9 @@ a.button:visited {
   .pmenu__mmenu_close {
     display: block;
     float: right;
+  }
+  .pmenu__mmenu_close.header__hmenu {
+    display: block;
   }
 
   .header {
