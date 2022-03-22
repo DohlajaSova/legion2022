@@ -2596,10 +2596,10 @@ a.button.button_grey {
 }
 .projects .project__review_body {
   font-size: 24px;
-  width: 58%;
+  width: 88%;
 }
 .projects .project__review_author {
-  padding: 73px 43px 55px;
+  padding: 23px 43px 55px;
 }
 .projects .project__review_author-img {
   float: right;
@@ -4055,10 +4055,11 @@ a.button.button_grey {
     padding: 33px 43px 35px;
   }
   .projects .project__review_rubr {
-    margin-bottom: 45px;
+    margin-bottom: 25px;
   }
   .projects .project__review_body {
     font-size: 20px;
+    width: 100%;
   }
   .projects .project__article_large .project-article_link {
     font-size: 15px;
@@ -4240,6 +4241,15 @@ a.button:visited {
   .problems {
     margin-bottom: 40px;
   }
+  .problems__item_bg4 {
+    padding: 0 0 49.2%;
+  }
+  .problems__item h3, .problems__item .h3 {
+    font-size: 24px;
+  }
+  .problems__item p {
+    font-size: 16px;
+  }
   .problems__link {
     margin-top: 20px;
     width: 100%;
@@ -4285,6 +4295,9 @@ a.button:visited {
 
   .projects__panels {
     margin-bottom: 89px;
+  }
+  .projects .project__review_author-position {
+    max-width: 100%;
   }
 
   .dummy-inprocess__text {
@@ -4419,6 +4432,10 @@ a.button:visited {
     border-radius: 30px 30px 0 0;
     position: relative;
     color: #fff;
+    /*				&:nth-child(2){
+    					background-color:$color-blue-light;
+    					z-index:2;
+    				}*/
   }
   .category__tabs a:nth-child(1),
 .category__tabs span:nth-child(1) {
@@ -4427,11 +4444,6 @@ a.button:visited {
   }
   .category__tabs a:nth-child(2),
 .category__tabs span:nth-child(2) {
-    background-color: #84AEFF;
-    z-index: 2;
-  }
-  .category__tabs a:nth-child(3),
-.category__tabs span:nth-child(3) {
     background-color: #2864D9;
     z-index: 3;
   }
@@ -4513,12 +4525,8 @@ a.button:visited {
     padding-left: 30px;
   }
   .problems__item_plus {
-    background-position: right -22px top;
     background-size: auto 100%;
     height: 100%;
-  }
-  .problems__item_button {
-    text-align: right;
   }
   .problems__review_top {
     min-height: 340px;
