@@ -2079,7 +2079,7 @@ a.button.button_grey {
   width: 100%;
   grid-gap: 17px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-bottom: 149px;
+  margin-bottom: 89px;
 }
 .who-we-are__widget_item {
   background-color: #F0F0F0;
@@ -3626,6 +3626,7 @@ a.button.button_grey {
 }
 .teammate__photo {
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 .teammate__photo img {
@@ -3937,9 +3938,21 @@ a.button.button_grey {
 .projects,
 .feedback,
 .news,
+.who-we-are,
+.not-all-the-same,
+.team,
+.to-work,
+.some-projects,
 .dummy__container {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .to-work .projects,
+.some-projects .cases,
+.who-we-are .vacancies,
+.not-all-the-same .projects {
+    padding: 0;
   }
 
   .back {
