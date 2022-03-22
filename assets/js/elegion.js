@@ -765,9 +765,23 @@ docReady(function() {
             container: '.js-randomcases-container .some-projects__list',
             items: 4,
             gutter: 15,
+            responsive: {
+                320: {
+                    items: 1,
+                    nav: true
+                },
+                640: {
+                    items: 2,
+                    nav: true
+                },
+                992: {
+                    items: 4,
+                    nav: false
+                }
+            },
             controls: false,
             nav: false,
-            //navPosition: 'bottom',
+            navPosition: 'bottom',
             mouseDrag: true,
             slideBy: 'page'
         });
