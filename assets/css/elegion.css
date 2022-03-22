@@ -1078,6 +1078,9 @@ a.button.button_grey {
 .popup-feedback__content_success .answer {
   display: block;
 }
+.popup-feedback__content_success .answer p small {
+  font-size: 100%;
+}
 
 .pmenu {
   position: fixed;
@@ -4324,6 +4327,27 @@ a.button:visited {
     width: 50%;
     margin-left: 50%;
   }
+
+  .popup-feedback__content {
+    padding: 50px 0;
+  }
+  .popup-feedback .answer__container {
+    padding-left: 30px;
+    padding-right: 35%;
+    background-size: 220px;
+    background-position: right 48px bottom;
+  }
+  .popup-feedback .answer h2, .popup-feedback .answer .h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .popup-feedback .answer p {
+    font-size: 28px;
+  }
+  .popup-feedback .answer p small {
+    font-size: 20px;
+    display: block;
+  }
 }
 @media only screen and (max-width: 992px) {
   body {
@@ -4736,6 +4760,95 @@ a.button:visited {
   .contacts__lead_phone, .contacts__lead_email {
     font-size: 16px;
     white-space: nowrap;
+  }
+
+  .request__select.select-selected {
+    display: block;
+  }
+  .request__select.select-inline_wide .select {
+    position: relative;
+  }
+  .request__select.select-inline_wide .select-selected {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 61px;
+    margin-bottom: 0;
+    padding: 12px 70px 10px 35px;
+    border-radius: 30px;
+    line-height: 23px;
+    cursor: pointer;
+    background-color: #2864D9;
+    color: #fff;
+    font-size: 24px;
+    position: relative;
+    z-index: 3;
+  }
+  .request__select.select-inline_wide .select-selected::before, .request__select.select-inline_wide .select-selected::after {
+    content: "";
+    width: 47px;
+    height: 47px;
+    margin-left: 15px;
+    position: absolute;
+    z-index: 10;
+  }
+  .request__select.select-inline_wide .select-selected::before {
+    background-color: #fff;
+    border-radius: 50%;
+    top: 6px;
+    right: 14px;
+  }
+  .request__select.select-inline_wide .select-selected::after {
+    background: url("img/arrow2blue.svg") center center no-repeat;
+    top: 10px;
+    right: 14px;
+    background-size: 60%;
+    z-index: 11;
+  }
+  .request__select.select-inline_wide .select-selected.select-arrow-active {
+    z-index: 23;
+  }
+  .request__select.select-inline_wide .select-selected.select-arrow-active::before {
+    opacity: 0.5;
+  }
+  .request__select.select-inline_wide .select-selected.select-arrow-active::after {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    top: 6px;
+  }
+  .request__select.select-inline_wide .select-selected.select-arrow-active + .select-items {
+    z-index: 22;
+  }
+  .request__select.select-inline_wide .select-items {
+    background-color: #F0F0F0;
+    border-radius: 0 0 30px 30px;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    padding: 45px 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  .request__select.select-inline_wide .select-items.select-hide {
+    display: none;
+  }
+  .request__select.select-inline_wide .select-items div {
+    padding: 15px 20px;
+  }
+  .request__select.select-inline_wide .select-items div:hover {
+    background-color: #2864D9;
+    color: #fff;
   }
 }
 @media only screen and (max-width: 860px) {
@@ -5154,6 +5267,11 @@ a.button:visited {
   .feedback_compact h2 {
     width: 70%;
   }
+
+  .popup-feedback .answer__container {
+    padding-left: 15px;
+    background-size: 110px;
+  }
 }
 @media only screen and (max-width: 650px) {
   .header,
@@ -5546,6 +5664,23 @@ a.button:visited {
   }
   .problems__item p {
     margin-top: 15px;
+  }
+
+  .request__file {
+    margin-bottom: 10px;
+  }
+  .request__select.select-inline_wide .select-selected {
+    font-size: 16px;
+  }
+
+  .popup-video__container,
+.popup-feedback__container {
+    padding: 0 15px;
+  }
+
+  .popup-feedback .answer__container {
+    padding-right: 15%;
+    padding-bottom: 100px;
   }
 }
 @media only screen and (max-width: 550px) {
