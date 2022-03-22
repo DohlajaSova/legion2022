@@ -728,6 +728,17 @@ docReady(function() {
             container: '.js-team-container .team__list',
             items: 4,
             gutter: 15,
+            responsive: {
+                320: {
+                    items: 1
+                },
+                640: {
+                    items: 2
+                },
+                992: {
+                    items: 4
+                }
+            },
             axis: "horizontal",
             controls: false,
             navPosition: 'bottom',
