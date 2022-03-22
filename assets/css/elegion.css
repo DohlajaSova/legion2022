@@ -3991,6 +3991,21 @@ a.button.button_grey {
   .top .h1 {
     width: 70%;
   }
+
+  .who-we-are__widget .vacancies .vacancy__body_item {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .who-we-are__widget .vacancies .vacancy__body {
+    font-size: 12px;
+    padding-top: 95px;
+  }
+  .who-we-are__widget .problems__item h3 {
+    font-size: 20px;
+  }
+  .who-we-are__widget .problems__more::before {
+    margin-right: 17px;
+  }
 }
 @media only screen and (max-width: 1280px) {
   body {
