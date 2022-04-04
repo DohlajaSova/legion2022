@@ -2706,6 +2706,8 @@ a.button.button_grey {
   width: 50%;
   border-radius: 42px;
   overflow: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 .projects .project__article_small .project-article_top-img {
   display: block;
