@@ -4079,11 +4079,18 @@ a.button.button_grey {
   width: 50%;
   border-radius: 42px;
   overflow: hidden;
+  position: relative;
+  max-height: 720px;
+  min-height: 517px;
 }
 .service__section_img img {
   display: block;
   width: 100%;
   height: auto;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .service__section_info {
   display: -webkit-box;
