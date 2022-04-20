@@ -207,6 +207,26 @@ function portfolioRefresh(limit){
         moreButton.parentNode.classList.add("hide");
 }
 
+function vacanciesRefresh(limit){
+    let vacanciesBlocks = document.querySelectorAll(".js-vacancies-container .vacancies__container_inner")[0];
+    let moreButton = document.querySelectorAll(".js-vacancies-more")[0];
+    let shown = 0;
+    for (let i=0; i<vacanciesBlocks.children.length; i++){
+        vacanciesBlocks.children[i].classList.add("not-shown");
+    }
+    for (let i=0; i<vacanciesBlocks.children.length; i++){
+        if (!vacanciesBlocks.children[i].classList.contains("hide")){
+            shown++;
+            if (shown <= limit)
+                vacanciesBlocks.children[i].classList.remove("not-shown");
+        }
+    }
+    if (shown <= limit)
+        moreButton.parentNode.classList.add("hide");
+	else
+        moreButton.parentNode.classList.remove("hide");
+}
+
 docReady(function() {
     // фиксим хедер при скролле
     let stickyHeader = document.getElementsByClassName('header')[0];
@@ -464,32 +484,78 @@ docReady(function() {
             })
         }
     }
+	
+    // фильтр на странице вакансий
+    let vacanciesBlocks = document.querySelectorAll(".js-vacancies-container .vacancies__container_inner");
+    let vacanciesTypes = document.querySelectorAll(".js-vacancies-types");
+
+    if (vacanciesBlocks.length >0)
+    {
+        let curLimit = document.querySelectorAll(".js-vacancies-container")[0].dataset.limit*1;
+        let moreButton = document.querySelectorAll(".js-vacancies-more")[0];
+        moreButton.addEventListener("click", function(e){
+            e.preventDefault();
+            curLimit += 4;
+            vacanciesRefresh(curLimit);
+        })
+        vacanciesRefresh(curLimit);
+
+        for (i=0; i<vacanciesTypes.length; i++){
+            let types = new Array();
+            for (j=0; j<vacanciesBlocks[0].children.length; j++){
+                let typeString = vacanciesBlocks[0].children[j].dataset.types.slice(1,vacanciesBlocks[0].children[j].dataset.types.length-1);
+                types[j] = typeString.split(",");
+            }
+
+            vacanciesTypes[i].addEventListener("click", function(e){
+                let options = e.target.parentNode.parentNode.childNodes[0];
+                e.preventDefault();
+                let selectedType = options.selectedOptions[0].value;
+
+                for (j=0; j<types.length; j++){
+                    if (!types[j].includes("'" + selectedType + "'")){
+                        vacanciesBlocks[0].children[j].classList.add("hide");
+                    }
+                    else{
+                        vacanciesBlocks[0].children[j].classList.remove("hide");
+                    }
+                }
+                vacanciesRefresh(curLimit);
+            })
+        }
+    }
+	
 
     // блок вакансий
     let vacancyBlocks = document.querySelectorAll(".vacancy");
-    for (i=0; i<vacancyBlocks.length; i++){
-        vacancyBlocks[i].addEventListener("mouseover", function(e){
-            e.preventDefault();
-            let vacancyContainer = this.children[0]; // контейнер с вакансией
-            let vacancyContainerHeight = vacancyContainer.getBoundingClientRect().height;
-            let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
-            let vacanceNameHeight = vacancyName.getBoundingClientRect().height+100;
-            let vacancyTitle = vacancyName.parentNode;
-            let vacancyBody = vacancyTitle.nextElementSibling;
-            vacancyTitle.style.top = vacanceNameHeight - vacancyContainerHeight + "px";
-            vacancyBody.style.top = vacanceNameHeight - vacancyContainerHeight + "px";
-            vacancyBody.style.height = vacancyContainerHeight - vacanceNameHeight + 92 + "px";
-        }, false);
-        vacancyBlocks[i].addEventListener("mouseout", function(e){
-            e.preventDefault();
-            let vacancyContainer = this.children[0]; // контейнер с вакансией
-            let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
-            let vacancyTitle = vacancyName.parentNode;
-            let vacancyBody = vacancyTitle.nextElementSibling;
-            vacancyTitle.style.top = "0px";
-            vacancyBody.style.top = "0px";
-            vacancyBody.style.height = "100%";
-        }, false);
+    if (vacancyBlocks.length) {
+        for (i=0; i<vacancyBlocks.length; i++){
+            vacancyBlocks[i].addEventListener("mouseover", function(e){
+                e.preventDefault();
+                let vacancyContainer = this.children[0]; // контейнер с вакансией
+                let vacancyContainerHeight = vacancyContainer.getBoundingClientRect().height;
+                let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
+                let vacanceNameHeight = vacancyName.getBoundingClientRect().height+100;
+                let vacancyTitle = vacancyName.parentNode;
+                let vacancyBody = vacancyTitle.nextElementSibling;
+				let sendAdjust = 0;
+				if (this.classList.contains("vacancy_send"))
+					sendAdjust = 120;
+                vacancyTitle.style.top = -sendAdjust + vacanceNameHeight - vacancyContainerHeight + "px";
+                vacancyBody.style.top = -sendAdjust + vacanceNameHeight - vacancyContainerHeight + "px";
+                vacancyBody.style.height = sendAdjust + vacancyContainerHeight - vacanceNameHeight + 92 + "px";
+            }, false);
+            vacancyBlocks[i].addEventListener("mouseout", function(e){
+                e.preventDefault();
+                let vacancyContainer = this.children[0]; // контейнер с вакансией
+                let vacancyName = vacancyContainer.getElementsByClassName("vacancy__title_name")[0];
+                let vacancyTitle = vacancyName.parentNode;
+                let vacancyBody = vacancyTitle.nextElementSibling;
+                vacancyTitle.style.top = "0px";
+                vacancyBody.style.top = "0px";
+                vacancyBody.style.height = "100%";
+            }, false);
+        }
     }
     
     // выпадающее меню
