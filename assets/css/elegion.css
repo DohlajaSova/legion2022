@@ -56,6 +56,9 @@
   grid-template-rows: 50px -webkit-max-content 50px;
   grid-template-rows: 50px max-content 50px;
   grid-template-columns: var(--label-w) var(--middl-w) var(--label-w);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .range__wrap::before, .range__wrap::after {
   z-index: -1;
@@ -736,6 +739,47 @@ a.button.button_grey {
   font-weight: 700;
 }
 
+.device {
+  width: 324px;
+  margin: 0 auto;
+}
+.device__wrapper {
+  position: relative;
+  width: 324px;
+  margin: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.device__screen {
+  position: absolute;
+  z-index: 2;
+  -o-object-fit: contain;
+     object-fit: contain;
+  left: 7px;
+  top: 5px;
+  border-radius: 0;
+  width: 289px;
+  height: auto;
+}
+.device__shadow {
+  position: relative;
+  z-index: 3;
+  top: 0;
+  margin: -20px 0;
+  width: calc(100% - 20px);
+  border-radius: 40px;
+}
+.device__phone {
+  width: 324px;
+  margin: -10px;
+  position: relative;
+  z-index: 4;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
 .select {
   position: relative;
 }
@@ -751,6 +795,9 @@ a.button.button_grey {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 .select-inline .select-hide div {
   color: #949191;
@@ -960,6 +1007,8 @@ a.button.button_grey {
   display: none;
   width: 230px;
   margin: 10px auto 0;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
 }
 .circle-text__item:first-child {
   display: block;
@@ -2125,6 +2174,10 @@ a.button.button_grey {
   width: 100%;
   margin-top: 50px;
 }
+.principles__content_buttons {
+  width: 49%;
+  margin-top: -213px;
+}
 .principles__content_buttons .button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -2555,11 +2608,32 @@ a.button.button_grey {
   opacity: 0.5;
 }
 .problems__item_bg8 {
+  padding: 40px 40px calc(49.2% - 40px);
   background: #82D997;
   overflow: hidden;
 }
+.problems__item_bg8 h4 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  padding: 0 35px 50px;
+}
+.problems__item_bg8 .device {
+  position: relative;
+  bottom: -15px;
+}
+.problems__item_bg8 .problems-slider-groups__statics_dots li {
+  border-color: #949191;
+}
+.problems__item_bg8 .problems-slider-groups__statics_dots li.tns-nav-active {
+  background-color: #949191;
+}
 .problems__item_bg9 {
   background: #F0F0F0;
+  overflow: hidden;
+}
+.problems__item_bg10 {
+  background: #1E2738;
   overflow: hidden;
 }
 .problems__item_plus {
@@ -4826,6 +4900,10 @@ a.button.button_grey {
   opacity: 1;
 }
 
+.client ~ .feedback {
+  margin-bottom: 120px;
+}
+
 .icon_plus, .icon_arrow {
   width: 56px;
   height: 56px;
@@ -4893,7 +4971,10 @@ a.button.button_grey {
 .team,
 .to-work,
 .some-projects,
-.dummy__container {
+.dummy__container,
+.client__info,
+.client__cases,
+.client__breadcrumbs {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -5366,6 +5447,13 @@ a.button:visited {
   .service__feature_inner-case__brief {
     padding: 20px;
   }
+
+  .client__info .cases-slider__item_nomination .h2 {
+    font-size: 54px !important;
+  }
+  .client__info .cases-slider__item_nomination p {
+    font-size: 20px !important;
+  }
 }
 @media only screen and (max-width: 992px) {
   body {
@@ -5403,8 +5491,13 @@ a.button:visited {
     width: 60%;
   }
 
+  .select-inline .select-hide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
   .select-inline .select-hide div {
-    width: 50%;
+    width: 100%;
   }
 
   .about {
@@ -5797,11 +5890,12 @@ a.button:visited {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: 61px;
+    height: auto;
+    min-height: 61px;
     margin-bottom: 0;
     padding: 12px 70px 10px 35px;
     border-radius: 30px;
-    line-height: 23px;
+    line-height: 32px;
     cursor: pointer;
     background-color: #2864D9;
     color: #fff;
@@ -5820,12 +5914,12 @@ a.button:visited {
   .request__select.select-inline_wide .select-selected::before {
     background-color: #fff;
     border-radius: 50%;
-    top: 6px;
+    top: calc(50% - 23px);
     right: 14px;
   }
   .request__select.select-inline_wide .select-selected::after {
     background: url("img/arrow2blue.svg") center center no-repeat;
-    top: 10px;
+    top: calc(50% - 17px);
     right: 14px;
     background-size: 60%;
     z-index: 11;
@@ -5840,6 +5934,7 @@ a.button:visited {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
     top: 6px;
+    top: calc(50% - 20px);
   }
   .request__select.select-inline_wide .select-selected.select-arrow-active + .select-items {
     z-index: 22;
@@ -5905,6 +6000,16 @@ a.button:visited {
   .client__info_text {
     width: 100%;
   }
+  .client__info .cases__case_double {
+    width: 100%;
+    padding-bottom: 48%;
+  }
+  .client__info .cases-slider__item_nomination .h2 {
+    font-size: 74px !important;
+  }
+  .client__info .cases-slider__item_nomination p {
+    font-size: 24px !important;
+  }
 }
 @media only screen and (max-width: 860px) {
   .projects__panels {
@@ -5915,6 +6020,7 @@ a.button:visited {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 1fr 1fr;
     margin-bottom: 60px;
+    overflow: hidden;
   }
   .projects .project_tall {
     grid-row-end: unset;
@@ -6446,15 +6552,19 @@ a.button:visited {
     -webkit-transition: none;
     transition: none;
     cursor: default;
+    padding-left: 0px;
   }
   .client__cases_block:first-child:hover:before {
     -webkit-transition: none;
     transition: none;
-    position: static;
     display: none;
   }
   .client__info > .cases__case {
     margin-top: 60px;
+  }
+
+  .client ~ .feedback {
+    margin-bottom: 60px;
   }
 }
 @media only screen and (max-width: 650px) {
@@ -6855,6 +6965,7 @@ a.button:visited {
   }
   .request__select.select-inline_wide .select-selected {
     font-size: 16px;
+    line-height: 24px;
   }
 
   .popup-video__container,
@@ -6885,6 +6996,10 @@ a.button:visited {
     width: 100%;
   }
 
+  .client__breadcrumbs, .client__cases, .client__info {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .client__info .cases-slider__item_nomination .h2 {
     font-size: 46px !important;
   }
@@ -7588,7 +7703,6 @@ a.button:visited {
   .client__breadcrumbs {
     font-size: 9px;
     line-height: 130%;
-    margin-left: 15px;
     margin-bottom: 40px;
   }
   .client__info > .cases__case {
@@ -7638,6 +7752,10 @@ a.button:visited {
   }
   .client__info_stats {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .client__info_stats .client__info_stats-state {
+    width: 100%;
   }
   .client__cases_block-name {
     font-size: 24px;
