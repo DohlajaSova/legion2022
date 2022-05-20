@@ -2043,8 +2043,19 @@ a.button.button_grey {
 .case-stages__layout_left, .case-stages__layout_right {
   width: 49.2%;
 }
+.case-stages__layout_inner {
+  padding: 60px 40px;
+  height: 100%;
+  border-radius: 42px;
+}
 .case-stages__layout.problems__item p {
   font-size: 24px;
+}
+.case-stages__layout_var1 .case-stages__layout_right .case-stages__layout_inner {
+  padding-left: 0;
+}
+.case-stages__layout_var2 .case-stages__layout_right .case-stages__layout_inner {
+  background-color: #1E2738;
 }
 .case-stages .principles {
   margin-bottom: 60px;
@@ -2765,14 +2776,21 @@ a.button.button_grey {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.problems__item_wide {
+.problems__item_container {
+  position: absolute;
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.problems__item_wide {
+  width: 100%;
+  padding: 0 0 49.2%;
+  position: relative;
 }
 .problems-complex {
   overflow: hidden;
