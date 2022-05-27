@@ -4683,6 +4683,7 @@ a.button.button_grey {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 90px;
+  color: #1E2738;
 }
 .service__feature_info-title {
   font-size: 46px;
@@ -4842,6 +4843,9 @@ a.button.button_grey {
 }
 .service-descr__accordion .problems-slider-groups .cases__case:hover .cases__case_contents {
   top: 0;
+}
+.service + .feedback.feedback_applicants {
+  background-image: none;
 }
 
 .vacancypage__content {
