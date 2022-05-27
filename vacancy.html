@@ -153,7 +153,6 @@
                         <li>Компенсацию спорта, обучения и&nbsp;медицины</li>
                         <li>Обучение и&nbsp;систему наставничества, которые помогут быстро расти и&nbsp;получать новые грейды</li>
                         <li>Возможность писать статьи для отраслевых медиа и&nbsp;выступать на&nbsp;конференциях и&nbsp;митапах</li>
-                        <li>Владение английским языком</li>
                     </ul>
                 </div>
             </div>
@@ -162,7 +161,7 @@
 </div>
   <div class="feedback feedback_applicants">
     <div class="container">
-        <form>
+        <form onsubmit="return false">
             <div class="feedback__container">
               <h2><a name="feedback"></a>Напишите нам</h2>
               <div class="feedback__form">
@@ -190,7 +189,7 @@
                   Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
               </div>
               <div class="feedback__button">
-                  <button class="button button_white">Откликнуться</button>
+                  <button class="button button_white js-popup-feedback-send">Откликнуться</button>
               </div>
             </div>
         </form>
@@ -202,9 +201,7 @@
         <a href="" class="js-popup-feedback-close"></a>
     </div>
     <div class="popup-feedback__container">
-        <div class="popup-feedback__head">
-            Расскажите нам о&nbsp;задаче
-        </div>
+        
         <div class="popup-feedback__content">
             <div class="request">
                 <div class="container">
@@ -233,8 +230,8 @@
                     </div>
 
                     <h3>Что нужно сделать?</h3>
-                    <div class="request__select select select-inline select-inline_wide">
-                        <select>
+                    <div class="request__select select select-inline select-inline_wide" id="multiple-container">
+                        <select id="multiple-4" name="Выберите вариант">
                             <option>Разработать приложение с&nbsp;нуля</option>
                             <option>Провести аудит&nbsp;МП</option>
                             <option>Проанализировать конкурентов</option>

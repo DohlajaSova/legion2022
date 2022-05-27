@@ -227,6 +227,35 @@ function vacanciesRefresh(limit){
         moreButton.parentNode.classList.remove("hide");
 }
 
+function checkFieldValid(element) {
+    if(!element.value || element.value < 2) {
+        addListenerInput(element);
+        return false;
+    }
+    if(element.type === 'tel'){
+        let v = element.value.replace(/\D+/g,"");
+        if(v.length != 10) {
+            addListenerInput(element);
+            return false;
+        }
+    }
+    if(element.type === 'email'){
+        var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if(!element.value.match(pattern)){
+            addListenerInput(element);
+            return false
+        }
+    }
+    return true;
+}
+
+function addListenerInput(el) {
+    el.addEventListener("input", function input(){
+        el.classList.remove("error");
+        el.removeEventListener("input", input, false);
+    })
+}
+
 docReady(function() {
     // фиксим хедер при скролле
     let stickyHeader = document.getElementsByClassName('header')[0];
@@ -637,15 +666,10 @@ docReady(function() {
 				val = +_t.value,
 				_o = _p.querySelector(`option[value='${val}']`), 
 				lbl = +_o.label;
-            // console.log( _p.clientWidth)
-            // console.log({_p})
             let wwidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-            console.log({wwidth})
-            console.log(_p.clientWidth)
             // let wdd = wwidth < 1200 ? wwidth : (wwidth < 1025 ? wwidth - 30 :_p.clientWidth)
             let wdd = wwidth > 1330 ? _p.clientWidth : (wwidth > 650 ? wwidth : wwidth - 60)
             // ( _p.clientWidth < 441 ? _p.clientWidth - 300 : _p.clientWidth - 120) : _p.clientWidth - 220
-            console.log({wdd})
             _t.setAttribute('aria-valuetext', lbl);
 			_p.style.setProperty(`--${_t.id}`, val);
 			_p.style.setProperty(`--lbl-${_t.id}`, lbl+"");
@@ -679,6 +703,19 @@ docReady(function() {
     let feedbackCloser = document.querySelector(".js-popup-feedback-close");
     let feedbackSubmiter = document.querySelector(".js-popup-feedback-send");
     let bodyOpened;
+    if(!feedbackOpener.length && feedbackSubmiter) {
+        let feedbackBody = document.querySelector(".popup-feedback");
+        let feedbackBodyContent = document.querySelector(".popup-feedback__content");
+        feedbackSubmiter.addEventListener("click", function(e){
+            feedbackBody.classList.add("active");
+            feedbackBodyContent.classList.add("popup-feedback__content_success");
+        });
+        setTimeout(function(){
+            feedbackBody.classList.remove("active");
+            document.querySelector("body").classList.remove("popup-open");
+            feedbackBodyContent.classList.remove("popup-feedback__content_success");
+        }, 4000);
+    }
     for (i=0; i<feedbackOpener.length; i++){
         let feedbackBody = document.querySelector(".popup-feedback");
         let feedbackBodyContent = document.querySelector(".popup-feedback__content");
@@ -703,7 +740,6 @@ docReady(function() {
                 document.querySelector("body").classList.remove("popup-open");
             }, false);
             feedbackSubmiter.addEventListener("click", function(e){
-                e.preventDefault();
                 feedbackBodyContent.classList.add("popup-feedback__content_success");
                 setTimeout(function(){
                     feedbackBody.classList.remove("active");
@@ -752,10 +788,13 @@ docReady(function() {
     // кастомный селект
     if (document.querySelector('.select'))
     {
+        // console.log('selected')
         let selectsByClass, i, j, sbcLength, SBTLength, selectsByTag, divCreated, div2Created, div3Created;
         /* Look for any elements with the class "select": */
         selectsByClass = document.getElementsByClassName("select");
+        // console.log({selectsByClass});
         sbcLength = selectsByClass.length;
+        // console.log({sbcLength});
 
         for (i = 0; i < sbcLength; i++) {
           selectsByTag = selectsByClass[i].getElementsByTagName("select")[0];
@@ -818,6 +857,10 @@ docReady(function() {
                 let optionSelected, i, k, selectsByTagDiv3, pvsSibling, sl, yl;
                 selectsByTagDiv3 = this.parentNode.parentNode.getElementsByTagName("select")[0];
                 const isMultiple = selectsByTagDiv3.id.startsWith('multiple')
+                console.log(this.parentNode)
+                console.log(this.parentNode.parentNode)
+                console.log({selectsByTagDiv3})
+                console.log({isMultiple})
                 sl = selectsByTagDiv3.length;
                 pvsSibling = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
@@ -875,7 +918,7 @@ docReady(function() {
         then close all select boxes: */
         document.addEventListener("click", closeAllSelect);
     }
-
+    
     // блок с фото сотрудников
     if (document.querySelectorAll(".js-team-container").length > 0)
     {
@@ -951,6 +994,9 @@ docReady(function() {
         let accItems = Array.prototype.slice.call(container.children);
         for (i=0; i<accItems.length; i++){
             accItems[i].addEventListener("click", function(e){
+                if(e.target.className.startsWith('project')){
+                    return;
+                }
                 e.preventDefault();
                 e.target.parentNode.classList.toggle("active");
             }, false);
@@ -992,6 +1038,36 @@ docReady(function() {
         slideCircle();
         sliderYears.events.on('transitionEnd', slideCircle);
     }
-
+    
+    // кнопка submit данных на странице request
+    if (document.querySelectorAll(".js-request-button").length > 0)
+    {
+        // document.getElementById('phonefield').addEventListener('input', function (e) {
+        //     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        //     e.target.value = (!x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : ''));
+        // });
+        
+        const btn = document.querySelectorAll(".js-request-button")[0];
+        let form = document.getElementById('request__form');
+        btn.onclick = function(){
+            let fields = form.getElementsByTagName('input')
+            let one;
+            let scrolled = false;
+            for(one = 0; one < fields.length; one++){
+                if(!checkFieldValid(fields[one])) {
+                    if(!scrolled) {
+                        scrolled = true;
+                        // fields[one].scrollIntoView({
+                        //     behavior: "smooth"
+                        // })
+                        form.scrollIntoView({
+                            behavior: "smooth"
+                        })
+                    }
+                    fields[one].classList.add("error");
+                }
+            }
+        }
+    }
 
 });

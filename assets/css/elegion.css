@@ -1455,6 +1455,8 @@ a.button.button_grey {
   transition: -webkit-transform 0.7s;
   transition: transform 0.7s;
   transition: transform 0.7s, -webkit-transform 0.7s;
+  position: relative;
+  z-index: 100;
 }
 .accordion__item_body {
   width: 50%;
@@ -1779,8 +1781,7 @@ a.button.button_grey {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 101.3333%;
-  margin-right: -1.3333%;
+  width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1790,9 +1791,8 @@ a.button.button_grey {
           justify-content: flex-start;
 }
 .cases_portfolio .cases__case {
-  width: 23.6673%;
+  width: 25%;
   margin-bottom: 15px;
-  margin-right: 1.3333%;
 }
 
 .cases-slider {
@@ -2702,6 +2702,14 @@ a.button.button_grey {
 .problems__item_bg3 .problems__more::after {
   background-image: url("img/arrow3grey.svg");
 }
+.problems__item_bg4 .problems__item_container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: calc(100% - 60px);
+  width: calc(100% - 80px);
+}
 .problems__item_bg4 h3 {
   width: 100%;
 }
@@ -2835,6 +2843,7 @@ a.button.button_grey {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  left: 0;
 }
 .problems__item_wide {
   width: 100%;
@@ -3037,7 +3046,7 @@ a.button.button_grey {
 }
 .projects .project_tall {
   grid-row-end: span 2;
-  height: 0;
+  height: 100%;
   padding-bottom: 100%;
 }
 .projects .project_tall-client {
@@ -3494,13 +3503,15 @@ a.button.button_grey {
   padding: 80px 0 60px;
 }
 .vacancies__container_inner {
-  width: 101.3333%;
-  margin-right: -1.3333%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-column-gap: 1.3333%;
+     -moz-column-gap: 1.3333%;
+          column-gap: 1.3333%;
 }
 .vacancies h2 {
   width: 100%;
@@ -3528,7 +3539,6 @@ a.button.button_grey {
   height: 0;
   padding-bottom: 23.6673%;
   margin-bottom: 20px;
-  margin-right: 1.3333%;
   border-radius: 42px;
 }
 .vacancies__list_item.final {
@@ -3915,7 +3925,7 @@ a.button.button_grey {
   margin-bottom: 170px;
 }
 .contacts__lead {
-  font-size: 24px;
+  font-size: 46px;
   border-bottom: 1px solid #1E2738;
   padding-bottom: 55px;
   margin-bottom: 70px;
@@ -3930,14 +3940,11 @@ a.button.button_grey {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.contacts__lead_welcome {
-  width: 50%;
+.contacts__lead_phone, .contacts__lead_email {
+  white-space: nowrap;
 }
 .contacts__lead_phone {
-  width: 25%;
-}
-.contacts__lead_email {
-  width: 25%;
+  color: #1E2738 !important;
 }
 .contacts a {
   color: #84AEFF;
@@ -4127,6 +4134,9 @@ a.button.button_grey {
 }
 .request__form_item.error .request__form_error {
   color: #dc000f;
+}
+.request__form_input.error {
+  border-bottom-color: #dc000f;
 }
 .request__comment-container {
   display: -webkit-box;
@@ -4711,13 +4721,15 @@ a.button.button_grey {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  text-decoration: none !important;
 }
 .service__feature_inner-description {
   font-size: 14px;
   line-height: 130%;
   margin-left: auto;
-  color: #949191;
+  color: #949191 !important;
   width: 150px;
+  text-decoration: none !important;
 }
 .service__feature_inner-icon {
   margin-right: 20px;
@@ -4782,7 +4794,9 @@ a.button.button_grey {
   text-align: center;
   font-size: 16px;
   line-height: 130%;
-  color: #949191;
+  color: #949191 !important;
+  cursor: pointer;
+  text-decoration: none !important;
 }
 .service > div:last-child {
   border: none;
@@ -5151,6 +5165,7 @@ a.button.button_grey {
 .vacancies,
 .projects,
 .feedback,
+.service,
 .news,
 .who-we-are,
 .not-all-the-same,
@@ -5500,10 +5515,10 @@ a.button:visited {
     padding: 0 0 49.2%;
   }
   .problems__item h3, .problems__item .h3 {
-    font-size: 24px;
+    font-size: 35px;
   }
   .problems__item p {
-    font-size: 16px;
+    font-size: 26px;
   }
   .problems__link {
     margin-top: 20px;
@@ -5641,6 +5656,18 @@ a.button:visited {
     font-size: 20px !important;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .problems {
+    margin-bottom: 40px;
+  }
+  .problems__item h3, .problems__item .h3 {
+    font-size: 30px;
+  }
+  .problems__item p {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+}
 @media only screen and (max-width: 992px) {
   body {
     font-size: 14px;
@@ -5684,6 +5711,16 @@ a.button:visited {
   }
   .select-inline .select-hide div {
     width: 100%;
+  }
+
+  .map__select .select-hide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .map__select .select-hide div {
+    width: auto;
+    font-size: 24px;
   }
 
   .about {
@@ -5827,7 +5864,10 @@ a.button:visited {
     font-size: 46px;
   }
   .problems__item h3 {
-    font-size: 24px;
+    font-size: 27px;
+  }
+  .problems__item p {
+    font-size: 20px;
   }
   .problems__item_container {
     position: absolute;
@@ -5944,7 +5984,7 @@ a.button:visited {
   }
   .projects .project__article_large .project-article_top-rubr2 {
     font-size: 30px;
-    width: 100%;
+    width: 80%;
   }
   .projects .project__article_large .project-article_top-img {
     width: calc(100% + 66px);
@@ -6047,16 +6087,8 @@ a.button:visited {
   .contacts__lead {
     line-height: 31px;
   }
-  .contacts__lead_welcome {
-    padding-right: 30px;
-  }
-  .contacts__lead_welcome a,
-.contacts__lead_welcome span {
-    white-space: nowrap;
-  }
   .contacts__lead_phone, .contacts__lead_email {
-    font-size: 16px;
-    white-space: nowrap;
+    font-size: 34px;
   }
 
   .request__select.select-selected {
@@ -6200,7 +6232,7 @@ a.button:visited {
 @media only screen and (max-width: 860px) {
   .projects__panels {
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
   .projects__panels-client {
     grid-template-columns: 1fr 1fr;
@@ -6210,6 +6242,7 @@ a.button:visited {
   }
   .projects .project_tall {
     grid-row-end: unset;
+    height: 0;
   }
   .projects .project_tall-with-slider {
     margin-bottom: 54px;
@@ -6232,6 +6265,9 @@ a.button:visited {
     grid-column-end: span 2;
     padding-bottom: 0;
     height: auto;
+  }
+  .projects .project-with-slider {
+    height: 0;
   }
   .projects .project-wide-client {
     grid-column-end: span 2;
@@ -6396,6 +6432,14 @@ a.button:visited {
     width: 135px;
     height: 135px;
     margin: -62px 0 0 -62px;
+  }
+
+  .problems__item h3 {
+    font-size: 24px;
+  }
+  .problems__item p {
+    font-size: 16px;
+    margin-top: 14px;
   }
 
   /*
@@ -6644,6 +6688,12 @@ a.button:visited {
         -ms-flex-order: 1;
             order: 1;
   }
+  .request__range {
+    display: none;
+  }
+  .request__range + .request__select {
+    display: block;
+  }
 
   .feedback_compact h2 {
     width: 70%;
@@ -6753,12 +6803,43 @@ a.button:visited {
     margin-bottom: 60px;
   }
 }
+@media only screen and (max-width: 700px) {
+  .contacts__title {
+    margin-bottom: 20px;
+  }
+  .contacts__lead {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+  .contacts__lead_phone, .contacts__lead_email {
+    width: 100%;
+    font-size: 20px;
+  }
+  .contacts .map__addresses {
+    margin: 14px 0 34px;
+  }
+  .contacts .map__addresses_title {
+    display: none;
+  }
+  .contacts .map__addresses_street {
+    width: 100%;
+    font-size: 16px;
+  }
+  .contacts .map__addresses_email {
+    width: 100%;
+    font-size: 16px;
+    margin-left: 0;
+  }
+}
 @media only screen and (max-width: 650px) {
   .header,
 .footer,
 .pmenu,
 .top,
 .cases,
+.service,
 .principles,
 .problems,
 .vacancies,
@@ -7050,46 +7131,6 @@ a.button:visited {
     font-size: 60px;
   }
 
-  .contacts__title {
-    margin-bottom: 20px;
-  }
-  .contacts__lead {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-  }
-  .contacts__lead_welcome {
-    width: 100%;
-    margin-bottom: 80px;
-    padding-right: 0;
-    font-size: 16px;
-    text-align: center;
-  }
-  .contacts__lead_phone, .contacts__lead_email {
-    width: 50%;
-    font-size: 12px;
-    line-height: 1;
-  }
-  .contacts__lead_email {
-    text-align: right;
-  }
-  .contacts .map__addresses {
-    margin: 14px 0 34px;
-  }
-  .contacts .map__addresses_title {
-    display: none;
-  }
-  .contacts .map__addresses_street {
-    width: 100%;
-    font-size: 16px;
-  }
-  .contacts .map__addresses_email {
-    width: 100%;
-    font-size: 16px;
-    margin-left: 0;
-  }
-
   .cases {
     margin-bottom: 75px;
   }
@@ -7142,8 +7183,12 @@ a.button:visited {
     width: 100%;
     padding: 30px 24px calc(100% - 30px);
   }
+  .problems__item h3 {
+    font-size: 35px;
+  }
   .problems__item p {
-    margin-top: 15px;
+    font-size: 26px;
+    margin-top: 20px;
   }
 
   .request__file {
@@ -7434,6 +7479,7 @@ a.button:visited {
   }
   .principles__content p {
     font-size: 16px;
+    margin-bottom: 24px;
   }
   .principles__video {
     -webkit-box-ordinal-group: 3;
@@ -7441,7 +7487,16 @@ a.button:visited {
             order: 2;
     margin-bottom: 40px;
   }
+  .principles__video_inline {
+    margin-bottom: 40px;
+  }
 
+  .problems__item h3 {
+    font-size: 27px;
+  }
+  .problems__item p {
+    font-size: 21px;
+  }
   .problems__item .problems-slider-groups__item h3 {
     font-size: 24px;
   }
@@ -7499,6 +7554,7 @@ a.button:visited {
     margin-top: -30px;
     padding-top: 60px;
     background: #fff;
+    overflow: hidden;
   }
   .projects__panels {
     margin-bottom: 45px;
@@ -7957,6 +8013,13 @@ a.button:visited {
   }
   .footer__copyright_about {
     margin-left: 0 !important;
+  }
+
+  .problems__item h3 {
+    font-size: 24px;
+  }
+  .problems__item p {
+    font-size: 16px;
   }
 
   .projects .project.project-with-slider {
