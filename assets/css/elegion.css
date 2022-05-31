@@ -1788,6 +1788,9 @@ a.button.button_grey {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1797,7 +1800,7 @@ a.button.button_grey {
           justify-content: flex-start;
 }
 .cases_portfolio .cases__case {
-  width: 25%;
+  width: calc(25% - 20px);
   margin-bottom: 15px;
 }
 
@@ -6569,8 +6572,8 @@ a.button:visited {
   }
   .cases_portfolio .cases__case {
     width: 47.667%;
+    width: calc(47.667% - 7.5px);
     padding-bottom: 47.667%;
-    margin-right: 2.3333%;
   }
 
   .cases__pagination-arrows {
