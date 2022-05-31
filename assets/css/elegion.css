@@ -2151,6 +2151,9 @@ a.button.button_grey {
 .case-stages .principles__content_text {
   margin-bottom: 0;
 }
+.case-stages .projects_case .project_tall {
+  height: 0;
+}
 
 .project-slider-article__item.active {
   height: 0;
