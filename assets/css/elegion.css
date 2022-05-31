@@ -1788,10 +1788,11 @@ a.button.button_grey {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: calc(100% + 20px);
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
           column-gap: 20px;
+  margin-right: -20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -6593,13 +6594,12 @@ a.button:visited {
   }
   */
   .cases_portfolio .container_portfolio-inner {
-    width: 102.3333%;
-    margin-right: -2.3333%;
+    width: calc(100% + 40px);
+    margin-right: -20px;
   }
   .cases_portfolio .cases__case {
-    width: 47.667%;
-    width: calc(47.667% - 7.5px);
-    padding-bottom: 47.667%;
+    width: calc(50% - 20px);
+    padding-bottom: calc(50% - 20px);
   }
 
   .cases__pagination-arrows {
