@@ -1140,8 +1140,11 @@ a.button.button_grey {
 }
 
 .popup-feedback__container {
-  max-height: 100%;
-  overflow-y: auto;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 100px calc(100% - 100px);
+  padding: 20px 60px;
 }
 .popup-feedback .answer {
   display: none;
@@ -1159,10 +1162,11 @@ a.button.button_grey {
   font-size: 46px;
 }
 .popup-feedback__content {
+  height: 100%;
   max-width: 1440px;
   background: #fff;
   border-radius: 38px;
-  padding: 110px 60px;
+  padding: 50px 0 50px 20px;
   text-align: left;
 }
 .popup-feedback__content_success {
@@ -1170,6 +1174,8 @@ a.button.button_grey {
   color: #fff;
 }
 .popup-feedback__content_success .request {
+  overflow-y: auto;
+  height: 100%;
   display: none;
 }
 .popup-feedback__content_success .answer {
@@ -1425,7 +1431,7 @@ a.button.button_grey {
 
 .accordion__item {
   border-bottom: 1px solid #949191;
-  padding: 40px 0 27px;
+  padding: 40px 0 0;
 }
 .accordion__item_head {
   cursor: pointer;
@@ -3986,6 +3992,13 @@ a.button.button_grey {
   height: 650px;
 }
 
+.request {
+  overflow-y: auto;
+  max-height: 100%;
+}
+.request .container {
+  padding: 0 30px;
+}
 .request__lead {
   height: 87px;
   border-bottom: 1px solid #1E2738;
@@ -4808,21 +4821,26 @@ a.button.button_grey {
   margin-bottom: 35px;
 }
 .service-descr__accordion {
-  border-top: 1px solid #949191;
-  border-bottom: 1px solid #949191;
   margin-bottom: 120px;
 }
 .service-descr__accordion .accordion__item_body p {
   font-size: 24px;
   margin-bottom: 35px;
 }
+.service-descr__accordion .accordion__item:first-child {
+  border-top: 1px solid #949191;
+}
+.service-descr__accordion .accordion__item:last-child {
+  border-bottom: 1px solid #949191;
+}
 .service-descr__accordion .problems {
   margin-top: 50px;
   margin-bottom: 40px;
+  padding: 0;
 }
 .service-descr__accordion .problems__item_bg5 h3 {
   font-size: 24px;
-  padding: 0 10%;
+  padding: 0 2%;
 }
 .service-descr__accordion .problems__item_bg7 .problems-slider-groups__statics_dots li {
   border-color: #949191;
@@ -4843,6 +4861,9 @@ a.button.button_grey {
 }
 .service-descr__accordion .problems-slider-groups .cases__case:hover .cases__case_contents {
   top: 0;
+}
+.service-descr + .feedback.feedback_applicants {
+  background-image: none;
 }
 .service + .feedback.feedback_applicants {
   background-image: none;
@@ -5179,7 +5200,8 @@ a.button.button_grey {
 .dummy__container,
 .client__info,
 .client__cases,
-.client__breadcrumbs {
+.client__breadcrumbs,
+.service-descr__accordion {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -6849,6 +6871,7 @@ a.button:visited {
 .vacancies,
 .projects,
 .feedback,
+.service-descr__accordion,
 .news {
     padding-left: 15px;
     padding-right: 15px;
@@ -7206,6 +7229,7 @@ a.button:visited {
   .popup-video__container,
 .popup-feedback__container {
     padding: 0 15px;
+    height: 95vh;
   }
 
   .popup-feedback .answer__container {
