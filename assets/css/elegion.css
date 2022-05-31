@@ -1207,6 +1207,7 @@ a.button.button_grey {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 2002;
 }
 .pmenu a {
   color: #fff;
@@ -7385,6 +7386,22 @@ a.button:visited {
 
   .body_about .header.header_sticky {
     background: #1E2738;
+  }
+
+  .body_service .header.header_scrolled {
+    background-color: #fff;
+  }
+  .body_service .header.header_scrolled .header__logo {
+    background-image: url("img/logo.svg");
+  }
+  .body_service .header.header_scrolled .header__hmenu {
+    background-image: url("img/icon-menu1.svg");
+  }
+  .body_service .header.header_scrolled .breadcrumbs {
+    display: none;
+  }
+  .body_service .top {
+    margin-bottom: 42px;
   }
 
   .circle {
