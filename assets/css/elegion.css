@@ -1794,6 +1794,9 @@ a.button.button_grey {
 .cases__case.hide, .cases__case.not-shown {
   display: none;
 }
+.cases_portfolio {
+  padding-top: 120px;
+}
 .cases_portfolio .container_portfolio-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5532,6 +5535,9 @@ a.button:visited {
     display: inline;
   }
 
+  .cases {
+    margin-bottom: 45px;
+  }
   .cases__case_logo > img {
     min-width: 37%;
     max-width: 52%;
@@ -5560,9 +5566,11 @@ a.button:visited {
   .cases-slider__statics_title {
     font-size: 11px;
   }
-
-  .cases {
-    margin-bottom: 45px;
+  .cases__lead {
+    height: 47px;
+  }
+  .cases_portfolio {
+    padding-top: 80px;
   }
 
   .about {
@@ -6387,6 +6395,7 @@ a.button:visited {
   }
   .projects .project__review_body {
     font-size: 24px;
+    padding-right: 30%;
   }
   .projects .project__review_author {
     padding: 43px 43px 55px;
@@ -6429,6 +6438,17 @@ a.button:visited {
   .feedback_compact {
     padding: 60px 30px 20px;
   }
+  .feedback_compact .container {
+    position: relative;
+  }
+  .feedback_compact .feedback__button {
+    height: 100%;
+    min-height: 0;
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    right: 0;
+  }
 
   .news .news-item {
     width: 48%;
@@ -6436,6 +6456,10 @@ a.button:visited {
   .news .news-item_wide {
     width: 100%;
     margin-bottom: 20px;
+  }
+
+  .cases__tags {
+    font-size: 16px;
   }
 
   .cases-slider__statics_title {
@@ -7089,6 +7113,10 @@ a.button:visited {
   .projects h2 {
     margin-bottom: 30px;
   }
+  .projects .project__review_body {
+    font-size: 22px;
+    padding-right: 10%;
+  }
 
   .feedback {
     margin-bottom: 40px;
@@ -7568,6 +7596,13 @@ a.button:visited {
   .cases__case-client {
     grid-column-end: span 2;
   }
+  .cases__lead {
+    height: 10px;
+    margin-bottom: 35px;
+  }
+  .cases_portfolio {
+    padding-top: 25px;
+  }
 
   .principles {
     background: #fff;
@@ -7816,7 +7851,7 @@ a.button:visited {
   }
   .projects .project_tall .project__review_top {
     height: 0;
-    padding-bottom: 100%;
+    padding-bottom: calc(100% - 34px);
   }
   .projects .project_tall .project__review_top-client {
     height: auto;
@@ -7898,6 +7933,15 @@ a.button:visited {
   }
   .feedback__button {
     width: 100%;
+  }
+  .feedback_compact {
+    padding: 60px 30px 50px;
+  }
+  .feedback_compact.feedback_applicants {
+    background-image: none;
+  }
+  .feedback_compact h2 {
+    padding-right: 10%;
   }
 
   .footer {
