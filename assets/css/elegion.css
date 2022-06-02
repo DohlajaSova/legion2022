@@ -1481,6 +1481,7 @@ a.button.button_grey {
   padding-bottom: 0;
   -webkit-transition: max-height 0.7s, padding-bottom 0.7s;
   transition: max-height 0.7s, padding-bottom 0.7s;
+  color: #1E2738;
 }
 .accordion__item_body h4 {
   font-size: 24px;
@@ -2314,6 +2315,7 @@ a.button.button_grey {
   width: 49%;
   padding-right: 4%;
   margin-bottom: 90px;
+  color: #1E2738;
 }
 .principles__content_text *:last-child {
   margin-bottom: 0;
@@ -4924,6 +4926,7 @@ a.button.button_grey {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: #1E2738;
 }
 .vacancypage__content_brief {
   width: 50%;
