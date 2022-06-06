@@ -1676,6 +1676,16 @@ a.button.button_grey {
   -webkit-transition: top ease 0.5s;
   transition: top ease 0.5s;
 }
+.cases__case_contents-active {
+  -webkit-animation-name: case-bounce;
+          animation-name: case-bounce;
+  -webkit-animation-timing-function: cubic-bezier(0.281, 0.841, 0.421, 1);
+          animation-timing-function: cubic-bezier(0.281, 0.841, 0.421, 1);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+}
 .cases__case_contents-slider {
   height: 100%;
   z-index: 2;
@@ -2444,6 +2454,7 @@ a.button.button_grey {
       flex-wrap: wrap;
 }
 .who-we-are__content h2 {
+  color: #1E2738;
   width: 48%;
 }
 .who-we-are__content h2 em {
@@ -2735,25 +2746,10 @@ a.button.button_grey {
       -ms-flex-direction: column;
           flex-direction: column;
   height: calc(100% - 60px);
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.problems__item_bg4 .problems__item_plus {
-  margin-bottom: -38px;
-}
-.problems__item_bg4 .problems__item_button {
-  height: 0;
-  opacity: 0;
-  -webkit-transition: opacity 1.5s;
-  transition: opacity 1.5s;
+  width: calc(100% - 80px);
 }
 .problems__item_bg4 h3 {
   width: 100%;
-}
-.problems__item_bg4:hover .problems__item_button {
-  opacity: 1;
 }
 .problems__item_bg5 {
   background: url("img/problems-bg4.svg") bottom right no-repeat #2864D9;
@@ -4449,18 +4445,6 @@ a.button.button_grey {
 .body_about .header {
   background-color: transparent;
 }
-.body_about .header__logo {
-  background-image: url("img/logo-white.svg");
-}
-.body_about .header__hmenu {
-  background-image: url("img/icon-menu2.svg");
-}
-.body_about .header__mmenu > a {
-  color: #fff;
-}
-.body_about .header__mmenu > a.header__mmenu_lang {
-  color: #1E2738;
-}
 .body_about .top {
   background: url("img/about.jpg") top center no-repeat;
   background-size: 100% auto;
@@ -4587,6 +4571,7 @@ a.button.button_grey {
   text-align: center;
   padding: 30px 0;
   margin-top: 60px;
+  color: #1E2738;
 }
 .years__year::before, .years__year::after {
   content: "";
@@ -5251,6 +5236,60 @@ a.button.button_grey {
             transform: rotate(360deg);
   }
 }
+@-webkit-keyframes case-bounce {
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0);
+  }
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-40px);
+  }
+  50% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes case-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-40px);
+            transform: scale(0.9, 1.1) translateY(-40px);
+  }
+  50% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+            transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-7px);
+            transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
 @media only screen and (max-width: 1500px) {
   .desktop-show {
     display: block;
@@ -5296,6 +5335,10 @@ a.button.button_grey {
 .who-we-are .vacancies,
 .not-all-the-same .projects {
     padding: 0;
+  }
+
+  .back {
+    display: none;
   }
 
   .dummy-inprocess__text {
@@ -5955,9 +5998,6 @@ a.button:visited {
   }
   .problems__item_bg4 {
     padding-right: 0;
-  }
-  .problems__item_bg4 .problems__item_button {
-    opacity: 1;
   }
   .problems__item_bg5, .problems__item_bg7 {
     width: 100%;
@@ -7451,7 +7491,7 @@ a.button:visited {
   .top .h1 {
     font-size: 36px;
     width: 100%;
-    margin-bottom: 45px;
+    margin-bottom: 85px;
   }
 
   .cases-slider-info__statics_dots,
@@ -7714,6 +7754,9 @@ a.button:visited {
     padding-left: 23px;
     padding-right: 23px;
     border-radius: 30px;
+  }
+  .problems__review_top-img {
+    border-radius: 29px;
   }
   .problems__review_rubr {
     font-size: 12px;
