@@ -138,8 +138,8 @@
                         <p>номинация «Торговля и&nbsp;услуги»</p>
                     </div>
                     <div class="cases-slider__item_project">
-                        <div class="cases-slider__item_project-photo"><a href="/inprocess.html"><img src="/assets/css/img/case-5ka2.svg" alt="Пятёрочка"></a></div>
-                        <div class="cases-slider__item_project-link"><a href="/inprocess.html">Подробнее о проекте →</a></div>
+                        <div class="cases-slider__item_project-photo"><a href="/case.html"><img src="/assets/css/img/case-5ka2.svg" alt="Пятёрочка"></a></div>
+                        <div class="cases-slider__item_project-link"><a href="/case.html">Подробнее о проекте →</a></div>
                     </div>
                 </div>
                 <div class="cases-slider__item">
@@ -148,8 +148,8 @@
                         <p>номинация «Приложение бренда»</p>
                     </div>
                     <div class="cases-slider__item_project">
-                        <div class="cases-slider__item_project-photo"><a href="/inprocess.html"><img src="/assets/css/img/case-5ka2.svg" alt="Пятёрочка"></a></div>
-                        <div class="cases-slider__item_project-link"><a href="/inprocess.html">Подробнее о проекте →</a></div>
+                        <div class="cases-slider__item_project-photo"><a href="/case.html"><img src="/assets/css/img/case-5ka2.svg" alt="Пятёрочка"></a></div>
+                        <div class="cases-slider__item_project-link"><a href="/case.html">Подробнее о проекте →</a></div>
                     </div>
                 </div>
                 <div class="cases-slider__item">
@@ -374,8 +374,8 @@
                             <p>Лучшее мобильное решение/активация</p>
                         </div>
                         <div class="cases-slider__item_project">
-                            <div class="cases-slider__item_project-photo"><a href="/inprocess.html"><img src="/assets/css/img/case-jetkid.png" alt="Jet Kid"></a></div>
-                            <div class="cases-slider__item_project-link"><a href="/inprocess.html">Подробнее о проекте →</a></div>
+                            <div class="cases-slider__item_project-photo"><a href="/case.html"><img src="/assets/css/img/case-jetkid.png" alt="Jet Kid"></a></div>
+                            <div class="cases-slider__item_project-link"><a href="/case.html">Подробнее о проекте →</a></div>
                         </div>
                     </div>
                     <div class="cases-slider__item">
@@ -384,8 +384,8 @@
                             <p>Лучшее ритейл-приложение</p>
                         </div>
                         <div class="cases-slider__item_project">
-                            <div class="cases-slider__item_project-photo"><a href="/inprocess.html"><img src="/assets/css/img/case-5ka2.svg" alt="Пятёрочка"></a></div>
-                            <div class="cases-slider__item_project-link"><a href="/inprocess.html">Подробнее о проекте →</a></div>
+                            <div class="cases-slider__item_project-photo"><a href="/case.html"><img src="/assets/css/img/case-5ka2.svg" alt="Пятёрочка"></a></div>
+                            <div class="cases-slider__item_project-link"><a href="/case.html">Подробнее о проекте →</a></div>
                         </div>
                     </div>
                     <div class="cases-slider__item">
@@ -450,10 +450,40 @@
         </div>
     </div>
 </div>
-  <div class="feedback feedback_compact feedback_applicants">
+  <div class="feedback feedback_applicants">
     <div class="container">
-        <h2>Расскажите нам о&nbsp;задаче</h2>
-        <a href="" class="feedback__button js-popup-feedback-open"></a>
+        <form onsubmit="return false">
+            <div class="feedback__container">
+              <h2><a name="feedback"></a>Напишите нам</h2>
+              <div class="feedback__form">
+                  <div class="feedback__form_item">
+                      <input name="name" type="text" class="feedback__form_input">
+                      <label for="name" class="feedback__form_label">Имя и фамилия</label>
+                      <span class="feedback__form_error">Введите имя и фамилию</span>
+                  </div>
+                  <div class="feedback__form_item">
+                      <input name="mail" type="email" class="feedback__form_input">
+                      <label for="mail" class="feedback__form_label">Электронная почта</label>
+                      <span class="feedback__form_error">Введите ваш е-мейл</span>
+                  </div>
+                  <div class="feedback__form_item">
+                      <input name="phone" type="tel" class="feedback__form_input">
+                      <label for="phone" class="feedback__form_label">Телефон</label>
+                      <span class="feedback__form_error">Введите ваш телефон</span>
+                  </div>
+                  <div class="feedback__form_item">
+                      <textarea name="resume" type="text" class="feedback__form_textarea"></textarea>
+                      <label for="company" class="feedback__form_label">О себе/ссылка на портфолио</label>
+                  </div>
+              </div>
+              <div class="feedback__comment">
+                  Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
+              </div>
+              <div class="feedback__button">
+                  <button class="button button_white js-popup-feedback-send">Откликнуться</button>
+              </div>
+            </div>
+        </form>
     </div>
 </div>
   <div class="news">
@@ -520,9 +550,9 @@
                             <span class="request__form_error">Введите название компании</span>
                         </div>
                         <div class="request__form_item">
-                            <input name="phone" type="tel" class="request__form_input" placeholder="Телефон">
-                            <label for="phone" class="request__form_label">Телефон</label>
-                            <span class="request__form_error">Введите ваш телефон</span>
+                            <input name="phone" type="tel" class="request__form_input" placeholder="Номер для связи">
+                            <label for="phone" class="request__form_label">Номер для связи</label>
+                            <span class="request__form_error">Введите номер для связи</span>
                         </div>
                         <div class="request__form_item">
                             <input name="mail" type="email" class="request__form_input" placeholder="Почта">
@@ -544,7 +574,7 @@
                     </div>
                     <h3>Есть ли описание проекта?</h3>
                     <div class="request__textarea request__file">
-                        <textarea placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
+                        <textarea id="project_desc" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
                         <label class="button button_grey button_wide" for="request-file">Загрузите файл, не&nbsp;более 15&nbsp;Мб</label>
                         <input type="file" id="request-file">
                     </div>
