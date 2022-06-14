@@ -1259,9 +1259,6 @@ a.button.button_grey {
   border-radius: 100%;
   margin-right: 0 !important;
 }
-.pmenu__mmenu_close {
-  display: none;
-}
 .pmenu__mmenu .header__mmenu_lang {
   color: #000 !important;
   background-color: #fff;
@@ -1434,6 +1431,12 @@ a.button.button_grey {
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+}
+.top_case .top__image-tablet {
+  display: none;
+}
+.top_case .top__image-mobile {
+  display: none;
 }
 .top_case .top__tags {
   margin: 13px 0 68px;
@@ -5394,9 +5397,6 @@ a.button.button_grey {
   .header__hmenu {
     display: block;
   }
-  .header__hmenu.pmenu__mmenu_close {
-    display: none;
-  }
   .header__mmenu a {
     display: none;
   }
@@ -5605,6 +5605,10 @@ a.button.button_grey {
   }
   .footer__contacts {
     font-size: 38px;
+  }
+
+  .body_career .top {
+    background-size: auto;
   }
 }
 @media only screen and (max-width: 1180px) {
@@ -7084,6 +7088,18 @@ a.button:visited {
   .client ~ .feedback {
     margin-bottom: 60px;
   }
+
+  .body_career .top {
+    background: url(img/career768.jpg) top center no-repeat;
+    background-size: 100% auto;
+  }
+
+  .top_case .top__image-desktop {
+    display: none;
+  }
+  .top_case .top__image-tablet {
+    display: block;
+  }
 }
 @media only screen and (max-width: 700px) {
   .contacts__title {
@@ -7134,8 +7150,14 @@ a.button:visited {
     padding-right: 15px;
   }
 
+  .contacts,
+.request {
+    overflow-y: unset;
+    max-height: unset;
+  }
   .contacts .container,
 .request .container {
+    overflow: unset !important;
     padding: 0 15px;
   }
   .contacts__textarea textarea,
@@ -7670,6 +7692,9 @@ a.button:visited {
     padding: 40px 40px 97px 30px;
   }
 
+  .cases__pagination-button {
+    margin-bottom: 30px;
+  }
   .cases-slider__item_nomination {
     border-radius: 30px;
   }
@@ -7752,7 +7777,7 @@ a.button:visited {
   .principles {
     background: #fff;
     border-radius: 30px 30px 0 0;
-    margin-top: -42px;
+    margin-top: -65px;
     padding-top: 60px;
   }
   .principles__content {
@@ -8332,6 +8357,11 @@ a.button:visited {
   }
   .request__form_warning {
     font-size: 16px;
+  }
+
+  .body_career .top {
+    background: url(img/career480.jpg) top center no-repeat;
+    background-size: auto;
   }
 }
 @media only screen and (max-width: 375px) {
