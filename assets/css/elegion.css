@@ -3428,6 +3428,9 @@ a.button.button_grey {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
+  font-size: 24px;
+  line-height: 130%;
+  resize: none;
 }
 .feedback__form_item {
   position: relative;
@@ -3445,6 +3448,31 @@ a.button.button_grey {
 }
 .feedback__form_item.error .feedback__form_error {
   color: #dc000f;
+}
+.feedback__form_input-placeholder::-webkit-input-placeholder, .feedback__form_textarea-placeholder::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 24px;
+  line-height: 130%;
+}
+.feedback__form_input-placeholder::-moz-placeholder, .feedback__form_textarea-placeholder::-moz-placeholder {
+  color: #fff;
+  font-size: 24px;
+  line-height: 130%;
+}
+.feedback__form_input-placeholder:-ms-input-placeholder, .feedback__form_textarea-placeholder:-ms-input-placeholder {
+  color: #fff;
+  font-size: 24px;
+  line-height: 130%;
+}
+.feedback__form_input-placeholder::-ms-input-placeholder, .feedback__form_textarea-placeholder::-ms-input-placeholder {
+  color: #fff;
+  font-size: 24px;
+  line-height: 130%;
+}
+.feedback__form_input-placeholder::placeholder, .feedback__form_textarea-placeholder::placeholder {
+  color: #fff;
+  font-size: 24px;
+  line-height: 130%;
 }
 .feedback__comment {
   font-size: 16px;
@@ -5986,7 +6014,7 @@ a.button:visited {
   }
   .category__tabs a:nth-child(1),
 .category__tabs span:nth-child(1) {
-    background-color: #24DA8D;
+    background-color: #84AEFF;
     z-index: 1;
   }
   .category__tabs a:nth-child(2),
@@ -6624,6 +6652,18 @@ a.button:visited {
   .request__textarea textarea {
     font-size: 18px;
     min-height: 30px;
+  }
+
+  .client ~ .feedback_compact {
+    padding: 110px 30px;
+  }
+  .client ~ .feedback_compact h2 {
+    width: 50%;
+  }
+  .client ~ .feedback_compact .feedback__button {
+    min-height: 184px;
+    background-image: url(img/icon-plus-client.svg) !important;
+    position: static;
   }
 }
 @media only screen and (max-width: 768px) {
