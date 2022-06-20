@@ -7771,6 +7771,27 @@ a.button:visited {
     font-size: 18px !important;
     margin-top: 20px;
   }
+
+  .who-we-are__widget .problems__more {
+    height: 43px;
+    line-height: 43px;
+    padding-top: 3px;
+    font-size: 14px;
+    bottom: 24px;
+    left: 21px;
+  }
+  .who-we-are__widget .problems__more::before {
+    width: 41px;
+    height: 41px;
+    margin: -3px 17px 0 0;
+  }
+  .who-we-are__widget .problems__more::after {
+    background-size: 20px 7px;
+    width: 20px;
+    height: 7px;
+    left: -36px;
+    top: 17px;
+  }
 }
 @media only screen and (max-width: 550px) {
   body {
@@ -8383,9 +8404,19 @@ a.button:visited {
     margin-top: 130px;
   }
 
+  .years__item {
+    font-size: 16px !important;
+    text-align: left;
+    height: auto;
+    min-height: 125px;
+    padding-bottom: 0;
+  }
   .years__year {
     font-size: 70px;
     padding: 30px 0;
+  }
+  .years__year::after {
+    margin-top: 10px;
   }
   .years__bullet {
     margin-top: -43px;
@@ -8393,6 +8424,22 @@ a.button:visited {
 
   .project__review_body-client {
     font-size: 14px !important;
+  }
+
+  .who-we-are__widget {
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+  .who-we-are__widget_item {
+    width: 100%;
+  }
+  .who-we-are__widget_item.double {
+    margin-bottom: 14px;
+    grid-row-end: unset;
+    grid-column-end: unset;
+  }
+  .who-we-are__widget .vacancies {
+    margin: 0;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -8584,6 +8631,11 @@ a.button:visited {
     margin-top: -43px;
   }
 }
+@media only screen and (max-width: 450px) {
+  .who-we-are__widget_item.double {
+    padding-bottom: 130%;
+  }
+}
 @media only screen and (max-width: 375px) {
   .top__buttons {
     min-width: 0;
@@ -8663,5 +8715,9 @@ a.button:visited {
 
   .service__feature_inner-case__brief-transition {
     font-size: 12px;
+  }
+
+  .who-we-are__widget_item.double {
+    padding-bottom: 145%;
   }
 }
