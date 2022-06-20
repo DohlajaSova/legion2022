@@ -7760,7 +7760,8 @@ a.button:visited {
   .header__mmenu {
     display: none;
   }
-  .header .tns-horizontal.tns-subpixel > .tns-item.cases__block {
+
+  .tns-horizontal.tns-subpixel > .tns-item.cases__block {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
