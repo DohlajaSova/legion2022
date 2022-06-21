@@ -2106,6 +2106,8 @@ a.button.button_grey {
   background: #2864D9;
   text-align: center;
   margin-right: 75px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .case-stages__list {
   margin-top: 40px;
@@ -5934,6 +5936,16 @@ a.button:visited {
   .years__bullet {
     margin-top: -23px;
   }
+
+  .principles_case .principles__content .principles__content_head {
+    width: 100%;
+  }
+  .principles_case .principles__content .principles__content_text {
+    width: 100%;
+  }
+  .case-stages .principles .principles__content .principles__content_text {
+    padding-left: 159px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .problems {
@@ -6123,6 +6135,13 @@ a.button:visited {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+  }
+  .principles__content_buttons {
+    margin-top: -250px;
+  }
+  .principles__content_buttons .button {
+    width: 90%;
+    margin-top: 30px;
   }
 
   .problems__item {
@@ -6814,6 +6833,30 @@ a.button:visited {
     height: 135px;
     margin: -62px 0 0 -62px;
   }
+  .principles.principles_case .principles__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .principles.principles_case .principles__content h2 {
+    width: 100%;
+    margin-bottom: 38px;
+  }
+  .principles.principles_case .principles__content h3 {
+    margin: 30px 0 20px;
+  }
+  .principles.principles_case .principles__content_text, .principles.principles_case .principles__content_head {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .principles.principles_case .principles__content_buttons {
+    width: 100%;
+    margin-top: 0;
+  }
+  .principles.principles_case .principles__content_buttons .button {
+    width: calc(50% - 20px);
+  }
 
   .problems__item h3 {
     font-size: 24px;
@@ -7211,6 +7254,9 @@ a.button:visited {
   }
   .top_case .top__image-tablet {
     display: block;
+  }
+  .top_case .top__image img {
+    max-width: none;
   }
 
   .vacancypage__content {
@@ -7840,15 +7886,6 @@ a.button:visited {
     background: #1E2738;
   }
 
-  .body_service .header.header_scrolled {
-    background-color: #fff;
-  }
-  .body_service .header.header_scrolled .header__logo {
-    background-image: url("img/logo.svg");
-  }
-  .body_service .header.header_scrolled .header__hmenu {
-    background-image: url("img/icon-menu1.svg");
-  }
   .body_service .header.header_scrolled .breadcrumbs {
     display: none;
   }
@@ -8018,6 +8055,11 @@ a.button:visited {
             order: 3;
     padding-right: 0;
     margin-bottom: 0;
+  }
+  .principles__content_buttons {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
   }
   .principles__content p {
     font-size: 16px;
@@ -8440,6 +8482,21 @@ a.button:visited {
   }
   .who-we-are__widget .vacancies {
     margin: 0;
+  }
+
+  .case-stages__digit {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 20px;
+    font-size: 24px;
+  }
+  .case-stages .principles__content_head h3 {
+    font-size: 24px;
+  }
+  .case-stages .principles__content_text {
+    padding-left: 0 !important;
+    margin-top: 15px;
   }
 }
 @media only screen and (max-width: 480px) {
