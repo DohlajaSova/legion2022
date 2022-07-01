@@ -859,7 +859,7 @@ a.button.button_grey {
   width: calc(100% - 20px);
   left: 0;
   top: 0;
-  border-radius: 20px;
+  border-radius: 40px;
 }
 .device_fit-width .device__shadow {
   width: 100%;
@@ -7112,7 +7112,6 @@ a.button:visited {
   }
   .client ~ .feedback_compact .feedback__button {
     min-height: 184px;
-    background-image: url(img/icon-plus-client.svg) !important;
     position: static;
   }
 
@@ -8414,6 +8413,9 @@ a.button:visited {
     margin-bottom: 40px;
   }
 
+  .problems__item_arrow {
+    max-width: 100%;
+  }
   .problems__item h3 {
     font-size: 27px;
   }
@@ -8486,8 +8488,8 @@ a.button:visited {
     margin-bottom: 45px;
   }
   .projects__panels-client {
-    grid-template-columns: 290px;
-    grid-template-rows: 500px 500px 250px 250px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 0.6338fr 250px;
     width: 100%;
     margin: auto;
   }
@@ -9051,6 +9053,13 @@ a.button:visited {
     font-size: 16px;
   }
 
+  .projects .project__review_rubr {
+    margin-bottom: 0;
+  }
+  .projects .project__review_body-client {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
   .projects .project.project-with-slider {
     padding-bottom: 200%;
   }
