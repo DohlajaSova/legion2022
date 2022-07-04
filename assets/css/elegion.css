@@ -1878,6 +1878,34 @@ a.button.button_grey {
 .cases__case.hide, .cases__case.not-shown {
   display: none;
 }
+.cases__case + .zero-case {
+  visibility: hidden;
+}
+.cases__case + .zero-case .cases__case_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.cases__case + .zero-case .cases__case_container .service__feature_inner-case__visual {
+  grid-template-columns: repeat(2, calc(50% - 7px));
+  grid-template-rows: repeat(2, calc(50% - 7px));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  padding: 14px;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.cases__case + .zero-case .cases__case_container .service__feature_inner-case__visual_wrapper {
+  border-radius: 30px;
+}
 .cases_portfolio {
   padding-top: 120px;
 }
@@ -3867,7 +3895,7 @@ a.button.button_grey {
   transition: top 0.5s step-start, height 0.5s step-start, background 0.5s step-start;
 }
 .vacancies .vacancy_send {
-  border: 1px dashed #000;
+  border: 2px dashed #1E2738;
   cursor: pointer;
 }
 .vacancies .vacancy_send .vacancy__title {
@@ -5379,6 +5407,10 @@ a.button.button_grey {
 
 .icon_arrow {
   background: url("img/arrow3grey.svg") center center no-repeat #24DA8D;
+}
+
+.display-none {
+  display: none;
 }
 
 @-webkit-keyframes rotating {
@@ -8868,7 +8900,7 @@ a.button:visited {
     margin-top: -42px;
   }
   .vacancies__container {
-    padding: 60px 0;
+    padding: 60px 0 0 0;
   }
   .vacancies__list_item {
     width: 100%;
@@ -9027,6 +9059,93 @@ a.button:visited {
   }
   .years__bullet {
     margin-top: -43px;
+  }
+
+  .vacancy {
+    max-height: 168px;
+    padding-bottom: 108px;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+  .vacancy__container {
+    background: url("img/vacancy-bg.svg") top right no-repeat #F0F0F0;
+    max-height: 168px;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+  .vacancy__title {
+    background: transparent !important;
+    height: auto !important;
+  }
+  .vacancy__title_icon {
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+    transition: transform 0.25s, -webkit-transform 0.25s;
+    margin-bottom: 20px;
+  }
+  .vacancy__body {
+    position: relative;
+    top: 0;
+    border-radius: 42px;
+    background: transparent !important;
+    margin-top: 0 !important;
+    padding: 10px 25px 25px !important;
+    color: #1E2738 !important;
+    height: 100%;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: top 0.5s step-end, height 0.5s step-end, background 0.5s step-end;
+    transition: top 0.5s step-end, height 0.5s step-end, background 0.5s step-end;
+  }
+  .vacancy__body_link {
+    margin-top: 10px !important;
+    height: 46px;
+    padding: 14px 0px;
+    background: #1E2738;
+    border-radius: 100px;
+    color: #fff !important;
+  }
+  .vacancy__body_item {
+    margin-bottom: 0px !important;
+  }
+  .vacancy_send .vacancy__body_item {
+    display: none;
+  }
+  .vacancy_send .vacancy__container {
+    background: #fff;
+  }
+  .vacancy_send .vacancy__body {
+    height: 46px;
+    padding: 0px 22px;
+  }
+  .vacancy:hover__title_icon {
+    margin-bottom: 20px;
+  }
+  .vacancy:hover__body {
+    background: #fff;
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  .cases__pagination-arrows + .cases-slider__statics_dots {
+    display: block !important;
+    visibility: unset !important;
+    margin: -40px auto 20px auto;
+  }
+  .cases__pagination-arrows + .cases-slider__statics_dots + .cases__pagination-button {
+    display: none;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .who-we-are__widget_item.double {
+    padding-bottom: 130%;
   }
 }
 @media only screen and (max-width: 450px) {
