@@ -2481,7 +2481,6 @@ a.button.button_grey {
           align-items: flex-start;
   width: 40%;
   line-height: 1.2;
-  margin-right: 20px;
   position: relative;
   padding-left: 90px;
   padding-right: 30px;
@@ -2507,6 +2506,9 @@ a.button.button_grey {
 }
 .principles__content_buttons .button.store_android::before {
   background-image: url("img/icon-store-googleplay.svg");
+}
+.principles__content_buttons .button:first-child {
+  margin-right: 20px;
 }
 .principles__video {
   width: 100%;
@@ -2554,6 +2556,116 @@ a.button.button_grey {
 .principles_case .case-stages__layout_var2 .problems__item_bg10 {
   width: 100%;
   padding-bottom: 100%;
+}
+
+.projects .case2 {
+  background-color: #1E2738 !important;
+}
+
+.case2__kpiWrapper {
+  background-color: #84AEFF !important;
+}
+.case2__kpiWrapper .container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 62px 40px 40px;
+}
+.case2__kpiWrapper .circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: visible !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.case2__kpiWrapper .circle-about {
+  margin-bottom: 100px;
+  position: relative;
+  width: 100%;
+}
+.case2__kpiWrapper .circle-about__animation {
+  margin-bottom: 0%;
+}
+.case2__kpiWrapper .circle-text {
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: static;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+.case2__kpiWrapper .circle-pic {
+  width: 320px;
+  height: 320px;
+  background: url("img/icon-rotate4.png") 50% 50% no-repeat !important;
+}
+.case2__kpiWrapper .circle-text__item_label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #fff;
+}
+.case2 .principles__content {
+  margin-bottom: 0;
+}
+.case2 .principles__content_buttons {
+  margin: 60px 0 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.case2 .principles__content_buttons .button {
+  width: calc(50% - 10px);
+  margin-top: 0;
+}
+.case2 .project__review_body .project__review_author-name {
+  color: #1E2738 !important;
+}
+.case2 .project__review_author-name {
+  color: #fff !important;
+}
+.case2 .project__review_author-position {
+  color: #1E2738 !important;
+}
+.case2 .project__review_rubr {
+  font-size: 24px;
+  line-height: 130%;
+}
+.case2 .project__review_top {
+  overflow: hidden;
+  min-height: 350px !important;
+  background-color: #F0F0F0 !important;
+  color: #1E2738 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.case2 .project__review_top-img {
+  top: 0;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .who-we-are__content {
@@ -5601,6 +5713,10 @@ a.button.button_grey {
     font-size: 140px;
     margin-top: 10px;
   }
+
+  .case2 .project__review_top {
+    min-height: 300px !important;
+  }
 }
 @media only screen and (max-width: 1280px) {
   body {
@@ -5824,6 +5940,10 @@ a.button.button_grey {
 
   .case-stages .principles {
     margin-bottom: 30px;
+  }
+
+  .case2 .project__review_top {
+    min-height: 250px !important;
   }
 }
 @media only screen and (max-width: 1180px) {
@@ -6125,6 +6245,14 @@ a.button:visited {
   .case-stages .problems_case .problems__item_wide {
     padding: 0 0 49.2%;
   }
+
+  .case2 .principles__content_text {
+    padding-left: 0px !important;
+  }
+  .case2 .project__review_author-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .problems {
@@ -6238,6 +6366,13 @@ a.button:visited {
   .case-stages__layout_var2 .case-stages__layout_inner-centered .problems__item {
     margin-bottom: 0;
     height: 100%;
+  }
+
+  .case2 .project_tall {
+    padding-bottom: 60% !important;
+  }
+  .case2 .project__review_top {
+    min-height: 310px !important;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -6881,6 +7016,41 @@ a.button:visited {
 .case-stages__layout_var2.problems__item {
     padding: 0;
   }
+
+  .case2 .projects_case .projects__panels {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+
+  .projects .project_tall {
+    width: 100% !important;
+  }
+
+  .project__review_author-name {
+    font-size: 18px;
+  }
+  .case2__kpiWrapper {
+    padding-bottom: 64.2% !important;
+  }
+  .case2 .circle-pic {
+    left: calc(50% - 160px);
+  }
+  .case2 .principles__content_buttons {
+    margin-top: 40px;
+  }
+  .case2 .principles__content_buttons .button {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 @media only screen and (max-width: 860px) {
   .projects__panels {
@@ -7223,9 +7393,6 @@ a.button:visited {
   .principles.principles_case .principles__content_buttons {
     width: 100%;
     margin-top: 0;
-  }
-  .principles.principles_case .principles__content_buttons .button {
-    width: calc(50% - 20px);
   }
 
   .problems__item h3 {
@@ -7639,6 +7806,19 @@ a.button:visited {
   .vacancypage__content_text {
     width: 100%;
     margin-top: 40px;
+  }
+
+  .case2 .project_tall {
+    padding-bottom: 100% !important;
+  }
+  .case2__kpiWrapper .project_tall {
+    padding-bottom: 100%;
+  }
+  .case2 .project__review_top {
+    min-height: 310px !important;
+  }
+  .case2 .principles__content_buttons {
+    margin: 40px 0 60px;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -8207,6 +8387,10 @@ a.button:visited {
     height: 7px;
     left: -36px;
     top: 17px;
+  }
+
+  .case2 .project__review_top {
+    min-height: 250px !important;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -8871,6 +9055,11 @@ a.button:visited {
     padding-left: 0 !important;
     margin-top: 15px;
   }
+
+  .case2 .project__review_top {
+    min-height: 210px !important;
+    padding-bottom: 42% !important;
+  }
 }
 @media only screen and (max-width: 480px) {
   .mobile480-show {
@@ -9059,6 +9248,26 @@ a.button:visited {
   }
   .years__bullet {
     margin-top: -43px;
+  }
+
+  .case2 .circle {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .case2 .project__tall {
+    padding-bottom: 150% !important;
+  }
+  .case2 .principles__content_buttons {
+    margin: 40px 0 60px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .case2 .principles__content_buttons .button {
+    padding: 16px 20px 16px 48px;
+  }
+  .case2 .principles__content_buttons ::before {
+    left: 17px;
   }
 
   .vacancy {
