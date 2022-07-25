@@ -2078,6 +2078,9 @@ a.button.button_grey {
 .cases-slider.bg_tele2 {
   background: url("img/cases-slider-bg_tele2.svg") center/cover no-repeat;
 }
+.cases-slider.bg_alfa {
+  background: url("img/cases-slider-bg_alfa.svg") center/cover no-repeat;
+}
 
 .cases-slider-info,
 .project-slider-article,
@@ -3284,7 +3287,7 @@ a.button.button_grey {
   height: 100%;
   border-radius: 42px;
 }
-.projects .project__review._5ka {
+.projects .project__review.dark {
   background-color: #1E2738;
   color: #fff;
 }
@@ -3309,17 +3312,17 @@ a.button.button_grey {
   bottom: 0;
   right: 0;
 }
-.projects .project__review_top._5ka {
+.projects .project__review_top.light {
   background-color: #F0F0F0;
 }
-.projects .project__review_top.tele2 {
+.projects .project__review_top.dark {
   background-color: #1E2738;
 }
 .projects .project__review_rubr {
   font-size: 24px;
   margin: 40px 0 56px 40px;
 }
-.projects .project__review_rubr._5ka {
+.projects .project__review_rubr.dark {
   color: #1E2738;
 }
 .projects .project__review_body {
@@ -3337,10 +3340,10 @@ a.button.button_grey {
   font-size: 46px;
   margin: 40px;
 }
-.projects .project__review_author-name._5ka {
+.projects .project__review_author-name.dark {
   color: #1E2738;
 }
-.projects .project__review_author-name.tele2 {
+.projects .project__review_author-name.light {
   color: #fff;
 }
 .projects .project__review_author-position {
@@ -3349,7 +3352,7 @@ a.button.button_grey {
   position: absolute;
   left: 40px;
 }
-.projects .project__review_author-position._5ka {
+.projects .project__review_author-position.dark {
   color: #1E2738;
 }
 .projects .project__article {
