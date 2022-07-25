@@ -2072,6 +2072,9 @@ a.button.button_grey {
   width: 50%;
   text-align: center;
 }
+.cases-slider.bg_5ka {
+  background: url("img/cases-slider-bg_5ka.svg") center/cover no-repeat;
+}
 .cases-slider.bg_tele2 {
   background: url("img/cases-slider-bg_tele2.svg") center/cover no-repeat;
 }
@@ -3279,6 +3282,11 @@ a.button.button_grey {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  border-radius: 42px;
+}
+.projects .project__review._5ka {
+  background-color: #1E2738;
+  color: #fff;
 }
 .projects .project__review_container {
   position: absolute;
@@ -3291,7 +3299,7 @@ a.button.button_grey {
   overflow: hidden;
   color: #fff;
   position: relative;
-  min-height: 434px;
+  min-height: 350px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -3301,13 +3309,18 @@ a.button.button_grey {
   bottom: 0;
   right: 0;
 }
+.projects .project__review_top._5ka {
+  background-color: #F0F0F0;
+}
 .projects .project__review_top.tele2 {
   background-color: #1E2738;
-  min-height: 350px;
 }
 .projects .project__review_rubr {
   font-size: 24px;
   margin: 40px 0 56px 40px;
+}
+.projects .project__review_rubr._5ka {
+  color: #1E2738;
 }
 .projects .project__review_body {
   font-size: 24px;
@@ -3324,6 +3337,9 @@ a.button.button_grey {
   font-size: 46px;
   margin: 40px;
 }
+.projects .project__review_author-name._5ka {
+  color: #1E2738;
+}
 .projects .project__review_author-name.tele2 {
   color: #fff;
 }
@@ -3332,6 +3348,9 @@ a.button.button_grey {
   max-width: 55%;
   position: absolute;
   left: 40px;
+}
+.projects .project__review_author-position._5ka {
+  color: #1E2738;
 }
 .projects .project__article {
   border-radius: 42px;
@@ -8922,7 +8941,7 @@ a.button:visited {
   }
 
   .cases__case {
-    min-height: 192px !important;
+    min-height: 180px !important;
   }
   .cases__case_info {
     grid-column-end: initial;
@@ -8930,9 +8949,15 @@ a.button:visited {
   }
   .cases__case_info .cases__case_number {
     font-size: 32px;
+    padding: 20px 20px 0;
   }
   .cases__case_info .cases__case_name {
-    font-size: 9px;
+    font-size: 14px;
+    padding: 10px 0 20px 20px;
+  }
+  .cases__case_info .cases__case_desc {
+    font-size: 12px;
+    padding: 20px 0 20px 20px;
   }
   .cases__case_info .cases__case_photo img {
     max-width: 36px;
@@ -8978,6 +9003,9 @@ a.button:visited {
     min-height: 210px !important;
     padding: 20px 30px;
   }
+  .projects .project__review_top-img._5ka {
+    bottom: -17px;
+  }
   .projects .project__review_rubr {
     font-size: 14px;
     margin: 0;
@@ -8989,6 +9017,10 @@ a.button:visited {
   .projects .project__review_author-position {
     font-size: 14px;
     left: auto;
+  }
+  .projects .project__review_author-position._5ka {
+    max-width: 60%;
+    font-size: 12px;
   }
   .projects .project__review_body {
     padding: 20px 0 20px 30px;
