@@ -5272,6 +5272,8 @@ a.button.button_grey {
 }
 .client__present > img {
   width: 100%;
+}
+.client__present > img.venn {
   display: none;
 }
 .client__present_mobile {
@@ -5452,6 +5454,10 @@ a.button.button_grey {
 }
 .client__cases_block-tele2:first-child:hover {
   cursor: url("img/case-tele2.png"), auto;
+  padding-left: 40px;
+}
+.client__cases_block-venn:first-child:hover {
+  cursor: url("img/cursor-client-venn.png"), auto;
   padding-left: 40px;
 }
 .client__cases_block:first-child:before {
