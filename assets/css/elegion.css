@@ -2668,6 +2668,56 @@ a.button.button_grey {
           transform: scale(1.05);
 }
 
+.case3__content {
+  display: grid;
+  row-gap: 20px;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  grid-template-rows: 650px;
+}
+.case3__content_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  background: url("img/case3-content-background.png") center center no-repeat #84AEFF;
+  background-size: cover;
+  color: #fff;
+  padding-top: 40px;
+  border-radius: 45px;
+}
+.case3__content_card > * {
+  padding: 0 40px;
+  line-height: 130%;
+}
+.case3__content_card-tip {
+  font-size: 24px;
+  margin-bottom: 70px;
+}
+.case3__content_card-main {
+  font-size: 46px;
+  margin-bottom: 10px;
+}
+.case3__content_card-transition {
+  font-size: 16px;
+  color: #fff !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.case3__content_card-accent {
+  font-size: 74px;
+}
+.case3__content_card:first-child {
+  background: url("img/case3-content-foreground.png") bottom left no-repeat #1E2738;
+  background-size: contain;
+}
+
 .who-we-are__content {
   display: -webkit-box;
   display: -ms-flexbox;
