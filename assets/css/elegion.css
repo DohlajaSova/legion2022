@@ -1759,6 +1759,9 @@ a.button.button_grey {
   width: 100%;
   height: 100%;
 }
+.cases__case_container.bg_venn {
+  background: url("img/cases-bg-venn.png") center/cover no-repeat;
+}
 .cases__case_contents {
   position: absolute;
   width: 100%;
@@ -1864,6 +1867,10 @@ a.button.button_grey {
   font-size: 24px;
   padding: 0 60px 0 30px;
   text-align: left;
+}
+.cases__case_info .cases__case_name p {
+  font-size: 30px;
+  margin-bottom: 16px;
 }
 .cases__case_info .cases__case_photo {
   position: absolute;
@@ -2080,6 +2087,9 @@ a.button.button_grey {
 }
 .cases-slider.bg_alfa {
   background: url("img/cases-slider-bg_alfa.svg") center/cover no-repeat;
+}
+.cases-slider.bg_venn {
+  background: url("img/cases-slider-bg_venn.svg") center/cover no-repeat;
 }
 
 .cases-slider-info,
@@ -5256,12 +5266,31 @@ a.button.button_grey {
 }
 .client__present {
   margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  min-height: 540px;
 }
 .client__present > img {
   width: 100%;
+  display: none;
 }
 .client__present_mobile {
   display: none;
+}
+.client__present-play {
+  position: absolute;
+  top: 42%;
+  width: 6vw !important;
+  left: 47vw !important;
+}
+.client__present-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: -70px;
+  left: 0;
 }
 .client__info {
   margin-bottom: 140px;
@@ -8958,6 +8987,9 @@ a.button:visited {
     font-size: 14px;
     padding: 10px 0 20px 20px;
   }
+  .cases__case_info .cases__case_name p {
+    font-size: 18px;
+  }
   .cases__case_info .cases__case_desc {
     font-size: 12px;
     padding: 20px 0 20px 20px;
@@ -9077,6 +9109,14 @@ a.button:visited {
     font-size: 9px;
     line-height: 130%;
     margin-bottom: 40px;
+  }
+  .client__present {
+    min-height: 360px;
+  }
+  .client__present-play {
+    width: 12vw !important;
+    left: 44vw !important;
+    top: 28vw;
   }
   .client__info .cases-slider__item {
     height: 50vw;
