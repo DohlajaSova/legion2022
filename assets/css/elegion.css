@@ -3409,8 +3409,8 @@ a.button.button_grey {
   max-height: 100%;
 }
 .problems__review_rubr {
-  font-size: 16px;
-  margin-bottom: 56px;
+  font-size: 24px;
+  margin: 40px 0 56px 0;
 }
 .problems__review_body {
   font-size: 24px;
@@ -3428,12 +3428,12 @@ a.button.button_grey {
 }
 .problems__review_author-name {
   font-size: 24px;
-  color: #000;
+  color: #1E2738;
   margin-bottom: 15px;
 }
 .problems__review_author-position {
-  font-size: 16px !important;
-  color: #949191;
+  font-size: 14px !important;
+  color: #1E2738;
   max-width: 45%;
   margin-top: 0 !important;
 }
@@ -3527,8 +3527,8 @@ a.button.button_grey {
   background-color: #1E2738;
 }
 .projects .project__review_rubr {
-  font-size: 16px;
-  margin-bottom: 56px;
+  font-size: 24px;
+  margin: 40px 0 56px 0;
 }
 .projects .project__review_rubr.dark {
   color: #1E2738;
@@ -3541,12 +3541,14 @@ a.button.button_grey {
 .projects .project__review_author-img {
   float: right;
   margin-left: 20px;
-  max-width: 91px;
-  max-height: 91px;
+  max-width: 83%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .projects .project__review_author-name {
   font-size: 46px;
-  margin: 40px;
+  margin: 40px 0;
 }
 .projects .project__review_author-name.dark {
   color: #1E2738;
@@ -3555,10 +3557,9 @@ a.button.button_grey {
   color: #fff;
 }
 .projects .project__review_author-position {
-  font-size: 16px;
-  color: #949191;
+  font-size: 24px;
+  color: #1E2738;
   max-width: 45%;
-  position: absolute;
   left: 40px;
 }
 .projects .project__review_author-position.dark {
@@ -5695,10 +5696,10 @@ a.button.button_grey {
   color: #1E2738 !important;
 }
 .client .project__review_author-name {
-  color: #fff !important;
+  color: #fff;
 }
 .client .project__review_author-position {
-  color: #1E2738 !important;
+  color: #1E2738;
 }
 .client .project__review_rubr {
   font-size: 24px;
@@ -9184,10 +9185,10 @@ a.button:visited {
     padding: 23px 23px 48px;
   }
   .problems__review_author-name {
-    font-size: 16px;
+    font-size: 46px;
   }
   .problems__review_author-position {
-    font-size: 14px;
+    font-size: 24px;
   }
 
   .vacancies {
