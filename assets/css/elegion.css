@@ -1854,7 +1854,7 @@ a.button.button_grey {
 .cases__case_info .cases__case_number {
   display: block;
   position: static;
-  color: #949191;
+  color: #1E2738;
   font-size: 74px;
   font-weight: 300;
   padding: 20px 30px 14px 30px;
@@ -1864,7 +1864,7 @@ a.button.button_grey {
   display: block;
   width: 100%;
   color: #000;
-  font-size: 16px;
+  font-size: 24px;
   padding: 0 60px 0 30px;
   text-align: left;
 }
@@ -1877,7 +1877,6 @@ a.button.button_grey {
   left: 0;
   bottom: 0;
   right: 0;
-  display: none;
   text-align: right;
   padding: 0 20px 20px 0;
   font-size: 0;
@@ -2690,6 +2689,9 @@ a.button.button_grey {
   font-size: 24px;
   line-height: 130%;
 }
+.case2 .project__review_rubr.light {
+  color: #fff !important;
+}
 .case2 .project__review_top {
   overflow: hidden;
   min-height: 350px !important;
@@ -2716,6 +2718,27 @@ a.button.button_grey {
   background-color: #1E2738 !important;
 }
 
+.case3__kpiWrapper {
+  background-color: #84AEFF !important;
+}
+.case3__kpiWrapper .container {
+  position: absolute;
+  height: 100%;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 62px 40px 40px;
+}
 .case3__content {
   display: grid;
   row-gap: 20px;
@@ -3391,6 +3414,9 @@ a.button.button_grey {
   font-size: 24px;
   margin: 40px 0 56px 0;
 }
+.problems__review_rubr.light {
+  color: #fff !important;
+}
 .problems__review_body {
   font-size: 24px;
   width: 65%;
@@ -3399,11 +3425,10 @@ a.button.button_grey {
   padding: 73px 43px 55px;
 }
 .problems__review_author-img {
-  float: right;
-  margin-left: 20px;
-  max-width: 91px;
-  max-height: 91px;
-  max-height: 308px;
+  position: absolute;
+  width: 63%;
+  right: 0;
+  bottom: 0;
 }
 .problems__review_author-name {
   font-size: 24px;
@@ -3474,7 +3499,7 @@ a.button.button_grey {
   border-radius: 42px;
 }
 .projects .project__review.dark {
-  background-color: #1E2738;
+  background-color: #1E2738 !important;
   color: #fff;
 }
 .projects .project__review_container {
@@ -3500,49 +3525,55 @@ a.button.button_grey {
   right: 0;
 }
 .projects .project__review_top.light {
-  background-color: #F0F0F0;
+  background-color: #F0F0F0 !important;
 }
 .projects .project__review_top.dark {
-  background-color: #1E2738;
+  background-color: #1E2738 !important;
 }
 .projects .project__review_rubr {
   font-size: 24px;
   margin: 40px 0 56px 0;
 }
 .projects .project__review_rubr.dark {
-  color: #1E2738;
+  color: #1E2738 !important;
+}
+.projects .project__review_rubr.light {
+  color: #fff !important;
 }
 .projects .project__review_body {
   font-size: 24px;
-  width: 88%;
   padding: 40px;
 }
 .projects .project__review_author-img {
-  float: right;
-  margin-left: 20px;
-  max-width: 83%;
+  width: 45%;
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 .projects .project__review_author-name {
   font-size: 46px;
   margin: 40px 0;
+  z-index: 3;
 }
 .projects .project__review_author-name.dark {
-  color: #1E2738;
+  color: #1E2738 !important;
 }
 .projects .project__review_author-name.light {
-  color: #fff;
+  color: #fff !important;
 }
 .projects .project__review_author-position {
   font-size: 24px;
   color: #1E2738;
-  max-width: 45%;
+  max-width: 65%;
   left: 40px;
+  z-index: 3;
 }
 .projects .project__review_author-position.dark {
-  color: #1E2738;
+  color: #1E2738 !important;
+}
+.projects .project__review_author-position.light {
+  color: #fff !important;
 }
 .projects .project__article {
   border-radius: 42px;
@@ -3886,6 +3917,19 @@ a.button.button_grey {
   color: #F0F0F0;
 }
 .feedback.feedback_applicants.feedback_compact .feedback__button {
+  background-image: url("img/icon-plus3.svg");
+}
+.feedback.feedback_client {
+  background: #1E2738;
+}
+.feedback.feedback_client h2 {
+  color: #fff;
+}
+.feedback.feedback_client .feedback__form_error,
+.feedback.feedback_client .feedback__comment {
+  color: #F0F0F0;
+}
+.feedback.feedback_client.feedback_compact .feedback__button {
   background-image: url("img/icon-plus3.svg");
 }
 
@@ -5518,6 +5562,7 @@ a.button.button_grey {
 }
 .client__info_stats-state__value {
   color: #1E2738;
+  max-width: 200px;
 }
 .client__info_text {
   width: 50%;
@@ -5683,6 +5728,9 @@ a.button.button_grey {
 .client .project__review_rubr {
   font-size: 24px;
   line-height: 130%;
+}
+.client .project__review_rubr.light {
+  color: #fff !important;
 }
 .client .project__review_top {
   overflow: hidden;
@@ -6128,7 +6176,7 @@ a.button.button_grey {
     padding: 20px 20px 0;
   }
   .cases__case_info .cases__case_name {
-    font-size: 15px;
+    font-size: 24px;
     padding-left: 20px;
   }
   .cases__case-client {
@@ -6369,7 +6417,7 @@ a.button:visited {
     margin-bottom: 6px;
   }
   .cases__case_info .cases__case_name {
-    font-size: 11px;
+    font-size: 24px;
     padding-right: 20px;
   }
   .cases-slider__item_nomination .h2 {
@@ -6614,12 +6662,35 @@ a.button:visited {
     padding: 0 0 49.2%;
   }
 
+  .case2 .project_tall {
+    padding-bottom: 60% !important;
+  }
   .case2 .principles__content_text {
     padding-left: 0px !important;
   }
   .case2 .project__review_author-name {
     font-size: 18px;
     margin-bottom: 10px;
+  }
+
+  .case3__content {
+    grid-template-rows: 550px;
+  }
+  .case3__content_card > * {
+    padding: 0 30px;
+  }
+  .case3__content_card-tip {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .case3__content_card-main {
+    font-size: 36px;
+  }
+  .case3__content_card-transition {
+    font-size: 14px;
+  }
+  .case3__content_card-accent {
+    font-size: 56px;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -6737,10 +6808,14 @@ a.button:visited {
   }
 
   .case2 .project_tall {
-    padding-bottom: 60% !important;
+    padding-bottom: 70% !important;
   }
   .case2 .project__review_top {
     min-height: 310px !important;
+  }
+
+  .case3 .problems__item {
+    padding-bottom: 120% !important;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -7100,8 +7175,8 @@ a.button:visited {
     font-size: 14px;
   }
   .projects .project__review_rubr {
-    font-size: 14px;
-    margin-bottom: 14px;
+    font-size: 24px;
+    margin: 0;
   }
   .projects .project__review_body {
     font-size: 16px;
@@ -7115,16 +7190,15 @@ a.button:visited {
     padding-right: 33px;
   }
   .projects .project__review_author-name {
-    font-size: 20px;
+    font-size: 46px;
     margin-bottom: 8px;
   }
   .projects .project__review_author-position {
-    font-size: 14px;
+    font-size: 24px;
     max-width: 63%;
   }
   .projects .project__review_author-img {
-    max-width: 71px;
-    max-height: 71px;
+    width: 42%;
   }
 
   .footer__menu {
@@ -7399,6 +7473,9 @@ a.button:visited {
   .project__review_author-name {
     font-size: 18px;
   }
+  .case2 .project_tall:first-child {
+    padding-bottom: 65% !important;
+  }
   .case2__kpiWrapper {
     padding-bottom: 64.2% !important;
   }
@@ -7418,6 +7495,17 @@ a.button:visited {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .case3__content {
+    grid-template-rows: 480px;
+  }
+  .case3__content_card-tip {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  .case3__content_card-main {
+    font-size: 32px;
   }
 }
 @media only screen and (max-width: 860px) {
@@ -7565,7 +7653,7 @@ a.button:visited {
     top: calc(100% - 34px);
   }
   .cases-slider__item_nomination {
-    padding: 14px;
+    padding: 30px;
   }
   .cases-slider__item_nomination p {
     font-size: 12px;
@@ -7691,6 +7779,26 @@ a.button:visited {
   }
   .project__review_body-client br {
     display: block !important;
+  }
+
+  .case2 .project_tall:first-child {
+    padding-bottom: 80% !important;
+  }
+
+  .case3 .circle-pic {
+    left: auto;
+  }
+  .case3__content {
+    grid-template-rows: 440px;
+  }
+  .case3__content_card-tip {
+    font-size: 16px;
+  }
+  .case3__content_card-main {
+    font-size: 28px;
+  }
+  .case3__content_card-accent {
+    font-size: 46px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -8120,18 +8228,31 @@ a.button:visited {
     margin-bottom: 40px;
   }
   .client__cases_block {
-    padding: 20px 0;
-    -webkit-box-orient: vertical;
+    padding: 40px 0 20px;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     position: static;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .client__cases_block-name {
     margin-bottom: 20px;
+  }
+  .client__cases_block-parts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 180px;
+  }
+  .client__cases_block-parts__feature {
+    margin-bottom: 16px;
+  }
+  .client__cases_block-parts__feature::last-child {
+    margin-bottom: 0;
   }
   .client__cases_block:first-child:hover {
     -webkit-transition: none;
@@ -8179,20 +8300,56 @@ a.button:visited {
     margin-top: 40px;
   }
 
-  .case2 .project_tall {
+  .case2 .project_tall:first-child {
     padding-bottom: 100% !important;
   }
-  .case2__kpiWrapper .project_tall {
-    padding-bottom: 100%;
+  .case2 .circle-about {
+    margin-bottom: 150px;
   }
   .case2 .circle-text__item_label {
     font-size: 28px;
+  }
+  .case2 .circle-pic {
+    background-size: 300px !important;
+    width: 300px;
+    height: 300px;
+    left: auto;
   }
   .case2 .project__review_top {
     min-height: 310px !important;
   }
   .case2 .principles__content_buttons {
     margin: 40px 0 60px;
+  }
+
+  .case3__content {
+    display: grid;
+    row-gap: 20px;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+    grid-template-columns: 100%;
+    grid-template-rows: 650px 650px;
+  }
+  .case3__content_card {
+    padding-top: 40px;
+  }
+  .case3__content_card > * {
+    padding: 0 40px;
+  }
+  .case3__content_card-tip {
+    font-size: 24px;
+    margin-bottom: 70px;
+  }
+  .case3__content_card-main {
+    font-size: 46px;
+    margin-bottom: 10px;
+  }
+  .case3__content_card-transition {
+    font-size: 16px;
+  }
+  .case3__content_card-accent {
+    font-size: 74px;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -8766,6 +8923,34 @@ a.button:visited {
   .case2 .project__review_top {
     min-height: 250px !important;
   }
+  .case2 .project_tall {
+    padding-bottom: 100% !important;
+  }
+  .case2 .project_tall:first-child {
+    padding-bottom: 140% !important;
+  }
+
+  .case3__content {
+    grid-template-rows: 520px 520px;
+  }
+  .case3__content_card > * {
+    padding: 0 40px;
+  }
+  .case3__content_card-tip {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .case3__content_card-main {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .case3__content_card-transition {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .case3__content_card-accent {
+    font-size: 56px;
+  }
 }
 @media only screen and (max-width: 550px) {
   body {
@@ -8825,7 +9010,9 @@ a.button:visited {
     height: 195px;
   }
   .circle-pic {
-    height: 195px;
+    background-size: 250px !important;
+    width: 250px;
+    height: 250px;
   }
   .circle-text {
     width: 195px;
@@ -9027,8 +9214,8 @@ a.button:visited {
     border-radius: 29px;
   }
   .problems__review_rubr {
-    font-size: 12px;
-    margin-bottom: 22px;
+    font-size: 24px;
+    margin: 0;
   }
   .problems__review_body {
     font-size: 14px;
@@ -9107,8 +9294,8 @@ a.button:visited {
     border-radius: 30px;
   }
   .projects .project__review_rubr {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 24px;
+    margin: 0;
   }
   .projects .project__review_body {
     font-size: 18px;
@@ -9133,11 +9320,12 @@ a.button:visited {
     margin: 40px 0 0 0;
   }
   .projects .project__review_author-name {
-    font-size: 20px;
+    font-size: 24px;
+    margin: 0;
   }
   .projects .project__review_author-position {
-    font-size: 18px;
-    max-width: 100%;
+    font-size: 14px;
+    max-width: 72%;
   }
   .projects .project__review_author-position-client {
     font-size: 14px;
@@ -9259,6 +9447,9 @@ a.button:visited {
   }
   .projects-client {
     margin-bottom: 40px;
+  }
+  .projects.some-projects {
+    padding-top: 0;
   }
 
   .news {
@@ -9514,6 +9705,8 @@ a.button:visited {
   .projects .project__review_top {
     min-height: 210px !important;
     padding: 20px 30px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .projects .project__review_top-img._5ka {
     bottom: -17px;
@@ -9524,18 +9717,19 @@ a.button:visited {
   }
   .projects .project__review_author-name {
     font-size: 24px;
-    margin: 30px 0 10px;
+    margin: 0;
   }
   .projects .project__review_author-position {
     font-size: 14px;
     left: auto;
+    top: 30%;
   }
   .projects .project__review_author-position._5ka {
     max-width: 60%;
     font-size: 12px;
   }
   .projects .project__review_body {
-    padding: 20px 0 20px 30px;
+    padding: 20px 10px 20px 30px;
     margin: 0;
   }
   .projects .project__article_small {
@@ -9553,22 +9747,39 @@ a.button:visited {
     grid-template-rows: 1fr;
   }
 
+  .feedback {
+    position: relative;
+  }
   .feedback__comment {
     font-size: 9px;
   }
   .feedback h2 {
     font-size: 24px;
+    width: 70% !important;
   }
   .feedback_compact {
-    padding: 10px 30px 25px 15px;
+    padding: 10px 30px 25px 15px !important;
+    border-radius: 30px 30px 0 0;
+    height: 240px;
+  }
+  .feedback::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    top: 210px;
+    left: 0;
+    border-radius: 30px 30px 0 0;
   }
 
   .footer__social {
-    width: 70%;
+    width: 100%;
+    margin: 24px 0 42px;
   }
   .footer__menu a,
 .footer__menu span {
-    width: 100%;
+    width: 50%;
   }
 
   .service__feature_inner-case {
@@ -9588,24 +9799,23 @@ a.button:visited {
     margin-bottom: 40px;
   }
   .client__present {
+    min-height: 270px;
+  }
+  .client__present.venn {
     min-height: 360px;
+    margin-bottom: 0;
   }
   .client__present-play {
     width: 12vw !important;
     left: 44vw !important;
     top: 28vw;
   }
-  .client__info .cases-slider__item {
-    height: 50vw;
-  }
   .client__info .cases-slider__item_nomination {
     width: 100%;
-    height: 192px;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    padding-left: 23px;
-    padding-right: 23px;
+    padding: 18px 8px 16px 24px;
   }
   .client__info .cases-slider__item_nomination .h2 {
     font-size: 46px;
@@ -9642,8 +9852,27 @@ a.button:visited {
   .client__info_stats .client__info_stats-state {
     width: 100%;
   }
+  .client__cases_block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 20px 0;
+  }
   .client__cases_block-name {
     font-size: 24px;
+  }
+  .client__cases_block-parts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .client__cases_block-parts__feature {
+    margin-bottom: 0;
   }
 
   .request__lead {
@@ -9670,8 +9899,14 @@ a.button:visited {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
   }
-  .case2 .project__tall {
-    padding-bottom: 150% !important;
+  .case2__kpiWrapper .circle-about {
+    margin-bottom: 150px;
+  }
+  .case2 .project_tall {
+    padding-bottom: 200% !important;
+  }
+  .case2 .project_tall:last-child {
+    padding-bottom: 120% !important;
   }
   .case2 .principles__content_buttons {
     margin: 40px 0 60px;
@@ -9767,10 +10002,46 @@ a.button:visited {
   .cases__pagination-arrows + .cases-slider__statics_dots + .cases__pagination-button {
     display: none;
   }
+
+  .case3__container_rate {
+    display: block !important;
+  }
+  .case3 .circle-pic {
+    background-size: 200px !important;
+    width: 200px;
+    height: 200px;
+  }
+  .case3__content {
+    grid-template-rows: 450px 450px;
+  }
+  .case3__content_card > * {
+    padding: 0 20px;
+  }
+  .case3__content_card-tip {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .case3__content_card-main {
+    font-size: 28px;
+  }
+  .case3__content_card-accent {
+    font-size: 48px;
+  }
+
+  .case-stages__layout_inner {
+    padding: 20px;
+  }
+  .case-stages__layout_inner-centered {
+    padding: 40px;
+  }
 }
 @media only screen and (max-width: 450px) {
   .who-we-are__widget_item.double {
     padding-bottom: 130%;
+  }
+
+  .case2 .project_tall:last-child {
+    padding-bottom: 140% !important;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -9863,5 +10134,19 @@ a.button:visited {
 
   .who-we-are__widget_item.double {
     padding-bottom: 145%;
+  }
+
+  .case3__content {
+    grid-template-rows: 400px 400px;
+  }
+  .case3__content_card-tip {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .case3__content_card-main {
+    font-size: 24px;
+  }
+  .case3__content_card-accent {
+    font-size: 42px;
   }
 }
