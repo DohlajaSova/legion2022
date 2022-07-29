@@ -3266,11 +3266,11 @@ a.button.button_grey {
   position: relative;
 }
 .problems__item_videosection {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   position: static !important;
 }
 .problems__item_videosection .client__present-video {
-  top: 0;
+  top: 0 !important;
 }
 .problems-complex {
   overflow: hidden;
