@@ -3201,6 +3201,10 @@ a.button.button_grey {
   padding: 38px 30px;
   top: 0;
 }
+.problems__item_bg11 {
+  background: #24DA8D;
+  overflow: hidden;
+}
 .problems__item_plus {
   display: block;
   background: url("img/icon-plus.svg") center top no-repeat;
@@ -3260,6 +3264,13 @@ a.button.button_grey {
   width: 100%;
   padding: 0 0 49.2%;
   position: relative;
+}
+.problems__item_videosection {
+  margin-bottom: 0;
+  position: static !important;
+}
+.problems__item_videosection .client__present-video {
+  top: 0;
 }
 .problems-complex {
   overflow: hidden;
