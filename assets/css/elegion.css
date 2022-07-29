@@ -1854,7 +1854,7 @@ a.button.button_grey {
 .cases__case_info .cases__case_number {
   display: block;
   position: static;
-  color: #949191;
+  color: #1E2738;
   font-size: 74px;
   font-weight: 300;
   padding: 20px 30px 14px 30px;
@@ -1864,7 +1864,7 @@ a.button.button_grey {
   display: block;
   width: 100%;
   color: #000;
-  font-size: 16px;
+  font-size: 24px;
   padding: 0 60px 0 30px;
   text-align: left;
 }
@@ -1877,7 +1877,6 @@ a.button.button_grey {
   left: 0;
   bottom: 0;
   right: 0;
-  display: none;
   text-align: right;
   padding: 0 20px 20px 0;
   font-size: 0;
@@ -2690,6 +2689,9 @@ a.button.button_grey {
   font-size: 24px;
   line-height: 130%;
 }
+.case2 .project__review_rubr.light {
+  color: #fff !important;
+}
 .case2 .project__review_top {
   overflow: hidden;
   min-height: 350px !important;
@@ -3199,6 +3201,10 @@ a.button.button_grey {
   padding: 38px 30px;
   top: 0;
 }
+.problems__item_bg11 {
+  background: #24DA8D;
+  overflow: hidden;
+}
 .problems__item_plus {
   display: block;
   background: url("img/icon-plus.svg") center top no-repeat;
@@ -3258,6 +3264,13 @@ a.button.button_grey {
   width: 100%;
   padding: 0 0 49.2%;
   position: relative;
+}
+.problems__item_videosection {
+  margin-bottom: 0;
+  position: static !important;
+}
+.problems__item_videosection .client__present-video {
+  top: 0;
 }
 .problems-complex {
   overflow: hidden;
@@ -3412,6 +3425,9 @@ a.button.button_grey {
   font-size: 24px;
   margin: 40px 0 56px 0;
 }
+.problems__review_rubr.light {
+  color: #fff !important;
+}
 .problems__review_body {
   font-size: 24px;
   width: 65%;
@@ -3420,11 +3436,10 @@ a.button.button_grey {
   padding: 73px 43px 55px;
 }
 .problems__review_author-img {
-  float: right;
-  margin-left: 20px;
-  max-width: 91px;
-  max-height: 91px;
-  max-height: 308px;
+  position: absolute;
+  width: 63%;
+  right: 0;
+  bottom: 0;
 }
 .problems__review_author-name {
   font-size: 24px;
@@ -3495,7 +3510,7 @@ a.button.button_grey {
   border-radius: 42px;
 }
 .projects .project__review.dark {
-  background-color: #1E2738;
+  background-color: #1E2738 !important;
   color: #fff;
 }
 .projects .project__review_container {
@@ -3521,49 +3536,55 @@ a.button.button_grey {
   right: 0;
 }
 .projects .project__review_top.light {
-  background-color: #F0F0F0;
+  background-color: #F0F0F0 !important;
 }
 .projects .project__review_top.dark {
-  background-color: #1E2738;
+  background-color: #1E2738 !important;
 }
 .projects .project__review_rubr {
   font-size: 24px;
   margin: 40px 0 56px 0;
 }
 .projects .project__review_rubr.dark {
-  color: #1E2738;
+  color: #1E2738 !important;
+}
+.projects .project__review_rubr.light {
+  color: #fff !important;
 }
 .projects .project__review_body {
   font-size: 24px;
-  width: 88%;
   padding: 40px;
 }
 .projects .project__review_author-img {
-  float: right;
-  margin-left: 20px;
-  max-width: 83%;
+  width: 45%;
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 .projects .project__review_author-name {
   font-size: 46px;
   margin: 40px 0;
+  z-index: 3;
 }
 .projects .project__review_author-name.dark {
-  color: #1E2738;
+  color: #1E2738 !important;
 }
 .projects .project__review_author-name.light {
-  color: #fff;
+  color: #fff !important;
 }
 .projects .project__review_author-position {
   font-size: 24px;
   color: #1E2738;
-  max-width: 45%;
+  max-width: 65%;
   left: 40px;
+  z-index: 3;
 }
 .projects .project__review_author-position.dark {
-  color: #1E2738;
+  color: #1E2738 !important;
+}
+.projects .project__review_author-position.light {
+  color: #fff !important;
 }
 .projects .project__article {
   border-radius: 42px;
@@ -3907,6 +3928,19 @@ a.button.button_grey {
   color: #F0F0F0;
 }
 .feedback.feedback_applicants.feedback_compact .feedback__button {
+  background-image: url("img/icon-plus3.svg");
+}
+.feedback.feedback_client {
+  background: #1E2738;
+}
+.feedback.feedback_client h2 {
+  color: #fff;
+}
+.feedback.feedback_client .feedback__form_error,
+.feedback.feedback_client .feedback__comment {
+  color: #F0F0F0;
+}
+.feedback.feedback_client.feedback_compact .feedback__button {
   background-image: url("img/icon-plus3.svg");
 }
 
@@ -5539,6 +5573,7 @@ a.button.button_grey {
 }
 .client__info_stats-state__value {
   color: #1E2738;
+  max-width: 200px;
 }
 .client__info_text {
   width: 50%;
@@ -5704,6 +5739,9 @@ a.button.button_grey {
 .client .project__review_rubr {
   font-size: 24px;
   line-height: 130%;
+}
+.client .project__review_rubr.light {
+  color: #fff !important;
 }
 .client .project__review_top {
   overflow: hidden;
@@ -6149,7 +6187,7 @@ a.button.button_grey {
     padding: 20px 20px 0;
   }
   .cases__case_info .cases__case_name {
-    font-size: 15px;
+    font-size: 24px;
     padding-left: 20px;
   }
   .cases__case-client {
@@ -6390,7 +6428,7 @@ a.button:visited {
     margin-bottom: 6px;
   }
   .cases__case_info .cases__case_name {
-    font-size: 11px;
+    font-size: 24px;
     padding-right: 20px;
   }
   .cases-slider__item_nomination .h2 {
@@ -7148,8 +7186,8 @@ a.button:visited {
     font-size: 14px;
   }
   .projects .project__review_rubr {
-    font-size: 14px;
-    margin-bottom: 14px;
+    font-size: 24px;
+    margin: 0;
   }
   .projects .project__review_body {
     font-size: 16px;
@@ -7163,16 +7201,15 @@ a.button:visited {
     padding-right: 33px;
   }
   .projects .project__review_author-name {
-    font-size: 20px;
+    font-size: 46px;
     margin-bottom: 8px;
   }
   .projects .project__review_author-position {
-    font-size: 14px;
+    font-size: 24px;
     max-width: 63%;
   }
   .projects .project__review_author-img {
-    max-width: 71px;
-    max-height: 71px;
+    width: 42%;
   }
 
   .footer__menu {
@@ -7627,7 +7664,7 @@ a.button:visited {
     top: calc(100% - 34px);
   }
   .cases-slider__item_nomination {
-    padding: 14px;
+    padding: 30px;
   }
   .cases-slider__item_nomination p {
     font-size: 12px;
@@ -8202,18 +8239,31 @@ a.button:visited {
     margin-bottom: 40px;
   }
   .client__cases_block {
-    padding: 20px 0;
-    -webkit-box-orient: vertical;
+    padding: 40px 0 20px;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     position: static;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .client__cases_block-name {
     margin-bottom: 20px;
+  }
+  .client__cases_block-parts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 180px;
+  }
+  .client__cases_block-parts__feature {
+    margin-bottom: 16px;
+  }
+  .client__cases_block-parts__feature::last-child {
+    margin-bottom: 0;
   }
   .client__cases_block:first-child:hover {
     -webkit-transition: none;
@@ -9175,8 +9225,8 @@ a.button:visited {
     border-radius: 29px;
   }
   .problems__review_rubr {
-    font-size: 12px;
-    margin-bottom: 22px;
+    font-size: 24px;
+    margin: 0;
   }
   .problems__review_body {
     font-size: 14px;
@@ -9255,8 +9305,8 @@ a.button:visited {
     border-radius: 30px;
   }
   .projects .project__review_rubr {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 24px;
+    margin: 0;
   }
   .projects .project__review_body {
     font-size: 18px;
@@ -9281,11 +9331,12 @@ a.button:visited {
     margin: 40px 0 0 0;
   }
   .projects .project__review_author-name {
-    font-size: 20px;
+    font-size: 24px;
+    margin: 0;
   }
   .projects .project__review_author-position {
-    font-size: 18px;
-    max-width: 100%;
+    font-size: 14px;
+    max-width: 72%;
   }
   .projects .project__review_author-position-client {
     font-size: 14px;
@@ -9407,6 +9458,9 @@ a.button:visited {
   }
   .projects-client {
     margin-bottom: 40px;
+  }
+  .projects.some-projects {
+    padding-top: 0;
   }
 
   .news {
@@ -9662,6 +9716,8 @@ a.button:visited {
   .projects .project__review_top {
     min-height: 210px !important;
     padding: 20px 30px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .projects .project__review_top-img._5ka {
     bottom: -17px;
@@ -9672,18 +9728,19 @@ a.button:visited {
   }
   .projects .project__review_author-name {
     font-size: 24px;
-    margin: 30px 0 10px;
+    margin: 0;
   }
   .projects .project__review_author-position {
     font-size: 14px;
     left: auto;
+    top: 30%;
   }
   .projects .project__review_author-position._5ka {
     max-width: 60%;
     font-size: 12px;
   }
   .projects .project__review_body {
-    padding: 20px 0 20px 30px;
+    padding: 20px 10px 20px 30px;
     margin: 0;
   }
   .projects .project__article_small {
@@ -9701,22 +9758,39 @@ a.button:visited {
     grid-template-rows: 1fr;
   }
 
+  .feedback {
+    position: relative;
+  }
   .feedback__comment {
     font-size: 9px;
   }
   .feedback h2 {
     font-size: 24px;
+    width: 70% !important;
   }
   .feedback_compact {
-    padding: 10px 30px 25px 15px;
+    padding: 10px 30px 25px 15px !important;
+    border-radius: 30px 30px 0 0;
+    height: 240px;
+  }
+  .feedback::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    top: 210px;
+    left: 0;
+    border-radius: 30px 30px 0 0;
   }
 
   .footer__social {
-    width: 70%;
+    width: 100%;
+    margin: 24px 0 42px;
   }
   .footer__menu a,
 .footer__menu span {
-    width: 100%;
+    width: 50%;
   }
 
   .service__feature_inner-case {
@@ -9736,24 +9810,23 @@ a.button:visited {
     margin-bottom: 40px;
   }
   .client__present {
+    min-height: 270px;
+  }
+  .client__present.venn {
     min-height: 360px;
+    margin-bottom: 0;
   }
   .client__present-play {
     width: 12vw !important;
     left: 44vw !important;
     top: 28vw;
   }
-  .client__info .cases-slider__item {
-    height: 50vw;
-  }
   .client__info .cases-slider__item_nomination {
     width: 100%;
-    height: 192px;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    padding-left: 23px;
-    padding-right: 23px;
+    padding: 18px 8px 16px 24px;
   }
   .client__info .cases-slider__item_nomination .h2 {
     font-size: 46px;
@@ -9790,8 +9863,27 @@ a.button:visited {
   .client__info_stats .client__info_stats-state {
     width: 100%;
   }
+  .client__cases_block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 20px 0;
+  }
   .client__cases_block-name {
     font-size: 24px;
+  }
+  .client__cases_block-parts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .client__cases_block-parts__feature {
+    margin-bottom: 0;
   }
 
   .request__lead {
