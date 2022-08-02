@@ -1960,6 +1960,12 @@ a.button.button_grey {
   border-radius: 42px;
   overflow: hidden;
 }
+.cases-slider.main {
+  border: #F0F0F0 3px solid;
+}
+.cases-slider.main .cases-slider__item_nomination {
+  background: #fff;
+}
 .cases-slider__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2034,7 +2040,7 @@ a.button.button_grey {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 5%;
 }
 .cases-slider__statics_dots {
   position: relative;
@@ -2140,7 +2146,7 @@ a.button.button_grey {
 .cases-slider-info__statics,
 .project-slider-article__statics,
 .problems-slider-groups__statics {
-  height: 100%;
+  height: 5%;
 }
 .cases-slider-info__statics_dots,
 .project-slider-article__statics_dots,
@@ -3266,11 +3272,11 @@ a.button.button_grey {
   position: relative;
 }
 .problems__item_videosection {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   position: static !important;
 }
 .problems__item_videosection .client__present-video {
-  top: 0 !important;
+  top: 0;
 }
 .problems-complex {
   overflow: hidden;

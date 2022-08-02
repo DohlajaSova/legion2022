@@ -371,6 +371,39 @@ docReady(function() {
         }
     }
 
+    // обработка свайпа
+    let slider = document.querySelector('.cases-slider');
+    let active = document.querySelectorAll('.cases__case .active') || document.querySelectorAll('.project-with-slider .active');
+    slider.addEventListener('touchstart', (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+    }, false);
+    slider.addEventListener('touchend', (e) => {
+        touchendX = e.changedTouches[0].screenX;
+        // console.log(active, touchstartX, touchendX)
+        if (touchstartX > touchendX) {
+            active.forEach((el) => {                
+                const next = el.nextElementSibling;
+                if (next) {
+                    el.classList.remove('active');
+                    next.classList.add('active');
+                } else {
+                    return;
+                }
+            });
+        } else {
+           active.forEach((el) => {                
+                const prev = el.previousElementSibling;
+                if (prev) {
+                    el.classList.remove('active');
+                    prev.classList.add('active');
+                } else {
+                    return;
+                }
+            }); 
+        }
+        active = document.querySelectorAll('.cases__case .active');
+    }, false);
+
     
     // слайдер с проектом
     let sliderDots = document.querySelectorAll(".js-cases-dots");
@@ -814,6 +847,12 @@ docReady(function() {
 	if (range != null){
 		document.querySelector(".range").classList.add('js');
 		
+		let outVal = document.createElement("input");
+		outVal.setAttribute('id', 'range');
+		outVal.setAttribute('name', 'range');
+		outVal.setAttribute('type', 'hidden');
+		range.appendChild(outVal);
+		
 		function rangeMonitor(e){
 			let _t;
 			if (e == undefined) _t = document.querySelectorAll('.range input[type="range"]')[0];
@@ -828,6 +867,9 @@ docReady(function() {
 			_p.style.setProperty(`--${_t.id}`, val);
 			_p.style.setProperty(`--lbl-${_t.id}`, lbl+"");
 			_p.style.setProperty(`--wd`, wdd); // 60 - padding
+			let aVal = document.getElementById('l').children[document.getElementById('a').value].getAttribute('label');
+			let bVal = document.getElementById('l').children[document.getElementById('b').value].getAttribute('label');
+			outVal.setAttribute('value', ''+aVal+'-'+bVal+' млн');
 		}
 	
 		document.querySelectorAll('.range input[type="range"]')[0].addEventListener('input', rangeMonitor, false);
@@ -925,7 +967,7 @@ docReady(function() {
     // круг с цифрами
     let circleText = document.querySelector(".circle-text");
     let circlePic = document.querySelector(".circle-pic");
-    let circleAbout = document.querySelector(".circle-about");
+    let circleAbout = document.querySelector(".about__animation_items");
     
     if (circlePic!= null) {
         circlePic.classList.add("rotating");
