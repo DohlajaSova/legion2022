@@ -938,6 +938,11 @@ a.button.button_grey {
   color: #fff;
 }
 
+.button.yaDiskUploader {
+  border-radius: 100px;
+  padding: 20px 60px;
+}
+
 .header {
   background-color: #fff;
   padding: 33px 0 83px;
@@ -1959,6 +1964,12 @@ a.button.button_grey {
   height: 100%;
   border-radius: 42px;
   overflow: hidden;
+}
+.cases-slider.main {
+  border: #F0F0F0 3px solid;
+}
+.cases-slider.main .cases-slider__item_nomination {
+  background: #fff;
 }
 .cases-slider__item {
   display: -webkit-box;
@@ -3266,11 +3277,11 @@ a.button.button_grey {
   position: relative;
 }
 .problems__item_videosection {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   position: static !important;
 }
 .problems__item_videosection .client__present-video {
-  top: 0 !important;
+  top: 0;
 }
 .problems-complex {
   overflow: hidden;
@@ -5815,6 +5826,31 @@ a.button.button_grey {
   background-size: contain;
 }
 
+.case__alfa_problems-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 40px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.case__alfa_problems-item__text {
+  color: #fff;
+  line-height: 130%;
+  margin: 0 0 40px 0;
+  font-size: 3vw;
+}
+.case__alfa_problems-item__img {
+  width: 100%;
+  padding: 0%;
+}
+
 .who-we-are__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7518,6 +7554,13 @@ a.button:visited {
   .case3__content_card-main {
     font-size: 32px;
   }
+
+  .case__alfa_problems-item {
+    padding: 25px;
+  }
+  .case__alfa_problems-item__text {
+    margin: 0 0 25px 0;
+  }
 }
 @media only screen and (max-width: 860px) {
   .projects__panels {
@@ -8961,6 +9004,14 @@ a.button:visited {
   }
   .case3__content_card-accent {
     font-size: 56px;
+  }
+
+  .case__alfa_problems-item {
+    padding: 40px;
+  }
+  .case__alfa_problems-item__text {
+    margin: 0 0 30px 0;
+    font-size: 5vw;
   }
 }
 @media only screen and (max-width: 550px) {

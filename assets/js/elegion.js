@@ -814,6 +814,12 @@ docReady(function() {
 	if (range != null){
 		document.querySelector(".range").classList.add('js');
 		
+		let outVal = document.createElement("input");
+		outVal.setAttribute('id', 'range');
+		outVal.setAttribute('name', 'range');
+		outVal.setAttribute('type', 'hidden');
+		range.appendChild(outVal);
+		
 		function rangeMonitor(e){
 			let _t;
 			if (e == undefined) _t = document.querySelectorAll('.range input[type="range"]')[0];
@@ -828,6 +834,9 @@ docReady(function() {
 			_p.style.setProperty(`--${_t.id}`, val);
 			_p.style.setProperty(`--lbl-${_t.id}`, lbl+"");
 			_p.style.setProperty(`--wd`, wdd); // 60 - padding
+			let aVal = document.getElementById('l').children[document.getElementById('a').value].getAttribute('label');
+			let bVal = document.getElementById('l').children[document.getElementById('b').value].getAttribute('label');
+			outVal.setAttribute('value', ''+aVal+'-'+bVal+' млн');
 		}
 	
 		document.querySelectorAll('.range input[type="range"]')[0].addEventListener('input', rangeMonitor, false);
@@ -925,7 +934,7 @@ docReady(function() {
     // круг с цифрами
     let circleText = document.querySelector(".circle-text");
     let circlePic = document.querySelector(".circle-pic");
-    let circleAbout = document.querySelector(".circle-about");
+    let circleAbout = document.querySelector(".about__animation_items");
     
     if (circlePic!= null) {
         circlePic.classList.add("rotating");
@@ -980,7 +989,7 @@ docReady(function() {
           /* For each element, create a new DIV that will act as the selected item: */
           divCreated = document.createElement("DIV");
           divCreated.setAttribute("class", "select-selected");
-          divCreated.innerHTML = selectsByTag.options[selectsByTag.selectedIndex].innerHTML;
+          divCreated.innerHTML = selectsByTag?.options[selectsByTag.selectedIndex]?.innerHTML;
           
 		  //divCreated.innerHTML = Array.prototype.slice.call(selectsByTag.selectedOptions);
           selectsByClass[i].appendChild(divCreated);
@@ -1040,6 +1049,8 @@ docReady(function() {
                 for (i = 0; i < sl; i++) {
                     if (selectsByTagDiv3.options[i].innerHTML == this.innerHTML) {
                         selectsByTagDiv3.selectedIndex = i;
+                        selectsByTagDiv3.value = '1,2';
+                        const val = selectsByTagDiv3.value;
                         if(!isMultiple){
                             pvsSibling.innerHTML = this.innerHTML
                         }
