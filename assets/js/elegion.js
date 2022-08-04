@@ -286,13 +286,13 @@ function checkFieldValid(element) {
         addListenerInput(element);
         return false;
     }
-    if(element.type === 'tel'){
-        let v = element.value.replace(/\D+/g,"");
-        if(v.length != 10) {
-            addListenerInput(element);
-            return false;
-        }
-    }
+    // if(element.type === 'tel'){
+    //     let v = element.value.replace(/\D+/g,"");
+    //     if(v.length != 10) {
+    //         addListenerInput(element);
+    //         return false;
+    //     }
+    // }
     if(element.type === 'email'){
         var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         if(!element.value.match(pattern)){
@@ -370,39 +370,6 @@ docReady(function() {
             else backButton.classList.remove("hide");
         }
     }
-
-    // обработка свайпа
-    let slider = document.querySelector('.cases-slider');
-    let active = document.querySelectorAll('.cases__case .active') || document.querySelectorAll('.project-with-slider .active');
-    slider.addEventListener('touchstart', (e) => {
-        touchstartX = e.changedTouches[0].screenX;
-    }, false);
-    slider.addEventListener('touchend', (e) => {
-        touchendX = e.changedTouches[0].screenX;
-        // console.log(active, touchstartX, touchendX)
-        if (touchstartX > touchendX) {
-            active.forEach((el) => {                
-                const next = el.nextElementSibling;
-                if (next) {
-                    el.classList.remove('active');
-                    next.classList.add('active');
-                } else {
-                    return;
-                }
-            });
-        } else {
-           active.forEach((el) => {                
-                const prev = el.previousElementSibling;
-                if (prev) {
-                    el.classList.remove('active');
-                    prev.classList.add('active');
-                } else {
-                    return;
-                }
-            }); 
-        }
-        active = document.querySelectorAll('.cases__case .active');
-    }, false);
 
     
     // слайдер с проектом

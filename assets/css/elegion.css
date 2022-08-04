@@ -1965,12 +1965,6 @@ a.button.button_grey {
   border-radius: 42px;
   overflow: hidden;
 }
-.cases-slider.main {
-  border: #F0F0F0 3px solid;
-}
-.cases-slider.main .cases-slider__item_nomination {
-  background: #fff;
-}
 .cases-slider__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1980,10 +1974,11 @@ a.button.button_grey {
 .cases-slider__item_nomination {
   width: 50%;
   height: 100%;
-  padding: 24px 32px;
+  padding: 42px 32px;
   background: #F0F0F0;
   border-radius: 42px;
   text-align: left;
+  z-index: 3;
 }
 .cases-slider__item_nomination * {
   opacity: 0;
@@ -2011,16 +2006,12 @@ a.button.button_grey {
   transition: visibility 0s, opacity 2s linear;
 }
 .cases-slider__item_project-photo {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   height: 100%;
-  max-height: 40%;
   font-size: 0;
 }
 .cases-slider__item_project-photo img {
-  max-height: 100%;
+  height: 100%;
+  float: right;
 }
 .cases-slider__item_project-link {
   width: 100%;
@@ -2045,7 +2036,7 @@ a.button.button_grey {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 5%;
+  height: 100%;
 }
 .cases-slider__statics_dots {
   position: relative;
@@ -2053,6 +2044,7 @@ a.button.button_grey {
   top: calc(100% - 47px);
   width: 50%;
   list-style: none;
+  z-index: 5;
 }
 .cases-slider__statics_dots ul {
   position: absolute;
@@ -2151,7 +2143,7 @@ a.button.button_grey {
 .cases-slider-info__statics,
 .project-slider-article__statics,
 .problems-slider-groups__statics {
-  height: 5%;
+  height: 100%;
 }
 .cases-slider-info__statics_dots,
 .project-slider-article__statics_dots,
@@ -2798,6 +2790,26 @@ a.button.button_grey {
 .case3__content_card:first-child {
   background: url("img/case3-content-foreground.png") bottom left no-repeat #1E2738;
   background-size: contain;
+}
+.case3__content_card:first-child.casevenn {
+  background: url("img/case_venn-content-foreground.png") bottom left no-repeat #1E2738;
+  background-size: contain;
+}
+
+.casevenn__content {
+  display: grid;
+  row-gap: 20px;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  grid-template-columns: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .who-we-are__content {
@@ -3587,7 +3599,7 @@ a.button.button_grey {
 .projects .project__review_author-position {
   font-size: 24px;
   color: #1E2738;
-  max-width: 65%;
+  max-width: 55%;
   left: 40px;
   z-index: 3;
 }
@@ -3976,6 +3988,8 @@ a.button.button_grey {
 }
 .news__button {
   margin-top: 59px;
+  width: 50%;
+  margin-left: 50%;
 }
 .news__button .button {
   width: 100%;
@@ -3984,13 +3998,34 @@ a.button.button_grey {
   width: 24%;
   position: relative;
   text-decoration: none;
+  margin-bottom: 40px;
+}
+.news .news-item.txt {
+  background: #84AEFF;
+  padding: 100px 30px 0;
+  border-radius: 42px;
+}
+.news .news-item.txt > * {
+  color: #fff;
+  margin-bottom: 20px;
 }
 .news .news-item_wide {
   width: 49%;
 }
+.news .news-item__img {
+  border-radius: 42px;
+  overflow: hidden;
+}
 .news .news-item__img img {
   display: block;
   width: 100%;
+}
+.news .news-item__tag {
+  margin: 20px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #949191;
 }
 .news .news-item__date {
   background: #fff;
@@ -4006,11 +4041,11 @@ a.button.button_grey {
 .news .news-item__head {
   font-size: 24px;
   color: #000;
-  margin: 20px 0 10px;
+  margin: 10px 0;
 }
 .news .news-item__lead {
-  color: #8F8B8B;
-  font-size: 12px;
+  color: #1E2738;
+  font-size: 16px;
 }
 
 .vacancies {
@@ -9522,6 +9557,8 @@ a.button:visited {
   }
   .news__button {
     margin-top: 20px;
+    width: 100%;
+    margin-left: 0;
   }
   .news .news-item {
     width: 100%;
