@@ -286,13 +286,13 @@ function checkFieldValid(element) {
         addListenerInput(element);
         return false;
     }
-    if(element.type === 'tel'){
-        let v = element.value.replace(/\D+/g,"");
-        if(v.length != 10) {
-            addListenerInput(element);
-            return false;
-        }
-    }
+    // if(element.type === 'tel'){
+    //     let v = element.value.replace(/\D+/g,"");
+    //     if(v.length != 10) {
+    //         addListenerInput(element);
+    //         return false;
+    //     }
+    // }
     if(element.type === 'email'){
         var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         if(!element.value.match(pattern)){
@@ -1027,7 +1027,7 @@ docReady(function() {
           /* For each element, create a new DIV that will act as the selected item: */
           divCreated = document.createElement("DIV");
           divCreated.setAttribute("class", "select-selected");
-          divCreated.innerHTML = selectsByTag.options[selectsByTag.selectedIndex].innerHTML;
+          divCreated.innerHTML = selectsByTag?.options[selectsByTag.selectedIndex]?.innerHTML;
           
 		  //divCreated.innerHTML = Array.prototype.slice.call(selectsByTag.selectedOptions);
           selectsByClass[i].appendChild(divCreated);
@@ -1087,6 +1087,8 @@ docReady(function() {
                 for (i = 0; i < sl; i++) {
                     if (selectsByTagDiv3.options[i].innerHTML == this.innerHTML) {
                         selectsByTagDiv3.selectedIndex = i;
+                        selectsByTagDiv3.value = '1,2';
+                        const val = selectsByTagDiv3.value;
                         if(!isMultiple){
                             pvsSibling.innerHTML = this.innerHTML
                         }
