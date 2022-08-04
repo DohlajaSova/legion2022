@@ -374,10 +374,10 @@ docReady(function() {
     // обработка свайпа
     let slider = document.querySelector('.cases-slider');
     let active = document.querySelectorAll('.cases__case .active') || document.querySelectorAll('.project-with-slider .active');
-    slider.addEventListener('touchstart', (e) => {
+    if (slider) slider.addEventListener('touchstart', (e) => {
         touchstartX = e.changedTouches[0].screenX;
     }, false);
-    slider.addEventListener('touchend', (e) => {
+    if (slider) slider.addEventListener('touchend', (e) => {
         touchendX = e.changedTouches[0].screenX;
         // console.log(active, touchstartX, touchendX)
         if (touchstartX > touchendX) {
