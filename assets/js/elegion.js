@@ -489,6 +489,25 @@ docReady(function() {
             });
         }
     }
+    
+    let sliderCases = document.querySelectorAll(".js-cases-slider-groups");
+    let sliderCasesLeftArrow = document.querySelectorAll(".js-cases-groups-arrows-left");
+    let sliderCasesRightArrow = document.querySelectorAll(".js-cases-groups-arrows-right");
+    let sliderCasesSlider = new Array();
+    if (sliderCases.length > 0)
+    {
+        for (i=0; i<sliderCases.length; i++){
+            sliderCasesSlider[i] = tns({
+                container: sliderCases[i],  
+                items: 1,
+                nav: false,
+                prevButton: sliderCasesLeftArrow[i],
+                nextButton: sliderCasesRightArrow[i],
+                mouseDrag: true,
+                slideBy: 'page'
+            });
+        }
+    }
 
     // слайдер со статьями
     if (document.querySelectorAll(".js-project-article").length > 0)
@@ -1087,26 +1106,28 @@ docReady(function() {
                 for (i = 0; i < sl; i++) {
                     if (selectsByTagDiv3.options[i].innerHTML == this.innerHTML) {
                         selectsByTagDiv3.selectedIndex = i;
-                        selectsByTagDiv3.value = '1,2';
-                        const val = selectsByTagDiv3.value;
                         if(!isMultiple){
                             pvsSibling.innerHTML = this.innerHTML
                         }
                         optionSelected = this.parentNode.getElementsByClassName("same-as-selected");
                         yl = optionSelected.length;
                         let removed = false;
+                        let removedInd = false;
+                        selectsByTagDiv3.options[i].setAttribute('selected', 'selected');
                         if(isMultiple) {
                             for (k = 0; k < yl; k++) {
                                 if(optionSelected[k]?.innerHTML == this.innerHTML) {
                                     removed = optionSelected[k]?.innerHTML; //  check why triggering error
+                                    removedInd = k; //  check why triggering error
                                     optionSelected[k]?.classList.remove("same-as-selected");
+                                    selectsByTagDiv3.options[i].removeAttribute('selected');
                                 }
                             }
                         } else {
                             for (k = 0; k < yl; k++) {
                                 optionSelected[k].classList.remove("same-as-selected");
                             }
-                            this.classList.add("same-as-selected");
+                            this.classList.add("same-as-selected");                         
 
                         }
                         if(isMultiple){
