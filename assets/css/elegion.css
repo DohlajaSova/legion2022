@@ -3613,6 +3613,9 @@ a.button.button_grey {
   height: 100%;
   padding-bottom: 100%;
 }
+.projects .project_tall-5ka {
+  padding-bottom: 115%;
+}
 .projects .project_tall-client {
   padding-bottom: calc(100% + 17px);
 }
@@ -3681,7 +3684,7 @@ a.button.button_grey {
   padding: 40px;
 }
 .projects .project__review_author-img {
-  width: 45%;
+  width: 40%;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -4070,9 +4073,6 @@ a.button.button_grey {
 .feedback_compact .feedback__button .pulse-button {
   margin: auto;
 }
-.feedback_compact .feedback__button .pulse-button:before {
-  font-size: 64px;
-}
 .feedback.feedback_applicants {
   background: url("img/vacancy-bg2.svg") left -40% top -80px no-repeat #2864D9;
   background-size: auto calc(100% + 200px);
@@ -4088,7 +4088,7 @@ a.button.button_grey {
   background-color: #fff;
 }
 .feedback.feedback_applicants.feedback_compact .feedback__button .pulse-button:before {
-  color: #2864D9;
+  content: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.0068 2.5332V37.7909' stroke='%232864D9' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M37.6386 19.7714L2.38088 19.7714' stroke='%232864D9' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 .feedback.feedback_applicants.feedback_compact .feedback__button .pulse-button__rings {
   border: 1px solid #fff;
@@ -4107,7 +4107,7 @@ a.button.button_grey {
   background-color: #fff;
 }
 .feedback.feedback_client.feedback_compact .feedback__button .pulse-button:before {
-  color: #2864D9;
+  content: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.0068 2.5332V37.7909' stroke='%232864D9' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M37.6386 19.7714L2.38088 19.7714' stroke='%232864D9' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 .feedback.feedback_client.feedback_compact .feedback__button .pulse-button__rings {
   border: 1px solid #fff;
@@ -5727,8 +5727,10 @@ a.button.button_grey {
   margin-bottom: 80px;
   position: relative;
   overflow: hidden;
-  height: 100vh;
   max-height: 740px;
+}
+.client__present.venn {
+  height: 100vh;
 }
 .client__present > img {
   width: 100%;
@@ -5873,10 +5875,8 @@ a.button.button_grey {
           align-items: center;
   color: #1E2738 !important;
   text-decoration: none !important;
-}
-.client__cases_block.inactive {
-  padding-left: 0px;
-  color: #949191;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 .client__cases_block-name {
   font-size: 46px;
@@ -5904,23 +5904,10 @@ a.button.button_grey {
 .client__cases_block:last-child {
   border-bottom: 1px solid #1E2738;
 }
-.client__cases_block:first-child {
-  -webkit-transition: all 0.25s linear;
-  transition: all 0.25s linear;
-}
-.client__cases_block:first-child:hover {
-  cursor: url("img/cursor-client.jpg"), auto;
+.client__cases_block:not(.inactive):hover {
   padding-left: 40px;
 }
-.client__cases_block-tele2:first-child:hover {
-  cursor: url("img/case-tele2.png"), auto;
-  padding-left: 40px;
-}
-.client__cases_block-venn:first-child:hover {
-  cursor: url("img/cursor-client-venn.png"), auto;
-  padding-left: 40px;
-}
-.client__cases_block:first-child:before {
+.client__cases_block:not(.inactive):before {
   margin-right: 20px;
   position: absolute;
   z-index: 0;
@@ -5935,7 +5922,7 @@ a.button.button_grey {
   border-radius: 50%;
   background-color: #2864D9;
 }
-.client__cases_block:first-child:hover:before {
+.client__cases_block:hover:before {
   opacity: 1;
 }
 .client .principles__content {
@@ -6228,11 +6215,9 @@ a.button.button_grey {
   z-index: 1000;
 }
 .pulse-button:before {
-  content: "+";
+  content: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.0068 2.5332V37.7909' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M37.6386 19.7714L2.38088 19.7714' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
   position: absolute;
-  color: #fff;
-  font-size: 72px;
-  font-family: auto;
+  top: 10px;
 }
 
 .pulse-button__text {
@@ -6601,6 +6586,9 @@ a.button.button_grey {
   .projects .project__review_author {
     padding: 33px 43px 35px;
   }
+  .projects .project__review_author-img {
+    width: 35%;
+  }
   .projects .project__review_rubr {
     margin-bottom: 25px;
   }
@@ -6626,6 +6614,9 @@ a.button.button_grey {
   }
   .projects .project__article_small .project-article_link-arrow {
     font-size: 15px;
+  }
+  .projects .project_tall-5ka {
+    padding-bottom: 120%;
   }
   .projects_case .project__review_body {
     width: 90%;
@@ -6901,6 +6892,15 @@ a.button:visited {
   }
   .projects .project__review_author-position {
     max-width: 100%;
+  }
+  .projects .project_tall-5ka {
+    padding-bottom: 130%;
+  }
+  .projects .project_tall-5ka .project__review_author-img {
+    width: 25%;
+  }
+  .projects .project_tall-5ka .project__review_author-position {
+    max-width: 80%;
   }
 
   .dummy-inprocess__text {
@@ -7203,6 +7203,16 @@ a.button:visited {
 
   .case3 .problems__item {
     padding-bottom: 120% !important;
+  }
+
+  .projects .project_tall-5ka {
+    padding-bottom: 150%;
+  }
+  .projects .project_tall .project__review_author-img {
+    width: 25%;
+  }
+  .projects .project_tall .project__review_author-position {
+    max-width: 80%;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -7861,6 +7871,7 @@ a.button:visited {
   .project__review_author-name {
     font-size: 18px;
   }
+
   .case2 .project_tall:first-child {
     padding-bottom: 65% !important;
   }
@@ -7929,6 +7940,9 @@ a.button:visited {
   .projects .project_tall {
     grid-row-end: unset;
     height: 0;
+  }
+  .projects .project_tall-5ka {
+    padding-bottom: 100%;
   }
   .projects .project_tall-with-slider {
     margin-bottom: 54px;
@@ -8039,10 +8053,6 @@ a.button:visited {
     min-height: 0;
     height: 184px;
     top: -20px;
-  }
-  .feedback_compact .feedback__button .pulse-button {
-    width: 40px;
-    height: 40px;
   }
   .feedback_compact .feedback__button .pulse-button:before {
     font-size: 32px;
@@ -8262,6 +8272,9 @@ a.button:visited {
   .project__review_body-client {
     font-size: 22px !important;
     margin-top: 30px;
+  }
+  .project_tall-5ka {
+    padding-bottom: 120%;
   }
 
   .principles__video_play {
@@ -9853,6 +9866,9 @@ a.button:visited {
   .projects .project_tall {
     height: auto;
     padding-bottom: 0;
+  }
+  .projects .project_tall-5ka .project__review_top-client {
+    padding-bottom: 60px !important;
   }
   .projects .project_tall .project__review_container {
     position: relative;
