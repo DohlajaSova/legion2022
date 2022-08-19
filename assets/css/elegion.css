@@ -2540,6 +2540,7 @@ a.button.button_grey {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 60px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -2549,7 +2550,7 @@ a.button.button_grey {
 .principles__content_text {
   width: 49%;
   padding-right: 4%;
-  margin-bottom: 0px;
+  margin-bottom: 90px;
   color: #1E2738;
 }
 .principles__content_text *:last-child {
