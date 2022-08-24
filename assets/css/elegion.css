@@ -8698,6 +8698,18 @@ a.button:visited {
     padding-top: 233px;
   }
 
+  .body_about .top {
+    background: url(img/about768.jpg) top center no-repeat;
+    background-size: cover;
+    min-height: 1024px;
+  }
+  .body_about .top > .container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 233px;
+  }
+
   .top_case .top__image-desktop {
     display: none;
   }
