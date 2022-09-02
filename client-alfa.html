@@ -76,8 +76,8 @@
   ﻿<div class="client">
   <div class="container">
       <ul class="client__breadcrumbs breadcrumbs">
-        <li><a href="/portfolio.html">Клиенты и кейсы</a></li>
-        <li><span>Клиент: Альфа-Банк</span></li>
+        <li><a href="/portfolio.html">Портфолио</a></li>
+        <li><span>Альфа-Банк</span></li>
       </ul>
   </div>
   
@@ -107,7 +107,7 @@
           </div>
           <div class="client__info_stats-state">
             <p class="client__info_stats-state__prop">Сотрудничество</p>
-            <p class="client__info_stats-state__value">с 201 года</p>
+            <p class="client__info_stats-state__value">с 2016 года</p>
           </div>
           <div class="client__info_stats-state">
             <p class="client__info_stats-state__prop">Работы</p>
@@ -209,20 +209,20 @@
                   alt="Альфа-Банк"
                 />
                 <div class="project__review_rubr light">Отзыв</div>
-                <h3 class="project__review_author-name light">Виктор<br>Ефимов</h3>
+                <h3 class="project__review_author-name light">Виктор Ефимов</h3>
                 <div class="project__review_author-position light">
                   менеджер продукта<br>«Альфа-Инвестиции»
                 </div>
               </div>
               <div class="project__review_body project__review_body-client">
-                Горжусь нашей командой и результатами в развитии продукта. Мы достигли наших целей и перевыполнили план, привлекли новичков-инвесторов и продолжаем делать приложение доступным для каждого пользователя. Сила в людях. Сила в команде.
+                Горжусь нашей командой и результатами в развитии продукта. Мы достигли наших целей и перевыполнили план, привлекли новичков-инвесторов и продолжаем делать приложение доступным для каждого пользователя.<br/><br/>Сила в людях. Сила в команде.
               </div>
             </div>
           </div>
         </div>
         <div class="project client cases__case cases__case-client cases__case_info">
           <div class="cases__case_container">
-            <span class="cases__case_number">№1</span>
+            <span class="cases__case_number cases__case_number-large">№1</span>
             <span class="cases__case_name"
               >Золотое приложение 2020 номинация «Инвестиции и коммерция»</span
             >
@@ -246,7 +246,7 @@
         </div>
         <div class="project project_wide-client">
           <a
-            href="#"
+            href="https://lenta.ru/news/2021/04/22/alfainv/"
             target="_blank"
             class="project__article project__article_small project-article project__article_small-client"
           >
@@ -433,16 +433,15 @@
                             <span class="request__form_error">Введите номер для связи</span>
                         </div>
                         <div class="request__form_item">
-                            <input name="mail" type="email" class="request__form_input" placeholder="Почта">
-                            <label for="mail" class="request__form_label">Почта</label>
+                            <input name="email" type="email" class="request__form_input" placeholder="Почта">
+                            <label for="email" class="request__form_label">Почта</label>
                             <span class="request__form_error">Введите вашу почту</span>
                         </div>
                     </div>
-
                     <h3>Что нужно сделать?</h3>
                     <div class="request__select select select-inline select-inline_wide" id="multiple-container">
-                        <select id="multiple-4" name="Выберите вариант" multiple>
-                            <option value="Разработать приложение с нуля" selected="selected">Разработать приложение с&nbsp;нуля</option>
+                        <select id="multiple-4" name="todo" multiple>
+                            <option value="Разработать приложение с нуля" selected>Разработать приложение с&nbsp;нуля</option>
                             <option value="Провести аудит МП">Провести аудит&nbsp;МП</option>
                             <option value="Проанализировать конкурентов">Проанализировать конкурентов</option>
                             <option value="Проработать дизайн-решение">Проработать дизайн-решение</option>
@@ -450,19 +449,17 @@
                             <option value="Другое">Другое</option>
                         </select>
                     </div>
-                    <h3>О проекте</h3>
+                    <h3>Есть ли описание проекта?</h3>
                     <div class="request__textarea request__file">
-                        <textarea id="project_desc" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
-                        <label class="button button_grey button_wide" for="request-file">Загрузите файл, не&nbsp;более 15&nbsp;Мб</label>
-                        <input type="file" id="request-file">
+                        <textarea id="project_desc" name="message" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
+                        [[!YandexDiskUploader? &inputId=`af_files`]]
                     </div>
-
                     <div class="request__comment-container">
                         <div class="request__comment">
-                          Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
+                            Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
                         </div>
                         <div class="request__button">
-                          <button class="button button_white js-popup-feedback-send">Отправить</button>
+                            <button class="button button_white js-popup-feedback-send">Отправить</button>
                         </div>
                     </div>
                 </div>
@@ -477,7 +474,8 @@
     </div>
 </div>
 
-	<div class="bottom-dummy"></div>
+
+	<!-- <div class="bottom-dummy"></div> -->
 </div>
 <footer class="footer cleared">
     <a href="#top" class="back js-top hide"></a>
