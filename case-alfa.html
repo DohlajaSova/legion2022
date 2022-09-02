@@ -80,7 +80,7 @@
             <li><a href="/client-alfa.html">Альфа-Банк</a></li>
             <li><span>Портфель</span></li>
         </ul>
-        <h1>Приложение «Альфа-Инвестиции».<br>Портфель</h1>
+        <h1 class="h2">Приложение «Альфа-Инвестиции».<br>Портфель</h1>
         
         <div class="top__tags">
             <span>#комплекснаяразработка</span>
@@ -98,7 +98,7 @@
     <div class="container">
         <div class="principles__content">
             <div class="principles__content_head">
-                <h2>Всё для&nbsp;инвестиций</h2>
+                <h3>Всё для&nbsp;инвестиций</h3>
             </div>
             <div class="principles__content_text">
                 <p>В&nbsp;приложении пользователь может сформировать инвестиционный портфель, покупать и&nbsp;продавать акции
@@ -169,10 +169,10 @@
                 <h3>Сбалансированный<br/>портфель</h3>
             </div>
             <div class="principles__content_text">
-                <p>А&nbsp;также в&nbsp;online-режиме отслеживать котировки и&nbsp;получать уведомления об&nbsp;изменении цен.</p>
-                <p>Пользователь может формировать инвестиционный портфель: покупать и&nbsp;продавать акции, валюту, облигации,
+                <p>Пользователь может формировать инвестиционный портфель: покупать и&nbsp;продавать акции, валюту, облигации,
                     фьючерсы, ПИФы, БПИФы и&nbsp;ETF на&nbsp;бирже.
                 </p>
+                <p>А&nbsp;также в&nbsp;online-режиме отслеживать котировки и&nbsp;получать уведомления об&nbsp;изменении цен.</p>
             </div>
         </div>
     </div>
@@ -225,7 +225,7 @@
             </div>
             </div>
             <div class="problems__item problems__item_bg9">
-                <h3>Настройки конструктора</h3>
+                <h3>Все виды инвестиций</h3>
                 <ul class="case-stages__list">
                     <li>Акции</li>
                     <li>Валюта</li>
@@ -261,7 +261,7 @@
                             <ul class="case-stages__list">
                                 <li>Открыть брокерский счёт в&nbsp;приложении и&nbsp;пополнять его&nbsp;напрямую со&nbsp;своего банковского счёта.</li>
                                 <li>Просматривать информацию о&nbsp;прибыли и&nbsp;убытках от&nbsp;приобретённых акций.</li>
-                                <li>Проверить статус заявок на&nbsp;покупку или&nbsp;продажу акций.</li>
+                                <li>Проверить статус заявок на&nbsp;покупку или&nbsp;продажу акций.</li>
                                 <li>Узнать дату выплаты дивидендов во&nbsp;вкладке «Купоны».</li>
                                 <li>Вывести с&nbsp;брокерского счёта начисленные дивиденды или&nbsp;средства от&nbsp;продажи ценных бумаг и&nbsp;валюты.
                                 </li>
@@ -502,16 +502,15 @@
                             <span class="request__form_error">Введите номер для связи</span>
                         </div>
                         <div class="request__form_item">
-                            <input name="mail" type="email" class="request__form_input" placeholder="Почта">
-                            <label for="mail" class="request__form_label">Почта</label>
+                            <input name="email" type="email" class="request__form_input" placeholder="Почта">
+                            <label for="email" class="request__form_label">Почта</label>
                             <span class="request__form_error">Введите вашу почту</span>
                         </div>
                     </div>
-
                     <h3>Что нужно сделать?</h3>
                     <div class="request__select select select-inline select-inline_wide" id="multiple-container">
-                        <select id="multiple-4" name="Выберите вариант" multiple>
-                            <option value="Разработать приложение с нуля" selected="selected">Разработать приложение с&nbsp;нуля</option>
+                        <select id="multiple-4" name="todo" multiple>
+                            <option value="Разработать приложение с нуля" selected>Разработать приложение с&nbsp;нуля</option>
                             <option value="Провести аудит МП">Провести аудит&nbsp;МП</option>
                             <option value="Проанализировать конкурентов">Проанализировать конкурентов</option>
                             <option value="Проработать дизайн-решение">Проработать дизайн-решение</option>
@@ -519,19 +518,17 @@
                             <option value="Другое">Другое</option>
                         </select>
                     </div>
-                    <h3>О проекте</h3>
+                    <h3>Есть ли описание проекта?</h3>
                     <div class="request__textarea request__file">
-                        <textarea id="project_desc" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
-                        <label class="button button_grey button_wide" for="request-file">Загрузите файл, не&nbsp;более 15&nbsp;Мб</label>
-                        <input type="file" id="request-file">
+                        <textarea id="project_desc" name="message" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
+                        [[!YandexDiskUploader? &inputId=`af_files`]]
                     </div>
-
                     <div class="request__comment-container">
                         <div class="request__comment">
-                          Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
+                            Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
                         </div>
                         <div class="request__button">
-                          <button class="button button_white js-popup-feedback-send">Отправить</button>
+                            <button class="button button_white js-popup-feedback-send">Отправить</button>
                         </div>
                     </div>
                 </div>
@@ -546,7 +543,8 @@
     </div>
 </div>
 
-	<div class="bottom-dummy"></div>
+
+	<!-- <div class="bottom-dummy"></div> -->
 </div>
 <footer class="footer cleared">
     <a href="#top" class="back js-top hide"></a>
