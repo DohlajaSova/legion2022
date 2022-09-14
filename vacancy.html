@@ -31,7 +31,7 @@
     <a href="/portfolio.html">портфолио</a>
     <a href="/career.html">карьера</a>
     <a href="/contacts.html">контакты</a>
-    <a href="https://www.e-legion.ru/" class="header__mmenu_lang">←&nbsp;старая&nbsp;версия</a>
+    <a href="https://old.e-legion.ru/" target="_blank" class="header__mmenu_lang">←&nbsp;старая&nbsp;версия</a>
 </div>
 		</div>
 	</header>
@@ -45,7 +45,7 @@
             <a href="" class="js-top-menu-inner"></a>
         </div>
         <div class="pmenu__mmenu">
-            <a href="https://www.e-legion.ru/" class="header__mmenu_lang">←&nbsp;старая&nbsp;версия</a>
+            <a href="https://old.e-legion.ru/" target="_blank" class="header__mmenu_lang">←&nbsp;старая&nbsp;версия</a>
         </div>
     </div>
     <div class="container">
@@ -174,7 +174,7 @@
                 </div>
                 <div class="feedback__form">
                     <div class="feedback__form_item">
-                        <input name="name" type="text" class="feedback__form_input feedback__form_input-placeholder" placeholder="Имя и фамилия">
+                        <input name="name" type="text" class="feedback__form_input feedback__form_input-placeholder" placeholder="Как вас зовут?">
                     </div>
                     <div class="feedback__form_item">
                         <input name="mail" type="email" class="feedback__form_input feedback__form_input-placeholder" placeholder="Электронная почта">
@@ -224,16 +224,15 @@
                             <span class="request__form_error">Введите номер для связи</span>
                         </div>
                         <div class="request__form_item">
-                            <input name="mail" type="email" class="request__form_input" placeholder="Почта">
-                            <label for="mail" class="request__form_label">Почта</label>
+                            <input name="email" type="email" class="request__form_input" placeholder="Почта">
+                            <label for="email" class="request__form_label">Почта</label>
                             <span class="request__form_error">Введите вашу почту</span>
                         </div>
                     </div>
-
                     <h3>Что нужно сделать?</h3>
                     <div class="request__select select select-inline select-inline_wide" id="multiple-container">
-                        <select id="multiple-4" name="Выберите вариант" multiple>
-                            <option value="Разработать приложение с нуля" selected="selected">Разработать приложение с&nbsp;нуля</option>
+                        <select id="multiple-4" name="todo" multiple>
+                            <option value="Разработать приложение с нуля" selected>Разработать приложение с&nbsp;нуля</option>
                             <option value="Провести аудит МП">Провести аудит&nbsp;МП</option>
                             <option value="Проанализировать конкурентов">Проанализировать конкурентов</option>
                             <option value="Проработать дизайн-решение">Проработать дизайн-решение</option>
@@ -241,19 +240,17 @@
                             <option value="Другое">Другое</option>
                         </select>
                     </div>
-                    <h3>О проекте</h3>
+                    <h3>Есть ли описание проекта?</h3>
                     <div class="request__textarea request__file">
-                        <textarea id="project_desc" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
-                        <label class="button button_grey button_wide" for="request-file">Загрузите файл, не&nbsp;более 15&nbsp;Мб</label>
-                        <input type="file" id="request-file">
+                        <textarea id="project_desc" name="message" placeholder="Краткая информация, которая поможет нам разобраться быстрее"></textarea>
+                        [[!YandexDiskUploader? &inputId=`af_files`]]
                     </div>
-
                     <div class="request__comment-container">
                         <div class="request__comment">
-                          Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
+                            Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с&nbsp;нашей политикой обработки персональных данных
                         </div>
                         <div class="request__button">
-                          <button class="button button_white js-popup-feedback-send">Отправить</button>
+                            <button class="button button_white js-popup-feedback-send">Отправить</button>
                         </div>
                     </div>
                 </div>
@@ -269,7 +266,8 @@
 </div>
 
 
-	<div class="bottom-dummy"></div>
+
+	<!-- <div class="bottom-dummy"></div> -->
 </div>
 <footer class="footer cleared">
     <a href="#top" class="back js-top hide"></a>

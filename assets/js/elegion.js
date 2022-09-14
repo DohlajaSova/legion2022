@@ -40,7 +40,7 @@ function closeAllSelect(elmnt) {
   selectSelected = document.getElementsByClassName("select-selected");
   xl = selectItems.length;
   yl = selectSelected.length;
-  for (i = 0; i < yl; i++) {
+        for (i = 0; i < yl; i++) {
     if (elmnt == selectSelected[i]) {
       arrNo.push(i)
     } else {
@@ -259,9 +259,9 @@ function vacanciesRefresh(limit){
                 vacanciesBlocks.children[i].classList.remove("not-shown");
         }
     }
-    if (shown <= limit)
+    if (shown <= limit && moreButton)
         moreButton.parentNode.classList.add("hide");
-    else
+    else if(moreButton)
         moreButton.parentNode.classList.remove("hide");
 }
 function vacanciesTransition(n, perpage) {
@@ -320,7 +320,7 @@ function addListenerInput(el) {
         el.removeEventListener("input", input, false);
     })
 }
-
+        
 docReady(function() {
     // фиксим хедер при скролле
     const stickyHeader = document.getElementsByClassName('header')[0];
@@ -523,6 +523,53 @@ docReady(function() {
         });
     }
     
+    // слайдер "на этом проекте мы сделали"
+    if (document.querySelectorAll(".js-we-did").length > 0)
+    {
+        let container = document.querySelector(".js-we-did");
+
+        if (windowWidth > 650){
+            let sliderTeam = tns({
+                container: '.js-we-did',
+                items: 4,
+                gutter: 15,
+                responsive: {
+                    320: {
+                        items: 2
+                    },
+                    992: {
+                        items: 4
+                    }
+                },
+                axis: "horizontal",
+                controls: false,
+                navPosition: 'bottom',
+                mouseDrag: true,
+                slideBy: 'page'
+            });
+        }
+        else{
+            let sliderTeam = tns({
+                container: '.js-we-did',
+                items: 4,
+                gutter: 15,
+                responsive: {
+                    320: {
+                        items: 2
+                    },
+                    992: {
+                        items: 4
+                    }
+                },
+                axis: "vertical",
+                controls: false,
+                navPosition: 'bottom',
+                mouseDrag: true,
+                slideBy: 'page'
+            });
+        }
+    }
+    
     // блок с кейсами
     if (document.querySelectorAll(".js-cases-container").length > 0)
     {
@@ -684,11 +731,13 @@ docReady(function() {
         let curLimit = document.querySelectorAll(".js-vacancies-container")[0].dataset.limit*1;
         let moreButton = document.querySelectorAll(".js-vacancies-more")[0];
         const transitionButtons = document.querySelectorAll(".js-vacancies-page");
-        moreButton.addEventListener("click", function(e){
-            e.preventDefault();
-            curLimit += 4;
-            vacanciesRefresh(curLimit);
-        })
+        if(moreButton){
+            moreButton.addEventListener("click", function(e){
+                e.preventDefault();
+                curLimit += 4;
+                vacanciesRefresh(curLimit);
+            })
+        }
         if(windowWidth > 480) {
             vacanciesRefresh(curLimit);
         } else {
@@ -717,7 +766,6 @@ docReady(function() {
             let options = e.target.parentNode.parentNode.childNodes[0];
                 e.preventDefault();
                 let selectedType = options.selectedOptions[0].value;
-
                 for (j=0; j<types.length; j++){
                     if (!types[j].includes("'" + selectedType + "'")){
                         vacanciesBlocks[0].children[j].classList.add("hide");
@@ -748,9 +796,10 @@ docReady(function() {
                     let sendAdjust = 0;
                     if (this.classList.contains("vacancy_send"))
                         sendAdjust = 120;
-                    vacancyTitle.style.top = -sendAdjust + vacanceNameHeight - vacancyContainerHeight + "px";
-                    vacancyBody.style.top = -sendAdjust + vacanceNameHeight - vacancyContainerHeight + "px";
-                    vacancyBody.style.height = sendAdjust + vacancyContainerHeight - vacanceNameHeight + 92 + "px";
+                        getup = -55;
+                        vacancyTitle.style.top = getup -sendAdjust + vacanceNameHeight - vacancyContainerHeight + "px";
+                        vacancyBody.style.top = getup -sendAdjust + vacanceNameHeight - vacancyContainerHeight + "px";
+                        vacancyBody.style.height = -getup +sendAdjust + vacancyContainerHeight - vacanceNameHeight + 92 + "px";
                 }, false);
                 vacancyBlocks[i].addEventListener("mouseout", function(e){
                     e.preventDefault();
@@ -918,9 +967,6 @@ docReady(function() {
         }, false);
     }
     
-    
-    // обработка форм
- 
     // выпадающая форма обратной связи
     let feedbackOpener = document.querySelectorAll(".js-popup-feedback-open");
     let feedbackCloser = document.querySelector(".js-popup-feedback-close");
@@ -954,7 +1000,6 @@ docReady(function() {
             feedbackBodyContent.classList.remove("popup-feedback__content_success");
         }, 40000);
     }
-    
     */
     for (i=0; i<feedbackOpener.length; i++){
         let feedbackBody = document.querySelector(".popup-feedback");
@@ -984,7 +1029,7 @@ docReady(function() {
             }, false);
             document.addEventListener('ajaxFormResponse', (e) => {
                 if (e.detail === true || e.details === false) {
-                    console.log('should be closed')
+                    // console.log('should be closed')
                     feedbackBody.classList.remove("active");
                     document.querySelector("body").classList.remove("popup-open");
                 }
@@ -1087,7 +1132,6 @@ docReady(function() {
             }
             
             div3Created.addEventListener("click", function(e) {
-
                 function updateSelect(removed, change, eHTML, placeh) {
                     selectSelected = document.getElementsByClassName("select-selected");
                     let sll = selectSelected.length
@@ -1120,20 +1164,22 @@ docReady(function() {
                 for (i = 0; i < sl; i++) {
                     selectedName = selectsByTagDiv3.options[i].innerHTML;
                     if (selectedName == this.innerHTML) {
-                        // selectsByTagDiv3.selectedIndex = i;
+                        if(!isMultiple){
+                            selectsByTagDiv3.selectedIndex = i;
+                        }
                         if(!isMultiple){
                             pvsSibling.innerHTML = this.innerHTML
                         }
                         optionSelected = this.parentNode.getElementsByClassName("same-as-selected");
                         yl = optionSelected.length;
                         let removed = false;
-                        let removedInd = false;
+                        // let removedInd = false;
                         selectsByTagDiv3.options[i].setAttribute('selected', '');
                         if(isMultiple) {
                             for (k = 0; k < yl; k++) {
                                 if(optionSelected[k]?.innerHTML == this.innerHTML) {
                                     removed = optionSelected[k]?.innerHTML; //  check why triggering error
-                                    removedInd = k; //  check why triggering error
+                                    // removedInd = k; //  check why triggering error
                                     optionSelected[k]?.classList.remove("same-as-selected");
                                     selectsByTagDiv3.options[i].removeAttribute('selected');
                                 }
@@ -1143,7 +1189,6 @@ docReady(function() {
                                 optionSelected[k].classList.remove("same-as-selected");
                             }
                             this.classList.add("same-as-selected");                         
-
                         }
                         if(isMultiple){
                             if (!removed) {
@@ -1253,7 +1298,7 @@ docReady(function() {
                 gutter: 15,
                 responsive: {
                     320: {
-                        items: 1,
+                        items: 2,
                         nav: true
                     },
                     640: {
@@ -1357,4 +1402,45 @@ docReady(function() {
         }
     }
 
+    const scrolltoapplicants = document.querySelectorAll(".js-scrollto-applicants-form");
+    if( scrolltoapplicants.length > 0){
+        for (i=0; i<scrolltoapplicants.length; i++){
+        
+            scrolltoapplicants[i].addEventListener("click", function(e){
+                let feedback_applicants = document.getElementsByClassName('feedback_applicants');
+                if(feedback_applicants.length){
+                    feedback_applicants[0].scrollIntoView({
+                        behavior: "smooth"
+                    })
+                }
+            }, false);
+        }
+    }
+        
+    //переключение категорий на главной странице
+    if (document.querySelectorAll(".js-switch-category").length > 0){
+        const categorySwitchers = document.querySelectorAll(".js-switch-category a, .js-switch-category span");
+        const businessBlocks = document.querySelectorAll(".js-show-business");
+        const applicantsBlocks = document.querySelectorAll(".js-show-applicants");
+        for (i=0; i<categorySwitchers.length; i++){
+            categorySwitchers[i].addEventListener("click", function(e){
+                e.preventDefault();
+                for (j=0; j<businessBlocks.length; j++) businessBlocks[j].classList.toggle("hide");
+                for (j=0; j<applicantsBlocks.length; j++) applicantsBlocks[j].classList.toggle("hide");
+            }, false);
+        }
+    }
+        
+    //обработчик загрузки файлов в форме заявки
+    if (document.querySelectorAll(".yaDiskUploader").length > 0){
+        const uploadButtons = document.querySelectorAll(".yaDiskUploader");
+        let curButton;
+        for (i=0; i<uploadButtons.length; i++){
+            curButton = uploadButtons[i];
+            curButton.addEventListener("click", function(e){
+                e.preventDefault();
+                if (!(curButton.classList.contains("js-upload-started"))) curButton.classList.add("js-upload-started");
+            }, false);
+        }
+    }
 });
