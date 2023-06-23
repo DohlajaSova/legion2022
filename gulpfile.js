@@ -28,7 +28,7 @@ var
     },
 
     devBuild = ((process.env.NODE_ENV || 'development').trim().toLocaleLowerCase() !== 'production'),
-    //devBuild=false;
+    devBuild=false;
 
     html = { in : source + 'pages/**/*.nunjucks)',
             watch: [source + 'pages/**/*', source + 'templates/**/*'],
