@@ -1,0 +1,42 @@
+{
+  "name": "e-legion.com",
+  "version": "4.0.0",
+  "description": "e-legion site",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eLegion",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "~2.27.5",
+    "connect": "^3.7.0",
+    "del": "~6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "~2.6.1",
+    "gulp-connect": "~5.7.0",
+    "gulp-deporder": "~1.2.0",
+    "gulp-htmlclean": "~2.7.22",
+    "gulp-htmlhint": "^4.0.1",
+    "gulp-imagemin": "~8.0.0",
+    "gulp-inject": "~5.0.5",
+    "gulp-jshint": "~2.1.0",
+    "gulp-livereload": "~4.0.2",
+    "gulp-load-plugins": "~2.0.7",
+    "gulp-clean-css": "~4.3.0",
+    "gulp-newer": "~1.4.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-postcss": "~9.0.1",
+    "gulp-preprocess": "~4.0.2",
+    "gulp-rename": "~2.0.0",
+    "gulp-sass": "~5.0.0",
+    "gulp-uglify": "~3.0.2",
+    "sass": "~1.39.0",
+    "jshint": "~2.13.1",
+    "multipipe": "^4.0.0",
+    "serve-static": "^1.14.1",
+    "through2": "^4.0.2"
+  },
+  "dependencies": {}
+}
